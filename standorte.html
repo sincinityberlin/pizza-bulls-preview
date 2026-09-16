@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Standorte &amp; Öffnungszeiten | Pizza Bulls</title>
+<meta name="description" content="Alle Pizza-Bulls-Standorte deutschlandweit mit Adresse, Status und heutigen Öffnungszeiten." />
+<link rel="icon" href="assets/images/logo.png" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="brand-rule" aria-hidden="true"></div>
+
+<!-- ==========================================================================
+     HEADER — identisch zu index.html, nur die Hamburger-Menü-Ziele sind
+     interne Unterseiten statt externer pizzabulls.de-Links.
+     ========================================================================== -->
+<header class="site-header" id="siteHeader">
+  <div class="site-header__inner">
+    <button class="site-header__burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="index.html#top" class="site-header__logo">
+      <img src="assets/images/logo.png" alt="Pizza Bulls" width="52" height="52" />
+      <span class="site-header__wordmark">PIZZABULLS</span>
+    </a>
+
+    <div class="site-header__right">
+      <!-- PLATZHALTER: Im Projekt existiert noch keine Sprachauswahl. Sobald eine
+           echte Sprachfunktion vorhanden ist, hier verlinken bzw. Dropdown öffnen. -->
+      <button type="button" class="site-header__icon-btn" aria-label="Sprache wählen (Platzhalter, noch ohne Funktion)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.3 2.6 3.6 5.8 3.6 9s-1.3 6.4-3.6 9c-2.3-2.6-3.6-5.8-3.6-9s1.3-6.4 3.6-9Z"/></svg>
+      </button>
+      <!-- PLATZHALTER: Im Projekt existiert noch keine Login-/Account-Seite bzw.
+           -URL. Sobald vorhanden, hier auf Einloggen/Registrieren verlinken. -->
+      <a class="site-header__icon-btn" href="#account-platzhalter" aria-label="Profil — Einloggen oder Registrieren (Platzhalter, noch ohne Ziel-URL)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.4-4.2 5-6.2 8-6.2s6.6 2 8 6.2"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="speisekarte.html">Menü</a>
+    <a href="angebote.html">Angebote &amp; Aktionen</a>
+    <a href="standorte.html">Standorte</a>
+    <a href="franchise.html">Franchise</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="ueber-uns.html">Über uns</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="page-hero">
+    <a class="page-hero__back" href="index.html#top">&larr; Zurück zur Startseite</a>
+
+    <p class="section-eyebrow">Standorte</p>
+    <h1>Unsere <em>Standorte</em></h1>
+    <p>27+ Filialen deutschlandweit — von Berlin bis Saarbrücken. Adresse, Status und heutige Öffnungszeiten auf einen Blick.</p>
+  </section>
+  <section class="page-section" aria-label="Filialliste">
+    <p class="location-count">27 Standorte gefunden — 18 aktuell geöffnet<br><span style="font-size:0.82rem">Status &amp; heutige Öffnungszeiten: Momentaufnahme vom 16.09.2026, können sich täglich ändern.</span></p>
+    <div class="location-grid">
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Hannover Laatzen</h3><span class="location-card__city">Laatzen</span></div>
+          <span class="location-card__status location-card__status--closed">Geschlossen</span>
+        </div>
+        <address>Hildesheimer Straße 40A, 30880 Laatzen</address>
+        <p class="location-card__hours">Heute: 15:00–23:30</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Hildesheimer+Straße+40A%2C+30880+Laatzen" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Schöneberg</h3><span class="location-card__city">Berlin</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Hohenstaufenstraße 40, 10779 Berlin</address>
+        <p class="location-card__hours">Heute: 11:00–02:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Hohenstaufenstraße+40%2C+10779+Berlin" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Rinteln</h3><span class="location-card__city">Rinteln</span></div>
+          <span class="location-card__status location-card__status--closed">Geschlossen</span>
+        </div>
+        <address>Mühlenstraße 10, 31737 Rinteln</address>
+        <p class="location-card__hours">Heute: 14:00–23:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Mühlenstraße+10%2C+31737+Rinteln" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Marzahn</h3><span class="location-card__city">Berlin</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Allee der Kosmonauten 151C, 12685 Berlin</address>
+        <p class="location-card__hours">Heute: 11:00–23:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Allee+der+Kosmonauten+151C%2C+12685+Berlin" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Seelze</h3><span class="location-card__city">Seelze</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Kantstraße 2, 30926 Seelze</address>
+        <p class="location-card__hours">Heute: 12:00–23:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Kantstraße+2%2C+30926+Seelze" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Falkenberg</h3><span class="location-card__city">Berlin</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Dorfstraße, 13057 Berlin</address>
+        <p class="location-card__hours">Heute: 11:00–22:30</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Dorfstraße%2C+13057+Berlin" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Velbert</h3><span class="location-card__city">Velbert</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Heidestraße 139, 42549 Velbert</address>
+        <p class="location-card__hours">Heute: 11:00–23:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Heidestraße+139%2C+42549+Velbert" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Sulzbach</h3><span class="location-card__city">Sulzbach/Saar</span></div>
+          <span class="location-card__status location-card__status--closed">Geschlossen</span>
+        </div>
+        <address>Friedrichstraße 6, 66280 Sulzbach/Saar</address>
+        <p class="location-card__hours">Heute: 14:30–22:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Friedrichstraße+6%2C+66280+Sulzbach/Saar" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Zehlendorf</h3><span class="location-card__city">Berlin</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Teltower Damm 266, 14167 Berlin</address>
+        <p class="location-card__hours">Heute: 11:00–21:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Teltower+Damm+266%2C+14167+Berlin" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Hameln</h3><span class="location-card__city">Hameln</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Emmernstraße 30, 31785 Hameln</address>
+        <p class="location-card__hours">Heute: 11:00–22:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Emmernstraße+30%2C+31785+Hameln" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Bad Kreuznach</h3><span class="location-card__city">Bad Kreuznach</span></div>
+          <span class="location-card__status location-card__status--closed">Geschlossen</span>
+        </div>
+        <address>Bosenheimer Straße 130, 55543 Bad Kreuznach</address>
+        <p class="location-card__hours">Heute: 16:00–22:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Bosenheimer+Straße+130%2C+55543+Bad+Kreuznach" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Lankwitz</h3><span class="location-card__city">Berlin</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Kaiser-Wilhelm-Straße 38, 12247 Berlin</address>
+        <p class="location-card__hours">Heute: 11:00–21:45</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Kaiser-Wilhelm-Straße+38%2C+12247+Berlin" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Panketal</h3><span class="location-card__city">Panketal</span></div>
+          <span class="location-card__status location-card__status--closed">Geschlossen</span>
+        </div>
+        <address>Alt Zepernick 6, 16341 Panketal</address>
+        <p class="location-card__hours">Heute: 15:00–21:30</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Alt+Zepernick+6%2C+16341+Panketal" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Lemgo</h3><span class="location-card__city">Lemgo</span></div>
+          <span class="location-card__status location-card__status--closed">Geschlossen</span>
+        </div>
+        <address>Hamelner Straße 31, 32657 Lemgo</address>
+        <p class="location-card__hours">Heute: Keine Angabe</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Hamelner+Straße+31%2C+32657+Lemgo" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Saarbrücken</h3><span class="location-card__city">Saarbrücken</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Trierer Straße 52, 66111 Saarbrücken</address>
+        <p class="location-card__hours">Heute: 11:00–00:30</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Trierer+Straße+52%2C+66111+Saarbrücken" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Krefeld</h3><span class="location-card__city">Krefeld</span></div>
+          <span class="location-card__status location-card__status--closed">Geschlossen</span>
+        </div>
+        <address>Uerdinger Straße 713, 47800 Krefeld</address>
+        <p class="location-card__hours">Heute: 15:30–01:30</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Uerdinger+Straße+713%2C+47800+Krefeld" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Löhne</h3><span class="location-card__city">Löhne</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Koblenzer Straße 128, 32584 Löhne</address>
+        <p class="location-card__hours">Heute: 11:00–23:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Koblenzer+Straße+128%2C+32584+Löhne" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Weißensee</h3><span class="location-card__city">Berlin</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Langhansstraße 135, 13086 Berlin</address>
+        <p class="location-card__hours">Heute: 12:00–00:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Langhansstraße+135%2C+13086+Berlin" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Zossen</h3><span class="location-card__city">Zossen</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Baruther Straße 12, 15806 Zossen</address>
+        <p class="location-card__hours">Heute: 11:00–22:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Baruther+Straße+12%2C+15806+Zossen" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Hannover Bothfeld</h3><span class="location-card__city">Hannover</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Leipziger Str. 116, 30179 Hannover</address>
+        <p class="location-card__hours">Heute: 11:00–23:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Leipziger+Str.+116%2C+30179+Hannover" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Kleefeld Hannover</h3><span class="location-card__city">Hannover</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Kirchröder Str. 94, 30625 Hannover</address>
+        <p class="location-card__hours">Heute: 11:00–23:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Kirchröder+Str.+94%2C+30625+Hannover" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Lichtenberg</h3><span class="location-card__city">Berlin</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Josef-Orlopp-Straße 53, 10365 Berlin</address>
+        <p class="location-card__hours">Heute: 10:30–01:30</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Josef-Orlopp-Straße+53%2C+10365+Berlin" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Niederschönweide</h3><span class="location-card__city">Berlin</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Fennstraße 24, 12439 Berlin</address>
+        <p class="location-card__hours">Heute: 11:00–23:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Fennstraße+24%2C+12439+Berlin" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Spandau</h3><span class="location-card__city">Berlin</span></div>
+          <span class="location-card__status location-card__status--closed">Geschlossen</span>
+        </div>
+        <address>Wittgensteiner Weg 21, 13583 Berlin</address>
+        <p class="location-card__hours">Heute: 14:00–02:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Wittgensteiner+Weg+21%2C+13583+Berlin" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Königs Wusterhausen</h3><span class="location-card__city">Königs Wusterhausen</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Goethestraße 55D, 15711 Königs Wusterhausen</address>
+        <p class="location-card__hours">Heute: 11:00–23:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Goethestraße+55D%2C+15711+Königs+Wusterhausen" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Bielefeld</h3><span class="location-card__city">Bielefeld</span></div>
+          <span class="location-card__status location-card__status--closed">Geschlossen</span>
+        </div>
+        <address>Gustav-Freytag-Straße 20, 33613 Bielefeld</address>
+        <p class="location-card__hours">Heute: 16:00–02:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Gustav-Freytag-Straße+20%2C+33613+Bielefeld" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-card__top">
+          <div><h3>Pizza &amp; Burger Bulls Hellersdorf</h3><span class="location-card__city">Berlin</span></div>
+          <span class="location-card__status location-card__status--open">Geöffnet</span>
+        </div>
+        <address>Hönower Str. 65, 12623 Berlin</address>
+        <p class="location-card__hours">Heute: 11:00–23:00</p>
+        <div class="location-card__actions">
+          <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Bestellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Hönower+Str.+65%2C+12623+Berlin" target="_blank" rel="noopener">Route</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="page-section stat-row" aria-label="Zahlen zu unseren Standorten" style="padding-top:0;border-top:none;">
+    <div><strong>27+</strong><span>Standorte</span></div>
+    <div><strong>4.5</strong><span>Bewertung</span></div>
+    <div><strong>30 min</strong><span>Ø Lieferzeit</span></div>
+    <div><strong>1M+</strong><span>Zufriedene Kunden</span></div>
+  </section>
+</main>
+
+<!-- ==========================================================================
+     FOOTER — identisch zu index.html, Navigationslinks zeigen auf interne
+     Unterseiten statt externer pizzabulls.de-Links (Impressum bleibt extern,
+     da es dafür keine eigene interne Seite in diesem Projekt gibt).
+     ========================================================================== -->
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <div class="site-footer__brand">
+      <img src="assets/images/logo.png" alt="Pizza Bulls" width="56" height="56" />
+      <p>Fast Like Bulls! — Jetzt online bestellen, liefern lassen oder abholen.</p>
+    </div>
+    <a class="btn btn--green site-footer__cta" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Jetzt bestellen</a>
+  </div>
+
+  <div class="site-footer__grid">
+    <div class="footer-col">
+      <h4>Produkte</h4>
+      <a href="speisekarte.html">Speisekarte</a>
+      <a href="angebote.html">Angebote &amp; Aktionen</a>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <a href="tel:+493088667838">030 / 88 66 78 38</a>
+      <a href="mailto:info@pizzabulls.de">info@pizzabulls.de</a>
+    </div>
+    <div class="footer-col">
+      <h4>Karriere</h4>
+      <a href="jobs.html">Jobs</a>
+      <a href="franchise.html">Franchise</a>
+    </div>
+    <div class="footer-col">
+      <h4>Über Pizza Bulls</h4>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="standorte.html">Standorte</a>
+      <a href="https://pizzabulls.de/impressum" target="_blank" rel="noopener">Impressum</a>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <span>&copy; 2026 Pizza &amp; Burger Bulls Franchise GmbH. Alle Rechte vorbehalten.</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

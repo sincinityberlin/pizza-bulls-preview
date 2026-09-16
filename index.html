@@ -41,12 +41,12 @@
   </div>
 
   <div class="mobile-nav" id="mobileNav">
-    <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Menü</a>
-    <a href="#angebote">Angebote &amp; Aktionen</a>
-    <a href="https://pizzabulls.de/standort-und-oeffnungszeiten" target="_blank" rel="noopener">Standorte</a>
-    <a href="https://pizzabulls.de/franchise-konzept" target="_blank" rel="noopener">Franchise</a>
-    <a href="https://pizzabulls.de/jobs" target="_blank" rel="noopener">Jobs</a>
-    <a href="https://pizzabulls.de/ueber-uns" target="_blank" rel="noopener">Über uns</a>
+    <a href="speisekarte.html">Menü</a>
+    <a href="angebote.html">Angebote &amp; Aktionen</a>
+    <a href="standorte.html">Standorte</a>
+    <a href="franchise.html">Franchise</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="ueber-uns.html">Über uns</a>
   </div>
 </header>
 
@@ -71,24 +71,14 @@
   </section>
 
   <!-- ==========================================================================
-       HERO — "NIMM 2 – ZAHL 1" Kampagne, ein großes bildfüllendes Motiv.
-       Hintergrund: assets/images/hero-nimm2zahl1-v2.jpg, textfrei/logofrei,
-       damit sich Text/CTA als eigenes Overlay überschneidungsfrei darüberlegen.
+       HERO — "Nimm mehr, zahl weniger", fertige Original-Aktionsgrafik
+       (assets/images/hero-nimm-mehr-zahl-weniger.jpg). Kein HTML-Overlay —
+       Text ist Teil des Bildes. Die Grafik enthält keinen eigenen Button,
+       daher ist die gesamte Karte klickbar.
        ========================================================================== -->
-  <section class="hero" id="angebote" aria-label="Aktion: Nimm 2, zahl 1">
-    <a class="hero__frame" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Nimm 2, zahl 1 — Jetzt bestellen">
-      <div class="hero__media">
-        <img src="assets/images/hero-nimm2zahl1-v2.jpg" alt="Nimm 2, zahl 1 — Hand zieht ein Pepperoni-Pizzastück mit Cheese-Pull aus der Pizza" loading="eager" />
-      </div>
-      <div class="hero__overlay">
-        <div class="hero__badges">
-          <span class="hero__badge hero__badge--green">Nimm 2</span>
-          <span class="hero__badge hero__badge--white">Zahl 1</span>
-        </div>
-        <p class="hero__sub">Zwei Pizzen deiner Wahl bestellen — nur eine bezahlen.</p>
-        <span class="btn btn--green hero__cta">Jetzt bestellen <span aria-hidden="true">→</span></span>
-        <p class="hero__script">Mehr Pizza.<br>Mehr Genuss!</p>
-      </div>
+  <section class="hero" id="angebote" aria-label="Aktion: Nimm mehr, zahl weniger">
+    <a class="hero__frame" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Nimm mehr, zahl weniger — Jetzt bestellen">
+      <img class="hero__image" src="assets/images/hero-nimm-mehr-zahl-weniger.jpg" alt="Nimm mehr, zahl weniger! Zwei Pizza Bulls Pizzen im Karton." loading="eager" />
     </a>
   </section>
 
@@ -101,11 +91,11 @@
     <p class="section-eyebrow">Bei dir vor Ort</p>
     <h2>Örtliche Aktionen</h2>
     <div class="local-deals__grid">
-      <a class="local-deals__card" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Pizza Pur — Jetzt bestellen">
-        <img src="assets/images/local-deal-pizza-pur.jpg" alt="Pizza Pur — echter Geschmack, kein Schnickschnack. Ganze Pizza Bulls Pizza im Karton." loading="lazy" />
+      <a class="local-deals__card" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Big Bag — Wenn Döner und Burger ein Kind hätten — Jetzt bestellen">
+        <img src="assets/images/local-deal-big-bag.jpg" alt="Big Bag — Wenn Döner und Burger ein Kind hätten! Pizza Bulls Logo, Bestellen-Button." loading="lazy" />
       </a>
-      <a class="local-deals__card" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Pizza und Dipp — Jetzt bestellen">
-        <img src="assets/images/local-deal-pizza-und-dipp.jpg" alt="Pizza und Dipp — Pizzastück wird in Dip getaucht, Pizza Bulls Karton." loading="lazy" />
+      <a class="local-deals__card" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Erst dippen, dann geniessen — Pizza Bulls Bites mit Aioli Dip — Jetzt bestellen">
+        <img src="assets/images/local-deal-aioli.jpg" alt="Erst dippen, dann geniessen. Pizza Bulls Bites mit cremigem Aioli Dip, Pizza Bulls Logo." loading="lazy" />
       </a>
       <a class="local-deals__card" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion 10 Euro Rabatt, Code BULLS — Zum Coupon">
         <img src="assets/images/local-deal-bulls-code.png" alt="10€ Rabatt auf 3 Bestellungen — Code BULLS, zum Coupon." loading="lazy" />
@@ -148,13 +138,7 @@
       <div class="pizza-slot pizza-slot--4"><div class="pizza-slice"><img src="assets/images/pizza-slice.png" alt="" /></div></div>
       <div class="pizza-slot pizza-slot--5"><div class="pizza-slice"><img src="assets/images/pizza-slice.png" alt="" /></div></div>
       <div class="pizza-slot pizza-club" aria-hidden="true">
-        <svg class="pizza-club__outline" viewBox="-4 -4 108 125.2">
-          <polygon points="50,117.2 0.1,11.15 16.13,5.0 32.88,1.26 50.0,0.0 67.12,1.26 83.87,5.0 99.9,11.15" />
-        </svg>
-        <div class="pizza-club__content">
-          <img src="assets/images/logo.png" alt="Pizza Bulls" />
-          <span>Club</span>
-        </div>
+        <img class="pizza-club__piece" src="assets/images/pizza-club-piece.png" alt="Pizza Bulls Club" />
       </div>
     </div>
     <!-- PLATZHALTER-LINK: Im Projekt existiert noch keine echte Pizza-Bulls-Club-
@@ -164,11 +148,27 @@
   </section>
 
   <!-- ==========================================================================
+       WILLKOMMENSBONUS — Original-Aktionsbild (Frau, Pizza-Bulls-Kartonstapel,
+       "5€ Willkommensbonus", Logo) unverändert. Aufbau nach Domino's-Referenz:
+       Bild → kurzer Text → breiter CTA. object-fit NICHT cover, komplettes
+       Motiv bleibt sichtbar. Direkt unter dem Pizza-Bulls-Club platziert.
+       ========================================================================== -->
+  <section class="welcome-bonus" aria-label="5 Euro Willkommensbonus für die Pizza Bulls App">
+    <img class="welcome-bonus__image" src="assets/images/welcome-bonus.jpg" alt="Hol dir jetzt 5€ Willkommensbonus! Frau mit einem Stapel Pizza Bulls Kartons, Pizza Bulls Logo." loading="lazy" />
+    <p class="welcome-bonus__text">Pizza Bulls App herunterladen, registrieren und direkt 5&nbsp;€ Willkommensbonus sichern. Schnell anmelden und direkt profitieren.</p>
+    <!-- PLATZHALTER-LINK: dieselbe noch nicht vorhandene Registrierungs-/App-Route
+         wie beim "Jetzt registrieren"-Button im Pizza-Bulls-Club-Bereich. -->
+    <a class="btn btn--green welcome-bonus__cta" href="#pizza-bulls-club-registrierung" aria-label="Jetzt registrieren für den 5 Euro Willkommensbonus (Platzhalter-Link, noch ohne Ziel-URL)">
+      Jetzt registrieren <span aria-hidden="true">›</span>
+    </a>
+  </section>
+
+  <!-- ==========================================================================
        BREITER MARKEN-/AKTIONSBANNER (Franchise) — hell: Foto oben (unverändertes
        Filialfoto, ohne dunkle Bildüberlagerung) + heller Content-Bereich darunter.
        ========================================================================== -->
   <section class="brand-banner">
-    <a class="brand-banner__link" href="https://pizzabulls.de/franchise-konzept" target="_blank" rel="noopener">
+    <a class="brand-banner__link" href="franchise.html">
       <div class="brand-banner__media">
         <img src="assets/images/franchise-storefront.jpg" alt="Pizza Bulls Franchise Filiale" loading="lazy" />
         <span class="brand-banner__badge">Bewährtes Franchise-Konzept seit 2008</span>
@@ -234,8 +234,8 @@
   <div class="site-footer__grid">
     <div class="footer-col">
       <h4>Produkte</h4>
-      <a href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Speisekarte</a>
-      <a href="#angebote">Angebote &amp; Aktionen</a>
+      <a href="speisekarte.html">Speisekarte</a>
+      <a href="angebote.html">Angebote &amp; Aktionen</a>
     </div>
     <div class="footer-col">
       <h4>Kontakt</h4>
@@ -244,13 +244,13 @@
     </div>
     <div class="footer-col">
       <h4>Karriere</h4>
-      <a href="https://pizzabulls.de/jobs" target="_blank" rel="noopener">Jobs</a>
-      <a href="https://pizzabulls.de/franchise-konzept" target="_blank" rel="noopener">Franchise</a>
+      <a href="jobs.html">Jobs</a>
+      <a href="franchise.html">Franchise</a>
     </div>
     <div class="footer-col">
       <h4>Über Pizza Bulls</h4>
-      <a href="https://pizzabulls.de/ueber-uns" target="_blank" rel="noopener">Über uns</a>
-      <a href="https://pizzabulls.de/standort-und-oeffnungszeiten" target="_blank" rel="noopener">Standorte</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="standorte.html">Standorte</a>
       <a href="https://pizzabulls.de/impressum" target="_blank" rel="noopener">Impressum</a>
     </div>
   </div>

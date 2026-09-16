@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Angebote &amp; Aktionen | Pizza Bulls</title>
+<meta name="description" content="Alle aktuellen Pizza-Bulls-Angebote und Aktionen im Überblick — jetzt online bestellen." />
+<link rel="icon" href="assets/images/logo.png" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="brand-rule" aria-hidden="true"></div>
+
+<!-- ==========================================================================
+     HEADER — identisch zu index.html, nur die Hamburger-Menü-Ziele sind
+     interne Unterseiten statt externer pizzabulls.de-Links.
+     ========================================================================== -->
+<header class="site-header" id="siteHeader">
+  <div class="site-header__inner">
+    <button class="site-header__burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="index.html#top" class="site-header__logo">
+      <img src="assets/images/logo.png" alt="Pizza Bulls" width="52" height="52" />
+      <span class="site-header__wordmark">PIZZABULLS</span>
+    </a>
+
+    <div class="site-header__right">
+      <!-- PLATZHALTER: Im Projekt existiert noch keine Sprachauswahl. Sobald eine
+           echte Sprachfunktion vorhanden ist, hier verlinken bzw. Dropdown öffnen. -->
+      <button type="button" class="site-header__icon-btn" aria-label="Sprache wählen (Platzhalter, noch ohne Funktion)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.3 2.6 3.6 5.8 3.6 9s-1.3 6.4-3.6 9c-2.3-2.6-3.6-5.8-3.6-9s1.3-6.4 3.6-9Z"/></svg>
+      </button>
+      <!-- PLATZHALTER: Im Projekt existiert noch keine Login-/Account-Seite bzw.
+           -URL. Sobald vorhanden, hier auf Einloggen/Registrieren verlinken. -->
+      <a class="site-header__icon-btn" href="#account-platzhalter" aria-label="Profil — Einloggen oder Registrieren (Platzhalter, noch ohne Ziel-URL)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.4-4.2 5-6.2 8-6.2s6.6 2 8 6.2"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="speisekarte.html">Menü</a>
+    <a href="angebote.html">Angebote &amp; Aktionen</a>
+    <a href="standorte.html">Standorte</a>
+    <a href="franchise.html">Franchise</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="ueber-uns.html">Über uns</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="page-hero">
+    <a class="page-hero__back" href="index.html#top">&larr; Zurück zur Startseite</a>
+    <p class="section-eyebrow">Angebote &amp; Aktionen</p>
+    <h1>Aktuelle <em>Angebote</em></h1>
+    <p>Alle laufenden Pizza-Bulls-Aktionen auf einen Blick — jede Karte führt direkt zur Bestellung.</p>
+  </section>
+
+  <section class="page-section" aria-label="Aktuelle Angebote">
+    <div class="offers-bento">
+      <a class="offers-bento__tile offers-bento__tile--hero" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Nimm mehr, zahl weniger — Jetzt bestellen">
+        <img src="assets/images/hero-nimm-mehr-zahl-weniger.jpg" alt="Nimm mehr, zahl weniger! Zwei Pizza Bulls Pizzen im Karton." loading="eager" />
+      </a>
+      <a class="offers-bento__tile" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Big Bag — Wenn Döner und Burger ein Kind hätten — Jetzt bestellen">
+        <img src="assets/images/local-deal-big-bag.jpg" alt="Big Bag — Wenn Döner und Burger ein Kind hätten! Pizza Bulls Logo, Bestellen-Button." loading="lazy" />
+      </a>
+      <a class="offers-bento__tile" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Erst dippen, dann geniessen — Pizza Bulls Bites mit Aioli Dip — Jetzt bestellen">
+        <img src="assets/images/local-deal-aioli.jpg" alt="Erst dippen, dann geniessen. Pizza Bulls Bites mit cremigem Aioli Dip, Pizza Bulls Logo." loading="lazy" />
+      </a>
+    </div>
+    <!-- Bild 4 (10€-Code) einzeln — NUR auf Mobile sichtbar (siehe
+         .offers-single display:none auf Desktop in css/style.css). Auf
+         Desktop übernimmt Karte 1 der 3er-Reihe unten dieses Motiv, daher
+         hier auf Desktop ausgeblendet statt doppelt angezeigt. -->
+    <div class="offers-single">
+      <a class="local-deals__card" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion 10 Euro Rabatt, Code BULLS — Zum Coupon">
+        <img src="assets/images/local-deal-bulls-code.png" alt="10€ Rabatt auf 3 Bestellungen — Code BULLS, zum Coupon." loading="lazy" />
+      </a>
+    </div>
+
+    <!-- Zusätzlicher Desktop-only-Bereich: 3 gleich große Karten (Bild + kurzer
+         Text + Button), nur auf Desktop sichtbar (siehe .offers-cards in
+         css/style.css, display:none im bestehenden 760px-Mobile-Block) —
+         verwendet 3 bereits vorhandene, bislang auf dieser Seite ungenutzte
+         Assets, keine Wiederholung der 4 Aktionsbilder oben. -->
+    <div class="offers-cards">
+      <div class="offers-card">
+        <img src="assets/images/pizza-topdown.jpg" alt="Frisch gebackene Pizza mit Peperoni, Oliven und roten Zwiebeln von oben" loading="lazy" />
+        <div class="offers-card__body">
+          <h3>Pizza</h3>
+          <p>Frisch gebacken, mit besten Zutaten — entdecke unsere Pizzen.</p>
+          <a class="btn btn--green offers-card__cta" href="speisekarte.html">Zur Speisekarte</a>
+        </div>
+      </div>
+      <div class="offers-card">
+        <img src="assets/images/welcome-bonus.jpg" alt="Hol dir jetzt 5€ Willkommensbonus! Frau mit einem Stapel Pizza Bulls Kartons, Pizza Bulls Logo." loading="lazy" />
+        <div class="offers-card__body">
+          <h3>Willkommensbonus</h3>
+          <p>5&nbsp;€ Willkommensbonus bei deiner ersten Registrierung sichern.</p>
+          <a class="btn btn--red offers-card__cta" href="index.html#pizzaBuild">Jetzt registrieren</a>
+        </div>
+      </div>
+      <div class="offers-card">
+        <img src="assets/images/local-deal-bulls-code.png" alt="10€ Rabatt auf 3 Bestellungen — Code BULLS." loading="lazy" />
+        <div class="offers-card__body">
+          <h3>10&nbsp;€ Rabatt</h3>
+          <p>10&nbsp;€ Rabatt auf deine ersten 3 Bestellungen — Code BULLS.</p>
+          <a class="btn btn--green offers-card__cta" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Zum Coupon</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Großer Standort-Bereich, direkt unter der 3-Karten-Reihe — NUR Desktop
+       (siehe .offers-storefront display:none im bestehenden 760px-Mobile-
+       Block). Reuse der bestehenden .brand-banner-Komponente (siehe
+       index.html, Franchise-Banner) mit demselben vorhandenen Laden-Foto,
+       hier für Standorte statt Franchise, verlinkt auf die bereits
+       vollständig gebaute standorte.html — keine 27 Filialen hier dupliziert. -->
+  <section class="brand-banner offers-storefront" aria-label="Unsere Standorte">
+    <a class="brand-banner__link" href="standorte.html">
+      <div class="brand-banner__media">
+        <img src="assets/images/franchise-storefront.jpg" alt="Pizza Bulls Filiale" loading="lazy" />
+        <span class="brand-banner__badge">27+ Standorte deutschlandweit</span>
+      </div>
+      <div class="brand-banner__content">
+        <h2>Unsere <em>Standorte</em></h2>
+        <p class="brand-banner__text">27+ Standorte deutschlandweit — von Berlin bis Saarbrücken. Adresse, Status und Öffnungszeiten auf einen Blick.</p>
+        <span class="btn btn--green brand-banner__cta">Alle Standorte ansehen</span>
+      </div>
+    </a>
+  </section>
+
+  <section class="page-section" aria-label="Pizza Bulls Club und Willkommensbonus" style="text-align:center;">
+    <div class="page-section__intro">
+      <p class="section-eyebrow">Dauerhaft im Vorteil</p>
+      <h2>Pizza Bulls <em>Club</em> &amp; Willkommensbonus</h2>
+      <p>Neben den zeitlich befristeten Aktionen oben lohnt sich auch die dauerhafte Mitgliedschaft: Punkte sammeln im Pizza Bulls Club und 5&nbsp;€ Willkommensbonus bei der Registrierung — mehr dazu direkt auf der Startseite.</p>
+    </div>
+    <a class="btn btn--green" href="index.html#pizzaBuild">Zum Pizza Bulls Club</a>
+  </section>
+
+</main>
+
+<!-- ==========================================================================
+     FOOTER — identisch zu index.html, Navigationslinks zeigen auf interne
+     Unterseiten statt externer pizzabulls.de-Links (Impressum bleibt extern,
+     da es dafür keine eigene interne Seite in diesem Projekt gibt).
+     ========================================================================== -->
+<footer class="site-footer">
+  <div class="site-footer__top">
+    <div class="site-footer__brand">
+      <img src="assets/images/logo.png" alt="Pizza Bulls" width="56" height="56" />
+      <p>Fast Like Bulls! — Jetzt online bestellen, liefern lassen oder abholen.</p>
+    </div>
+    <a class="btn btn--green site-footer__cta" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Jetzt bestellen</a>
+  </div>
+
+  <div class="site-footer__grid">
+    <div class="footer-col">
+      <h4>Produkte</h4>
+      <a href="speisekarte.html">Speisekarte</a>
+      <a href="angebote.html">Angebote &amp; Aktionen</a>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <a href="tel:+493088667838">030 / 88 66 78 38</a>
+      <a href="mailto:info@pizzabulls.de">info@pizzabulls.de</a>
+    </div>
+    <div class="footer-col">
+      <h4>Karriere</h4>
+      <a href="jobs.html">Jobs</a>
+      <a href="franchise.html">Franchise</a>
+    </div>
+    <div class="footer-col">
+      <h4>Über Pizza Bulls</h4>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="standorte.html">Standorte</a>
+      <a href="https://pizzabulls.de/impressum" target="_blank" rel="noopener">Impressum</a>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <span>&copy; 2026 Pizza &amp; Burger Bulls Franchise GmbH. Alle Rechte vorbehalten.</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
