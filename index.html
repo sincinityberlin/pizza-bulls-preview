@@ -161,6 +161,44 @@
   </section>
 
   <!-- ==========================================================================
+       PIZZA BULLS CLUB / WILLKOMMENSBONUS / 10€ RABATT — NUR Desktop
+       (.pizza-build und .welcome-bonus oben werden auf Desktop per CSS
+       ausgeblendet, siehe display:none-Regel in css/style.css — Inhalte
+       bleiben vollständig erhalten und sind auf Mobile unverändert sichtbar).
+       Dieselbe .offers-cards/.offers-card-Komponente wie auf angebote.html:
+       exakt 3 gleich große Karten nebeneinander, gleiche Bildhöhe, Buttons
+       auf einer Linie. Bild 3 (10€-Code) ist dieselbe Aktion wie die
+       Einzelkarte weiter oben im Bento-Bereich, die auf Desktop dafür
+       ausgeblendet ist (keine Wiederholung sichtbar).
+       ========================================================================== -->
+  <div class="offers-cards">
+    <div class="offers-card">
+      <img class="offers-card__img--contain" src="assets/images/pizza-club-piece.png" alt="Pizza Bulls Club" loading="lazy" />
+      <div class="offers-card__body">
+        <h3>Pizza Bulls Club</h3>
+        <p>Punkte sammeln &amp; als V.I.P. Mitglied belohnt werden.</p>
+        <a class="btn btn--green offers-card__cta" href="#pizza-bulls-club-registrierung" aria-label="Jetzt für den Pizza Bulls Club registrieren (Platzhalter-Link, noch ohne Ziel-URL)">Jetzt registrieren</a>
+      </div>
+    </div>
+    <div class="offers-card">
+      <img src="assets/images/welcome-bonus.jpg" alt="Hol dir jetzt 5€ Willkommensbonus! Frau mit einem Stapel Pizza Bulls Kartons, Pizza Bulls Logo." loading="lazy" />
+      <div class="offers-card__body">
+        <h3>Willkommensbonus</h3>
+        <p>Pizza Bulls App herunterladen, registrieren und direkt 5&nbsp;€ Willkommensbonus sichern.</p>
+        <a class="btn btn--red offers-card__cta" href="#pizza-bulls-club-registrierung" aria-label="Jetzt registrieren für den 5 Euro Willkommensbonus (Platzhalter-Link, noch ohne Ziel-URL)">Jetzt registrieren</a>
+      </div>
+    </div>
+    <div class="offers-card">
+      <img src="assets/images/local-deal-bulls-code.png" alt="10€ Rabatt auf 3 Bestellungen — Code BULLS, zum Coupon." loading="lazy" />
+      <div class="offers-card__body">
+        <h3>10&nbsp;€ Rabatt</h3>
+        <p>10&nbsp;€ Rabatt auf deine ersten 3 Bestellungen — Code BULLS.</p>
+        <a class="btn btn--green offers-card__cta" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Zum Coupon</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
        BREITER MARKEN-/AKTIONSBANNER (Franchise) — hell: Foto oben (unverändertes
        Filialfoto, ohne dunkle Bildüberlagerung) + heller Content-Bereich darunter.
        ========================================================================== -->
