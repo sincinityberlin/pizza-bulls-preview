@@ -834,19 +834,56 @@ h1,h2,h3{ text-wrap: balance; }
   box-shadow: 0 2px 14px rgba(26,26,26,0.1);
 }
 .offers-card img{ width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
-.offers-card__img--contain{ object-fit: contain !important; background: var(--pb-white); padding: 22px; }
 .offers-card__body{ display: flex; flex-direction: column; flex: 1; gap: 8px; padding: 20px 20px 24px; }
 .offers-card__body h3{ margin: 0; font-size: 1.05rem; }
 .offers-card__body p{ margin: 0; flex: 1; font-size: 0.86rem; color: var(--pb-grey); line-height: 1.5; }
 .offers-card__cta{ width: 100%; justify-content: center; margin-top: auto; }
 
-/* Startseite Desktop: die großen Vollbereiche Pizza-Bulls-Club (inkl.
-   Animation) und Willkommensbonus werden durch die kompakte .offers-cards-
-   Reihe oben/unten ersetzt — Markup bleibt unverändert erhalten und ist auf
-   Mobile weiterhin sichtbar (siehe display:block-Override im bestehenden
-   760px-Block). Die Animation selbst (Keyframes/Trigger) wird dabei nicht
-   angefasst, sie läuft auf Mobile unverändert weiter. */
-.pizza-build, .welcome-bonus{ display: none; }
+/* Startseite: die 3er-Reihe enthält als linke Karte die ECHTE, einzige
+   #pizzaBuild-Sektion (keine Kopie) statt eines dritten .offers-card — daher
+   braucht .offers-cards--home hier keine grid-template-columns-Anpassung,
+   3 direkte Kinder (section.pizza-build + 2× .offers-card) genügen der
+   bestehenden 3-Spalten-Basisregel oben automatisch. Die Willkommensbonus-
+   und 10€-Rabatt-Bilder dürfen hier NICHT beschnitten werden (anders als der
+   allgemeine .offers-card-Standard mit object-fit:cover) — eigene Bildhöhe
+   statt erzwungenem 4:3, object-fit:contain wirkt dadurch ohne Letterboxing;
+   überschüssige Höhe wird vom flexiblen Textbereich darunter ausgeglichen.
+   Betrifft ausschließlich diese Startseiten-Instanz, NICHT die 3er-Reihe auf
+   angebote.html (dort weiterhin unverändert object-fit:cover, 4:3). */
+.offers-cards--home .offers-card img{ height: auto; aspect-ratio: auto; object-fit: contain; }
+
+/* Startseite Desktop: der Willkommensbonus-Vollbereich wird durch die Karte
+   oben in der 3er-Reihe ersetzt (dasselbe Bild) — Markup bleibt unverändert
+   erhalten und ist auf Mobile weiterhin sichtbar (siehe display:block-
+   Override im bestehenden 760px-Block). Die #pizzaBuild-Sektion selbst wird
+   NICHT mehr separat ausgeblendet, sie lebt jetzt als linke Karte direkt in
+   .offers-cards--home (siehe HTML) und wird nur noch dort weiter unten in
+   der Größe angepasst (@media min-width:761px) — auf Mobile läuft exakt
+   dieselbe, einzige Animations-Instanz unverändert weiter. */
+.welcome-bonus{ display: none; }
+
+/* Startseite Desktop: #pizzaBuild als linke Karte der 3er-Reihe kompakter
+   darstellen (Kartenrahmen + kleinere Pizza-Stage + kleinere Schrift) —
+   ausschließlich oberhalb der echten Mobile-Grenze (760px) aktiv, damit
+   Mobile exakt bei der bestehenden, unveränderten Basis-/760px-Regel für
+   .pizza-build/.pizza-stage bleibt. Keyframes, Trigger-Mechanismus (js/
+   main.js) und alle .pizza-slot/.pizza-slice-Regeln bleiben komplett
+   unangetastet — hier werden nur Größe/Abstände der immer gleichen,
+   einzigen Animation angepasst, keine neue Animation. */
+@media (min-width: 761px){
+  .offers-cards--home .pizza-build{
+    background: var(--pb-white);
+    padding: 26px 18px 30px;
+    border: 1px solid var(--pb-border);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 14px rgba(26,26,26,0.1);
+  }
+  .offers-cards--home .pizza-build .section-eyebrow{ font-size: 0.68rem; }
+  .offers-cards--home .pizza-build__title{ font-size: 1.15rem; margin: 4px 0 16px; }
+  .offers-cards--home .pizza-stage{ width: min(190px, 78%); }
+  .offers-cards--home .pizza-build__cta{ margin-top: 18px; width: 100%; justify-content: center; }
+  .offers-cards--home .pizza-build__hint{ margin-top: 14px; font-size: 0.76rem; }
+}
 
 /* Standorte */
 .location-count{ text-align: center; margin: 0 auto 28px; color: var(--pb-grey); font-size: 0.9rem; }
@@ -924,5 +961,16 @@ h1,h2,h3{ text-wrap: balance; }
   .offers-single{ display: block; max-width: 640px; margin: 24px auto 0; }
   .offers-cards{ display: none; }
   .offers-storefront{ display: none; }
-  .pizza-build, .welcome-bonus{ display: block; }
+  .welcome-bonus{ display: block; }
+
+  /* Startseite: der Wrapper "verschwindet" aus dem Layout (display:contents),
+     sodass die echte #pizzaBuild-Sektion als direktes Kind seines
+     eigentlichen Elternelements normal im Fluss rendert — exakt wie vor
+     dieser Änderung, mit ihren eigenen, hier unveränderten Basis-Regeln
+     (inkl. der bestehenden .pizza-stage-Mobile-Regel oben in diesem Block).
+     Die beiden künstlichen Karten (Willkommensbonus/10€-Rabatt) werden
+     ausgeblendet, da ihr Inhalt auf Mobile bereits als eigene Vollbereiche
+     an anderer Stelle sichtbar ist. */
+  .offers-cards--home{ display: contents; }
+  .offers-cards--home .offers-card{ display: none; }
 }

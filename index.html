@@ -119,67 +119,35 @@
   </section>
 
   <!-- ==========================================================================
-       LIVE-PIZZA-ANIMATION — zeitgesteuerte Endlosschleife (kein Scroll-Effekt):
-       Pizzastücke fliegen automatisch, gestaffelt nacheinander, zu einer
-       vollständigen Pizza um das Pizza-Bulls-Club-Badge zusammen, halten kurz,
-       lösen sich wieder auf, Loop beginnt von vorn. Start automatisch, sobald
-       die Sektion in den Viewport scrollt (siehe js/main.js).
+       PIZZA BULLS CLUB (ECHTE, EINZIGE INSTANZ DER ANIMATION) / WILLKOMMENSBONUS /
+       10€ RABATT — auf Desktop als eine horizontale 3er-Reihe (.offers-cards--home,
+       CSS-Grid), auf Mobile per display:contents unverändert als eigener
+       Vollbereich (die Animation läuft in BEIDEN Fällen in derselben, einzigen
+       #pizzaBuild/#pizzaStage-Instanz — keine Kopie, keine neue Animation,
+       Keyframes/Trigger-Mechanismus in css/style.css bzw. js/main.js komplett
+       unangetastet). Auf Desktop wird die Karte per zusätzlicher, ausschließlich
+       oberhalb 760px aktiver CSS-Regel kompakter dargestellt (siehe
+       ".offers-cards--home .pizza-build" in css/style.css).
        ========================================================================== -->
-  <section class="pizza-build" id="pizzaBuild" aria-label="Pizza Bulls Club — deine Pizza entsteht Stück für Stück">
-    <p class="section-eyebrow">Pizza Bulls Club</p>
-    <h2 class="pizza-build__title">Stück für Stück <em>perfekt</em></h2>
-    <div class="pizza-stage" id="pizzaStage">
-      <div class="pizza-slot pizza-slot--1"><div class="pizza-slice"><img src="assets/images/pizza-slice.png" alt="" /></div></div>
-      <div class="pizza-slot pizza-slot--2"><div class="pizza-slice"><img src="assets/images/pizza-slice.png" alt="" /></div></div>
-      <div class="pizza-slot pizza-slot--3"><div class="pizza-slice"><img src="assets/images/pizza-slice.png" alt="" /></div></div>
-      <div class="pizza-slot pizza-slot--4"><div class="pizza-slice"><img src="assets/images/pizza-slice.png" alt="" /></div></div>
-      <div class="pizza-slot pizza-slot--5"><div class="pizza-slice"><img src="assets/images/pizza-slice.png" alt="" /></div></div>
-      <div class="pizza-slot pizza-club" aria-hidden="true">
-        <img class="pizza-club__piece" src="assets/images/pizza-club-piece.png" alt="Pizza Bulls Club" />
+  <div class="offers-cards offers-cards--home">
+    <section class="pizza-build" id="pizzaBuild" aria-label="Pizza Bulls Club — deine Pizza entsteht Stück für Stück">
+      <p class="section-eyebrow">Pizza Bulls Club</p>
+      <h2 class="pizza-build__title">Stück für Stück <em>perfekt</em></h2>
+      <div class="pizza-stage" id="pizzaStage">
+        <div class="pizza-slot pizza-slot--1"><div class="pizza-slice"><img src="assets/images/pizza-slice.png" alt="" /></div></div>
+        <div class="pizza-slot pizza-slot--2"><div class="pizza-slice"><img src="assets/images/pizza-slice.png" alt="" /></div></div>
+        <div class="pizza-slot pizza-slot--3"><div class="pizza-slice"><img src="assets/images/pizza-slice.png" alt="" /></div></div>
+        <div class="pizza-slot pizza-slot--4"><div class="pizza-slice"><img src="assets/images/pizza-slice.png" alt="" /></div></div>
+        <div class="pizza-slot pizza-slot--5"><div class="pizza-slice"><img src="assets/images/pizza-slice.png" alt="" /></div></div>
+        <div class="pizza-slot pizza-club" aria-hidden="true">
+          <img class="pizza-club__piece" src="assets/images/pizza-club-piece.png" alt="Pizza Bulls Club" />
+        </div>
       </div>
-    </div>
-    <!-- PLATZHALTER-LINK: Im Projekt existiert noch keine echte Pizza-Bulls-Club-
-         Registrierungsseite. href hier durch die echte URL ersetzen, sobald bekannt. -->
-    <a class="btn btn--green pizza-build__cta" href="#pizza-bulls-club-registrierung" aria-label="Jetzt für den Pizza Bulls Club registrieren (Platzhalter-Link, noch ohne Ziel-URL)">Jetzt registrieren</a>
-    <p class="pizza-build__hint">Punkte sammeln &amp; als V.I.P. Mitglied belohnt werden.</p>
-  </section>
-
-  <!-- ==========================================================================
-       WILLKOMMENSBONUS — Original-Aktionsbild (Frau, Pizza-Bulls-Kartonstapel,
-       "5€ Willkommensbonus", Logo) unverändert. Aufbau nach Domino's-Referenz:
-       Bild → kurzer Text → breiter CTA. object-fit NICHT cover, komplettes
-       Motiv bleibt sichtbar. Direkt unter dem Pizza-Bulls-Club platziert.
-       ========================================================================== -->
-  <section class="welcome-bonus" aria-label="5 Euro Willkommensbonus für die Pizza Bulls App">
-    <img class="welcome-bonus__image" src="assets/images/welcome-bonus.jpg" alt="Hol dir jetzt 5€ Willkommensbonus! Frau mit einem Stapel Pizza Bulls Kartons, Pizza Bulls Logo." loading="lazy" />
-    <p class="welcome-bonus__text">Pizza Bulls App herunterladen, registrieren und direkt 5&nbsp;€ Willkommensbonus sichern. Schnell anmelden und direkt profitieren.</p>
-    <!-- PLATZHALTER-LINK: dieselbe noch nicht vorhandene Registrierungs-/App-Route
-         wie beim "Jetzt registrieren"-Button im Pizza-Bulls-Club-Bereich. -->
-    <a class="btn btn--green welcome-bonus__cta" href="#pizza-bulls-club-registrierung" aria-label="Jetzt registrieren für den 5 Euro Willkommensbonus (Platzhalter-Link, noch ohne Ziel-URL)">
-      Jetzt registrieren <span aria-hidden="true">›</span>
-    </a>
-  </section>
-
-  <!-- ==========================================================================
-       PIZZA BULLS CLUB / WILLKOMMENSBONUS / 10€ RABATT — NUR Desktop
-       (.pizza-build und .welcome-bonus oben werden auf Desktop per CSS
-       ausgeblendet, siehe display:none-Regel in css/style.css — Inhalte
-       bleiben vollständig erhalten und sind auf Mobile unverändert sichtbar).
-       Dieselbe .offers-cards/.offers-card-Komponente wie auf angebote.html:
-       exakt 3 gleich große Karten nebeneinander, gleiche Bildhöhe, Buttons
-       auf einer Linie. Bild 3 (10€-Code) ist dieselbe Aktion wie die
-       Einzelkarte weiter oben im Bento-Bereich, die auf Desktop dafür
-       ausgeblendet ist (keine Wiederholung sichtbar).
-       ========================================================================== -->
-  <div class="offers-cards">
-    <div class="offers-card">
-      <img class="offers-card__img--contain" src="assets/images/pizza-club-piece.png" alt="Pizza Bulls Club" loading="lazy" />
-      <div class="offers-card__body">
-        <h3>Pizza Bulls Club</h3>
-        <p>Punkte sammeln &amp; als V.I.P. Mitglied belohnt werden.</p>
-        <a class="btn btn--green offers-card__cta" href="#pizza-bulls-club-registrierung" aria-label="Jetzt für den Pizza Bulls Club registrieren (Platzhalter-Link, noch ohne Ziel-URL)">Jetzt registrieren</a>
-      </div>
-    </div>
+      <!-- PLATZHALTER-LINK: Im Projekt existiert noch keine echte Pizza-Bulls-Club-
+           Registrierungsseite. href hier durch die echte URL ersetzen, sobald bekannt. -->
+      <a class="btn btn--green pizza-build__cta" href="#pizza-bulls-club-registrierung" aria-label="Jetzt für den Pizza Bulls Club registrieren (Platzhalter-Link, noch ohne Ziel-URL)">Jetzt registrieren</a>
+      <p class="pizza-build__hint">Punkte sammeln &amp; als V.I.P. Mitglied belohnt werden.</p>
+    </section>
     <div class="offers-card">
       <img src="assets/images/welcome-bonus.jpg" alt="Hol dir jetzt 5€ Willkommensbonus! Frau mit einem Stapel Pizza Bulls Kartons, Pizza Bulls Logo." loading="lazy" />
       <div class="offers-card__body">
@@ -197,6 +165,23 @@
       </div>
     </div>
   </div>
+
+  <!-- ==========================================================================
+       WILLKOMMENSBONUS-VOLLBEREICH — Original-Aktionsbild (Frau, Pizza-Bulls-
+       Kartonstapel, "5€ Willkommensbonus", Logo) unverändert. Auf Desktop per
+       CSS ausgeblendet (siehe .welcome-bonus display:none in css/style.css —
+       Karte oben in der 3er-Reihe zeigt dasselbe Bild), auf Mobile unverändert
+       sichtbar wie zuvor.
+       ========================================================================== -->
+  <section class="welcome-bonus" aria-label="5 Euro Willkommensbonus für die Pizza Bulls App">
+    <img class="welcome-bonus__image" src="assets/images/welcome-bonus.jpg" alt="Hol dir jetzt 5€ Willkommensbonus! Frau mit einem Stapel Pizza Bulls Kartons, Pizza Bulls Logo." loading="lazy" />
+    <p class="welcome-bonus__text">Pizza Bulls App herunterladen, registrieren und direkt 5&nbsp;€ Willkommensbonus sichern. Schnell anmelden und direkt profitieren.</p>
+    <!-- PLATZHALTER-LINK: dieselbe noch nicht vorhandene Registrierungs-/App-Route
+         wie beim "Jetzt registrieren"-Button im Pizza-Bulls-Club-Bereich. -->
+    <a class="btn btn--green welcome-bonus__cta" href="#pizza-bulls-club-registrierung" aria-label="Jetzt registrieren für den 5 Euro Willkommensbonus (Platzhalter-Link, noch ohne Ziel-URL)">
+      Jetzt registrieren <span aria-hidden="true">›</span>
+    </a>
+  </section>
 
   <!-- ==========================================================================
        BREITER MARKEN-/AKTIONSBANNER (Franchise) — hell: Foto oben (unverändertes
