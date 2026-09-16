@@ -71,32 +71,29 @@
   </section>
 
   <!-- ==========================================================================
-       HERO — "Nimm mehr, zahl weniger", fertige Original-Aktionsgrafik
-       (assets/images/hero-nimm-mehr-zahl-weniger.jpg). Kein HTML-Overlay —
-       Text ist Teil des Bildes. Die Grafik enthält keinen eigenen Button,
-       daher ist die gesamte Karte klickbar.
+       BEI DIR VOR ORT — identischer Bento-Aufbau wie auf angebote.html
+       (.offers-bento/.offers-single, dieselben Klassen, dieselben 4 Original-
+       Bilder, dieselbe Reihenfolge): Bild 1 (Hero "Nimm mehr, zahl weniger")
+       groß links, Bild 2 (Big Bag) oben rechts, Bild 3 (Aioli) unten rechts,
+       Bild 4 (10€-Code) einzeln darunter. Auf Mobile identischer Stapel wie
+       zuvor (Hero → Big Bag → Aioli → 10€-Code), da dieselbe Komponente samt
+       Mobile-Override verwendet wird wie auf angebote.html.
        ========================================================================== -->
-  <section class="hero" id="angebote" aria-label="Aktion: Nimm mehr, zahl weniger">
-    <a class="hero__frame" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Nimm mehr, zahl weniger — Jetzt bestellen">
-      <img class="hero__image" src="assets/images/hero-nimm-mehr-zahl-weniger.jpg" alt="Nimm mehr, zahl weniger! Zwei Pizza Bulls Pizzen im Karton." loading="eager" />
-    </a>
-  </section>
-
-  <!-- ==========================================================================
-       ÖRTLICHE AKTIONEN — zwei finale Aktionskarten (Original-Bilddateien,
-       Text/Button bereits im Bild enthalten). object-fit NICHT cover, damit
-       jedes Bild vollständig ohne Beschneidung sichtbar bleibt. Kein Slider.
-       ========================================================================== -->
-  <section class="local-deals" aria-label="Örtliche Aktionen">
+  <section class="local-deals" id="angebote" aria-label="Bei dir vor Ort">
     <p class="section-eyebrow">Bei dir vor Ort</p>
     <h2>Örtliche Aktionen</h2>
-    <div class="local-deals__grid">
-      <a class="local-deals__card" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Big Bag — Wenn Döner und Burger ein Kind hätten — Jetzt bestellen">
+    <div class="offers-bento">
+      <a class="offers-bento__tile offers-bento__tile--hero" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Nimm mehr, zahl weniger — Jetzt bestellen">
+        <img src="assets/images/hero-nimm-mehr-zahl-weniger.jpg" alt="Nimm mehr, zahl weniger! Zwei Pizza Bulls Pizzen im Karton." loading="eager" />
+      </a>
+      <a class="offers-bento__tile" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Big Bag — Wenn Döner und Burger ein Kind hätten — Jetzt bestellen">
         <img src="assets/images/local-deal-big-bag.jpg" alt="Big Bag — Wenn Döner und Burger ein Kind hätten! Pizza Bulls Logo, Bestellen-Button." loading="lazy" />
       </a>
-      <a class="local-deals__card" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Erst dippen, dann geniessen — Pizza Bulls Bites mit Aioli Dip — Jetzt bestellen">
+      <a class="offers-bento__tile" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion Erst dippen, dann geniessen — Pizza Bulls Bites mit Aioli Dip — Jetzt bestellen">
         <img src="assets/images/local-deal-aioli.jpg" alt="Erst dippen, dann geniessen. Pizza Bulls Bites mit cremigem Aioli Dip, Pizza Bulls Logo." loading="lazy" />
       </a>
+    </div>
+    <div class="offers-single">
       <a class="local-deals__card" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener" aria-label="Aktion 10 Euro Rabatt, Code BULLS — Zum Coupon">
         <img src="assets/images/local-deal-bulls-code.png" alt="10€ Rabatt auf 3 Bestellungen — Code BULLS, zum Coupon." loading="lazy" />
       </a>

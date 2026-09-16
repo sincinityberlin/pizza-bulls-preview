@@ -807,6 +807,16 @@ h1,h2,h3{ text-wrap: balance; }
 .offers-single{ display: none; }
 .offers-single .local-deals__card{ box-shadow: 0 2px 14px rgba(26,26,26,0.1); }
 
+/* Startseite ("Bei dir vor Ort"): hier gibt es keine 3-Karten-Reihe, die das
+   10€-Code-Motiv erneut zeigt (anders als auf angebote.html) — daher bleibt
+   die Einzelkarte hier auch auf Desktop sichtbar, nur die Startseite betrifft
+   dieser Override (Selektor über die eindeutige .local-deals-Sektion), gilt
+   ausschließlich oberhalb der echten Mobile-Grenze (760px), damit die Mobile-
+   Darstellung unverändert der bestehenden 760px-Regel weiter unten folgt. */
+@media (min-width: 761px){
+  .local-deals .offers-single{ display: block; max-width: 480px; margin: 16px auto 0; }
+}
+
 /* Zusätzlicher Bereich unter dem Bento-Block — 3 gleich große Karten
    (Bild + Text + Button), NUR Desktop (siehe display:none im bestehenden
    760px-Mobile-Block weiter unten; auf Mobile bleibt dadurch alles exakt
