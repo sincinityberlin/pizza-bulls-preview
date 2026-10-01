@@ -801,6 +801,18 @@ h1,h2,h3{ text-wrap: balance; }
 .offers-bento__tile:nth-child(2){ grid-column: 2; grid-row: 1; }
 .offers-bento__tile:nth-child(3){ grid-column: 2; grid-row: 2; }
 
+/* Startseite: NUR die große linke Bento-Kachel ("Doppelt spart besser — 50%
+   Rabatt auf die 2. Single Pizza") hier gezielt auf object-fit:contain
+   umgestellt — das neue Originalbild ist deutlich schmaler/höher als die
+   alte Hero-Grafik, bei object-fit:cover würde Text/Pizzen beschnitten.
+   Ausschließlich auf die Startseite beschränkt (Selektor über die
+   eindeutige .local-deals-Sektion) — angebote.html nutzt dieselbe Klasse
+   .offers-bento__tile--hero für ein anderes Bild und bleibt unverändert bei
+   object-fit:cover. Auf Mobile ohnehin irrelevant: dort gilt bereits
+   height:auto (siehe bestehende Regel im 760px-Block weiter unten), das
+   komplette Bild ist also unabhängig von object-fit sichtbar. */
+.local-deals .offers-bento__tile--hero img{ object-fit: contain; background: var(--pb-white); }
+
 /* Bild 4 (10€-Code) einzeln — auf Desktop ausgeblendet, da Karte 1 der
    3er-Reihe unten dasselbe Motiv zeigt (keine Dopplung). Auf Mobile bleibt
    es sichtbar wie zuvor (siehe display:block-Override im 760px-Block). */
