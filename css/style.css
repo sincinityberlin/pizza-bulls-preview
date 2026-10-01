@@ -815,8 +815,8 @@ h1,h2,h3{ text-wrap: balance; }
 
 /* Startseite: NUR die Big-Bag-Kachel (2. Bento-Kachel, "Wenn Döner und
    Burger ein Kind hätten!") hier gezielt auf object-fit:contain umgestellt
-   — das neue, helle Originalbild ist breitformatig (16:9) statt quadratisch
-   wie das alte, bei object-fit:cover würde oben/unten beschnitten. Position
+   — das aktuelle Originalbild ist hochformatig (1122×1402, 4:5), bei
+   object-fit:cover würde oben/unten beschnitten. Position
    im Bento-Layout (grid-row/-column) bleibt unverändert, nur das Bild selbst
    wird vollständig statt ausschnittweise dargestellt. Ausschließlich auf die
    Startseite beschränkt (.local-deals-Sektion) — angebote.html verwendet für
@@ -826,10 +826,9 @@ h1,h2,h3{ text-wrap: balance; }
 .local-deals .offers-bento__tile:nth-child(2) img{ object-fit: contain; background: var(--pb-white); }
 
 /* Startseite: NUR die Aioli-Kachel (3. Bento-Kachel, "Erst dippen, dann
-   geniessen") hier gezielt auf object-fit:contain umgestellt — das neue
-   Originalbild ist breitformatig (2:1, horizontal) statt hochformatig wie
-   das alte, bei object-fit:cover wäre der linke Text bzw. rechts Hand/
-   Snackbox beschnitten worden. Position im Bento-Layout (grid-row/-column)
+   geniessen") hier gezielt auf object-fit:contain umgestellt — das aktuelle
+   Originalbild ist hochformatig (1122×1402, 4:5), bei object-fit:cover
+   wäre oben Text bzw. unten die Snackbox beschnitten worden. Position im Bento-Layout (grid-row/-column)
    bleibt unverändert, nur das Bild selbst wird vollständig statt
    ausschnittweise dargestellt. Ausschließlich auf die Startseite beschränkt
    (.local-deals-Sektion) — angebote.html verwendet für dieselbe Kachel
