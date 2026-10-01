@@ -1265,17 +1265,19 @@ a.home-footer__info:hover{ color: var(--pb-green); }
    .mobile-nav außerhalb von .site-header__inner und bleibt unverändert.
    < 1024px: Hamburger-Menü; die geöffnete Liste wird per
    flex-wrap in eine eigene volle Zeile unter dem Header umgebrochen (gleiche
-   Optik wie bisher). ≥ 1024px: Hamburger ausgeblendet, Menüpunkte (HOME …
-   JOBS, Großbuchstaben) dauerhaft sichtbar in einer Reihe mittig im freien
-   Bereich zwischen Logo und Icons; „Angebote & Aktionen“ nur im Mobile-Menü.
+   Optik wie bisher). ≥ 1024px: Hamburger ausgeblendet, Menüpunkte
+   (Großbuchstaben) dauerhaft sichtbar in einer Reihe mittig im freien
+   Bereich zwischen Logo und Icons (MENÜ, ANGEBOTE & AKTIONEN, STANDORTE,
+   FRANCHISE); Jobs/Über uns nur im Mobile-Menü. Bewusst ohne :has(), damit
+   der Hamburger auch in älteren Browsern auf Desktop verschwindet.
    ========================================================================== */
-.site-header__inner:has(> .mobile-nav){ flex-wrap: wrap; row-gap: 0; }
+.site-header__inner--nav{ flex-wrap: wrap; row-gap: 0; }
 .site-header__inner > .mobile-nav{ order: 10; flex-basis: calc(100% + 40px); margin: 12px -20px -12px; }
 @media (max-width: 760px){
   .site-header__inner > .mobile-nav{ flex-basis: calc(100% + 28px); margin: 8px -14px -8px; }
 }
 @media (min-width: 1024px){
-  .site-header__inner:has(> .mobile-nav) > .site-header__burger{ display: none; }
+  .site-header__inner--nav > .site-header__burger{ display: none !important; }
   .site-header__inner > .mobile-nav{
     order: 0; display: flex; flex-direction: row; flex: 1 1 auto;
     justify-content: center; align-items: center; gap: clamp(18px, 2.2vw, 36px);
