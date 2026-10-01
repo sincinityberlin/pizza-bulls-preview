@@ -825,6 +825,19 @@ h1,h2,h3{ text-wrap: balance; }
    Block weiter unten). */
 .local-deals .offers-bento__tile:nth-child(2) img{ object-fit: contain; background: var(--pb-white); }
 
+/* Startseite: NUR die Aioli-Kachel (3. Bento-Kachel, "Erst dippen, dann
+   geniessen") hier gezielt auf object-fit:contain umgestellt — das neue
+   Originalbild ist breitformatig (2:1, horizontal) statt hochformatig wie
+   das alte, bei object-fit:cover wäre der linke Text bzw. rechts Hand/
+   Snackbox beschnitten worden. Position im Bento-Layout (grid-row/-column)
+   bleibt unverändert, nur das Bild selbst wird vollständig statt
+   ausschnittweise dargestellt. Ausschließlich auf die Startseite beschränkt
+   (.local-deals-Sektion) — angebote.html verwendet für dieselbe Kachel
+   weiterhin das alte, hochformatige Bild mit object-fit:cover, unverändert.
+   Auf Mobile ohnehin irrelevant (height:auto greift bereits, siehe 760px-
+   Block weiter unten). */
+.local-deals .offers-bento__tile:nth-child(3) img{ object-fit: contain; background: var(--pb-white); }
+
 /* Bild 4 (10€-Code) einzeln — auf Desktop ausgeblendet, da Karte 1 der
    3er-Reihe unten dasselbe Motiv zeigt (keine Dopplung). Auf Mobile bleibt
    es sichtbar wie zuvor (siehe display:block-Override im 760px-Block). */
