@@ -6,7 +6,7 @@
 <title>Pizza Bulls — Fast Like Bulls! Pizza &amp; Burger Lieferdienst</title>
 <meta name="description" content="Pizza Bulls — frisches, hausgemachtes Essen seit 2008. Über 27 Standorte deutschlandweit. Jetzt online bestellen: Lieferung oder Abholung." />
 <link rel="icon" href="assets/images/logo.png" />
-<link rel="stylesheet" href="css/style.css?v=20261001-bento2" />
+<link rel="stylesheet" href="css/style.css?v=20261001-home3" />
 </head>
 <body>
 
@@ -235,49 +235,254 @@
     </div>
   </section>
 
+
+  <!-- ==========================================================================
+       UNTERER BEREICH — Inhalte der offiziellen Seite pizzabulls.de (Über uns,
+       Deutschlandweit, Google-Bewertungen, Standorte mit Karte, Bestell-CTA),
+       im Design dieser Seite neu gestaltet. Alle Klassen mit Präfix .home-*
+       existieren nur auf der Startseite. Logik (Karte, Filialliste, Slider)
+       in js/home-sections.js — js/main.js bleibt unverändert.
+       ========================================================================== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <section class="home-about" aria-labelledby="home-about-title">
+    <div class="home-about__inner">
+      <div class="home-about__media">
+        <img class="home-about__img home-about__img--main" src="assets/images/about-interior.jpg" alt="Restaurant Innenraum" loading="lazy" width="1200" height="1500" />
+        <img class="home-about__img home-about__img--side" src="assets/images/about-kitchen.jpg" alt="Küche und Zubereitung" loading="lazy" width="1200" height="1500" />
+      </div>
+      <div class="home-about__content">
+        <p class="section-eyebrow">Seit 2010</p>
+        <h2 id="home-about-title">Pizza &amp; Burger Bulls <em>Dein Lieblingsrestaurant</em></h2>
+        <p class="home-about__text">Frisches, leckeres Essen! Dafür brennen nicht nur unsere Öfen, sondern auch unsere Herzen! Wir haben die Vision, euch täglich mit frischem &amp; hausgemachtem Essen zu versorgen – und das schnell &amp; einfach. Seitdem bemühen wir uns jeden Tag, unseren Kunden mit leckerem Essen ein Lächeln ins Gesicht zu zaubern.</p>
+        <a class="btn btn--green" href="https://www.pizzabulls.de/menu" target="_blank" rel="noopener">Jetzt bestellen</a>
+      </div>
+    </div>
+    <div class="home-about__features">
+      <div class="home-feature"><span class="home-feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg></span><h3>Mit Leidenschaft</h3><p>Jedes Gericht wird mit Liebe zubereitet. Unsere Leidenschaft schmeckt man in jedem Bissen.</p></div>
+      <div class="home-feature"><span class="home-feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.2-6.1C9.5 14.4 12 13 13 12"/></svg></span><h3>Immer frisch</h3><p>Täglich frische Zutaten, knuspriger Teig und Saucen nach Originalrezept.</p></div>
+      <div class="home-feature"><span class="home-feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span><h3>Für alle</h3><p>Von herzhaft bis vegetarisch – bei uns findet jeder sein Lieblingsgericht.</p></div>
+      <div class="home-feature"><span class="home-feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/></svg></span><h3>Top Qualität</h3><p>Unsere Kunden bewerten uns durchgehend mit Bestnoten. Qualität, der man vertraut.</p></div>
+    </div>
+  </section>
+
+  <section class="home-nationwide" aria-labelledby="home-nationwide-title">
+    <div class="home-section-head">
+      <p class="section-eyebrow">Deutschlandweit</p>
+      <h2 id="home-nationwide-title">Pizza &amp; Burger Bulls <em>deutschlandweit</em></h2>
+      <p>Das Wohlbefinden unserer Gäste steht bei uns an erster Stelle. Bei der Auswahl unserer Zutaten legen wir großen Wert auf höchste Qualität und Frische. Mit Sorgfalt und Liebe zum Detail bereiten wir unsere Speisen für Sie zu, damit Ihr Besuch bei uns zu einem besonderen Genuss wird. Freuen Sie sich auf sorgfältig zubereitete Gerichte, die mit hochwertigen Zutaten und frischen Produkten überzeugen. Haben Sie besondere Wünsche? Sprechen Sie uns gerne an – wir tun unser Bestes, um Ihre individuellen Vorstellungen zu erfüllen.</p>
+    </div>
+    <div class="home-stats">
+      <div class="home-stat"><strong>27+</strong><span>Standorte</span></div>
+      <div class="home-stat"><strong>4.5</strong><span>Sterne Bewertung</span></div>
+      <div class="home-stat"><strong>30 min</strong><span>Lieferzeit</span></div>
+      <div class="home-stat"><strong>200+</strong><span>Gerichte</span></div>
+    </div>
+    <div class="home-topics">
+      <article class="home-topic">
+        <img src="assets/images/quality-variety.jpg" alt="Vielfältige Auswahl an Gerichten" loading="lazy" width="1200" height="1500" />
+        <div class="home-topic__body"><h3>Vielfalt &amp; Geschmack</h3><p>Abwechslungsreiche Auswahl an Gerichten mit frischen Zutaten – ob herzhaft, vegetarisch oder vegan, für jeden ist etwas dabei!</p></div>
+      </article>
+      <article class="home-topic">
+        <img src="assets/images/quality-fresh.jpg" alt="Frische Zutaten werden zubereitet" loading="lazy" width="1200" height="1500" />
+        <div class="home-topic__body"><h3>Frische Zutaten</h3><p>Täglich frisch zubereitet mit hochwertigen Zutaten. Qualität steht bei uns immer an erster Stelle.</p></div>
+      </article>
+      <article class="home-topic">
+        <img src="assets/images/quality-delivery.jpg" alt="Schnelle Essenslieferung" loading="lazy" width="1200" height="1500" />
+        <div class="home-topic__body"><h3>Schnelle Lieferung</h3><p>Bestell mit wenigen Klicks und wir liefern dir dein Essen schnell &amp; zuverlässig bis an deine Tür.</p></div>
+      </article>
+    </div>
+    <div class="home-actions">
+      <a class="btn btn--green" href="https://www.pizzabulls.de/menu" target="_blank" rel="noopener">Speisekarte entdecken</a>
+      <a class="btn home-btn--ghost" href="#standorte">Store finden</a>
+    </div>
+    <p class="home-note">Alle Preise in Euro und inkl. der gesetzlichen Mehrwertsteuer.</p>
+  </section>
+
+  <section class="home-reviews" aria-labelledby="home-reviews-title">
+    <div class="home-section-head">
+      <p class="home-reviews__source"><svg class="home-reviews__google" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1A6.6 6.6 0 0 1 5.5 12c0-.73.13-1.44.34-2.1V7.06H2.18A11 11 0 0 0 1 12c0 1.77.43 3.45 1.18 4.94l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1A11 11 0 0 0 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z"/></svg>Google Bewertungen</p>
+      <h2 id="home-reviews-title">Was unsere <em>Kunden sagen</em></h2>
+      <p>Echte Bewertungen von zufriedenen Kunden aus ganz Deutschland.</p>
+      <div class="home-reviews__score">
+        <strong>4.9</strong>
+        <span class="home-review__stars" role="img" aria-label="4,9 von 5 Sternen"><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span></span>
+        <span class="home-reviews__total">(10 ausgewählte Bewertungen)</span>
+      </div>
+    </div>
+    <div class="home-reviews__slider">
+      <button class="home-reviews__nav home-reviews__nav--prev" type="button" aria-label="Vorherige Bewertungen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <div class="home-reviews__track" tabindex="0" aria-label="Kundenbewertungen">
+        <article class="home-review">
+          <div class="home-review__stars" role="img" aria-label="5 von 5 Sternen"><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span></div>
+          <p class="home-review__text">„Gegen Mittag und am frühen Nachmittag wird viel früher geliefert, als in der App gezeigt wird. Nachmittags/Abends kanns schon etwas länger dauern aber bin noch nicht verhungert. Die ausliefernden Leute sind immer nett (vor Ort natürlich auch), das Essen schmeckt, kannste nicht meckern. Zufriedener Stammkunde.“</p>
+          <div class="home-review__author">
+            <span class="home-review__avatar" aria-hidden="true">L</span>
+            <div><strong>Lisa</strong><span>Dezember 2025</span></div>
+          </div>
+        </article>
+        <article class="home-review">
+          <div class="home-review__stars" role="img" aria-label="5 von 5 Sternen"><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span></div>
+          <p class="home-review__text">„Meine Frau und ich haben kurz vor Ladenschluss bestellt und die Pizzen (Salami) waren mega! Ich gehe sogar soweit das ich sage besser als bei Freddy Fresh, Domino‘s oder ähnlich. Pizzen waren in ca. 35min da! Und 36cm muss mir auch erstmal jemand entgegen bieten! Wir werden zukünftig definitiv gerne hier bestellen😍“</p>
+          <div class="home-review__author">
+            <span class="home-review__avatar" aria-hidden="true">PG</span>
+            <div><strong>P G</strong><span>März 2023</span></div>
+          </div>
+        </article>
+        <article class="home-review">
+          <div class="home-review__stars" role="img" aria-label="5 von 5 Sternen"><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span></div>
+          <p class="home-review__text">„Ich habe zu meinem Geburtstag 11 Pizzen bestellt. Ich hatte eine Frage zum Eingang meiner Bestellung, diese wurde mir am Telefon sofort und sehr nett beantwortet. Der Inhaber hat mich auch noch zwei Mal zurückgerufen, um den Stand der Dinge zu besprechen-wirklich sehr zuvorkommend. Die Pizzen kamen pünktlich und geschnitten, wie gewünscht. Der Fahrer war wirklich lieb, mit einem großen Lächeln im Gesicht. Die Pizzen waren warm, gut belegt und sehr lecker. Lieben Dank!!!!!“</p>
+          <div class="home-review__author">
+            <span class="home-review__avatar" aria-hidden="true">HI</span>
+            <div><strong>Hey Ino</strong><span>Dezember 2024</span></div>
+          </div>
+        </article>
+        <article class="home-review">
+          <div class="home-review__stars" role="img" aria-label="5 von 5 Sternen"><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span></div>
+          <p class="home-review__text">„Wow, solche leckeren Pizza Brötchen habe ich noch nie gegessen. Da kann sich dominos locker einer Scheibe abschneiden. Aber deren Pizza, sry, 0 punkte. Ich hätte gedacht, dass sie auch so toll schmecken. Leider nicht, weil es eine ölige pan-pizza ist, wie in Amerika.“</p>
+          <div class="home-review__author">
+            <span class="home-review__avatar" aria-hidden="true">BB</span>
+            <div><strong>bea ba</strong><span>Januar 2026</span></div>
+          </div>
+        </article>
+        <article class="home-review">
+          <div class="home-review__stars" role="img" aria-label="5 von 5 Sternen"><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span></div>
+          <p class="home-review__text">„Mahlzeit, Hab da am 05.10.25 bestellt. Essen war ganz gut aber was mir nach 25 Jahren dit erste mal passiert ist, mein Fahrer Herr Singh hatte meine extra aoili vergessen, ich meinte dann an der Tür das es ok sei und sowas mal passieren kann. Nach nicht mal 20min. Kam er dann nochmal zurück und hat mir meine fehlende Soße gebracht. Hab sowas noch nie vorher erlebt und bin da auch dankbar für deswegen 5 Sterne“</p>
+          <div class="home-review__author">
+            <span class="home-review__avatar" aria-hidden="true">JE</span>
+            <div><strong>Jeremy Ehring</strong><span>Oktober 2025</span></div>
+          </div>
+        </article>
+        <article class="home-review">
+          <div class="home-review__stars" role="img" aria-label="5 von 5 Sternen"><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span></div>
+          <p class="home-review__text">„Unfortunately, I'm not a photographer, otherwise I would have taken a picture that did the food justice! Whether it was pizza or finger food (the spicy chicken tenders were absolutely amazing!), everything tasted great (to us and the kids)! Friendly and attentive service, delicious dishes, and a cozy atmosphere! It definitely won't be the last time! 💯“</p>
+          <div class="home-review__author">
+            <span class="home-review__avatar" aria-hidden="true">JW</span>
+            <div><strong>Jannis Wagner</strong><span>Juni 2026</span></div>
+          </div>
+        </article>
+        <article class="home-review">
+          <div class="home-review__stars" role="img" aria-label="5 von 5 Sternen"><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span></div>
+          <p class="home-review__text">„Sehr nettes Personal. Nach meiner Arbeit habe ich Hunger bekommen und habe die Einwohner hier gefragt und haben mir diese Pizzeria empfohlen. Sehr lecker. Alles frisch und nettes Personal und sehr entgegenkommend. Kann ich nur weiterempfehlen.“</p>
+          <div class="home-review__author">
+            <span class="home-review__avatar" aria-hidden="true">SK</span>
+            <div><strong>Sebastian Kuhn</strong><span>Dezember 2025</span></div>
+          </div>
+        </article>
+        <article class="home-review">
+          <div class="home-review__stars" role="img" aria-label="5 von 5 Sternen"><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span></div>
+          <p class="home-review__text">„Das erste mal bestellt und positiv überrascht bei den schlechten Bewertungen hier. Sehr leckere Pizza mit Käserand gehabt, pünktlich geliefert, Preis Leistung passt. Was will man mehr.“</p>
+          <div class="home-review__author">
+            <span class="home-review__avatar" aria-hidden="true">BB</span>
+            <div><strong>Basti B.</strong><span>April 2025</span></div>
+          </div>
+        </article>
+        <article class="home-review">
+          <div class="home-review__stars" role="img" aria-label="5 von 5 Sternen"><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span></div>
+          <p class="home-review__text">„Bester Lieferservice in der Gegend. Essen kommt innerhalb von 30-40 Minuten und ist immer Top. Heiss und Mega lecker. Da könnten sich so einige andere Lieferservice mal ein Beispiel dran nehmen.“</p>
+          <div class="home-review__author">
+            <span class="home-review__avatar" aria-hidden="true">OM</span>
+            <div><strong>Odd Macpot</strong><span>September 2025</span></div>
+          </div>
+        </article>
+        <article class="home-review">
+          <div class="home-review__stars" role="img" aria-label="4 von 5 Sternen"><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span><span class="home-review__star is-empty"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></svg></span></div>
+          <p class="home-review__text">„Essen war geschmacklich in Ordnung. Haben erstmal eine falsche Pizza bekommen, angerufen und uns wurde die richtige direkt nachgeliefert. Service und Fahrer korrekt.“</p>
+          <div class="home-review__author">
+            <span class="home-review__avatar" aria-hidden="true">AB</span>
+            <div><strong>Alex Bernowsky</strong><span>Januar 2026</span></div>
+          </div>
+        </article>
+      </div>
+      <button class="home-reviews__nav home-reviews__nav--next" type="button" aria-label="Nächste Bewertungen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
+    <p class="home-reviews__hint">Wische um mehr zu sehen</p>
+  </section>
+
+  <section class="home-stores" id="standorte" aria-labelledby="home-stores-title">
+    <div class="home-section-head">
+      <p class="section-eyebrow">In deiner Nähe</p>
+      <h2 id="home-stores-title">Unsere <em>Standorte</em></h2>
+      <p>Finde dein nächstes Pizza Bulls oder Burger Bulls Restaurant und bestell direkt online.</p>
+    </div>
+    <form class="home-stores__search" role="search">
+      <label class="home-stores__field">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <input class="home-stores__input" type="search" placeholder="PLZ oder Stadt eingeben..." aria-label="PLZ oder Stadt eingeben" autocomplete="postal-code" />
+      </label>
+      <button class="home-stores__locate" type="button" title="Meinen Standort verwenden" aria-label="Meinen Standort verwenden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg><span>Mein Standort</span></button>
+      <button class="btn btn--green home-stores__submit" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Suchen</button>
+    </form>
+    <div class="home-stores__layout">
+      <div class="home-stores__panel">
+        <p class="home-stores__count" aria-live="polite">27 Standorte gefunden</p>
+        <div class="home-stores__list"></div>
+      </div>
+      <div class="home-stores__map" role="region" aria-label="Deutschlandkarte mit allen Pizza-Bulls-Standorten"></div>
+    </div>
+    <div class="home-stats home-stats--compact">
+      <div class="home-stat"><strong>27+</strong><span>Standorte</span></div>
+      <div class="home-stat"><strong>30 min</strong><span>Lieferzeit</span></div>
+      <div class="home-stat"><strong>1M+</strong><span>Kunden</span></div>
+      <div class="home-stat"><strong>7 Tage</strong><span>Geöffnet</span></div>
+    </div>
+    <div class="home-actions">
+      <a class="btn btn--green" href="standorte.html">Alle Standorte ansehen</a>
+    </div>
+  </section>
+
+  <section class="home-cta" aria-labelledby="home-cta-title">
+    <div class="home-cta__inner">
+      <h2 id="home-cta-title">Hunger? Jetzt bestellen!</h2>
+      <p>Entdecke unsere Speisekarte und bestell dein Lieblingsessen bequem online zur Lieferung oder Abholung.</p>
+      <div class="home-actions">
+        <a class="btn btn--white" href="https://www.pizzabulls.de/menu" target="_blank" rel="noopener">Speisekarte</a>
+        <a class="btn btn--outline" href="#standorte">Store finden</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <!-- ==========================================================================
      FOOTER
      ========================================================================== -->
-<footer class="site-footer">
-  <div class="site-footer__top">
-    <div class="site-footer__brand">
-      <img src="assets/images/logo.png" alt="Pizza Bulls" width="56" height="56" />
-      <p>Fast Like Bulls! — Jetzt online bestellen, liefern lassen oder abholen.</p>
+<footer class="site-footer home-footer">
+  <div class="home-footer__grid">
+    <div class="home-footer__col home-footer__brand">
+      <a class="home-footer__logo" href="index.html#top"><img src="assets/images/logo.png" alt="" width="48" height="48" /><span>Pizza &amp; Burger Bulls</span></a>
+      <p class="home-footer__info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Täglich geöffnet</p>
+      <p class="home-footer__info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>Telefonisch erreichbar</p>
+      <a class="home-footer__info" href="mailto:info@pizzabulls.de"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>info@pizzabulls.de</a>
     </div>
-    <a class="btn btn--green site-footer__cta" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Jetzt bestellen</a>
-  </div>
-
-  <div class="site-footer__grid">
-    <div class="footer-col">
-      <h4>Produkte</h4>
-      <a href="speisekarte.html">Speisekarte</a>
-      <a href="angebote.html">Angebote &amp; Aktionen</a>
-    </div>
-    <div class="footer-col">
-      <h4>Kontakt</h4>
-      <a href="tel:+493088667838">030 / 88 66 78 38</a>
-      <a href="mailto:info@pizzabulls.de">info@pizzabulls.de</a>
-    </div>
-    <div class="footer-col">
-      <h4>Karriere</h4>
-      <a href="jobs.html">Jobs</a>
-      <a href="franchise.html">Franchise</a>
-    </div>
-    <div class="footer-col">
-      <h4>Über Pizza Bulls</h4>
+    <nav class="home-footer__col" aria-label="Seiten">
+      <h4>Seiten</h4>
+      <a href="index.html#top">Home</a>
       <a href="ueber-uns.html">Über uns</a>
-      <a href="standorte.html">Standorte</a>
-      <a href="https://pizzabulls.de/impressum" target="_blank" rel="noopener">Impressum</a>
+      <a href="speisekarte.html">Speisekarte</a>
+      <a href="standorte.html">Standort</a>
+      <a href="franchise.html">Franchise Konzept</a>
+      <a href="https://www.pizzabulls.de/franchise-anfrage" target="_blank" rel="noopener">Franchise Anfrage</a>
+      <a href="jobs.html">Jobs</a>
+    </nav>
+    <nav class="home-footer__col" aria-label="Rechtliches">
+      <h4>Rechtliches</h4>
+      <a href="https://www.pizzabulls.de/datenschutzerklaerung" target="_blank" rel="noopener">Datenschutzerklärung</a>
+      <a href="https://www.pizzabulls.de/cookie-richtlinie" target="_blank" rel="noopener">Cookie-Richtlinie</a>
+      <a href="https://www.pizzabulls.de/impressum" target="_blank" rel="noopener">Impressum</a>
+    </nav>
+    <div class="home-footer__col home-footer__newsletter">
+      <h4>Immer auf dem Laufenden</h4>
+      <p>Erhalte die neuesten Angebote, Aktionen und News direkt von Pizza&amp; Burger Bulls.</p>
+      <a class="btn btn--green" href="#pizza-bulls-club-registrierung" aria-label="Werde V.I.P Mitglied (Platzhalter-Link, noch ohne Ziel-URL)">Werde V.I.P Mitglied</a>
     </div>
   </div>
-
-  <div class="site-footer__bottom">
-    <span>&copy; 2026 Pizza &amp; Burger Bulls Franchise GmbH. Alle Rechte vorbehalten.</span>
+  <div class="home-footer__bottom">
+    <span>&copy; 2026 Pizza &amp; Burger Bulls. Alle Rechte vorbehalten.</span>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="js/home-sections.js"></script>
 </body>
 </html>
