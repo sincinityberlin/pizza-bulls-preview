@@ -837,6 +837,26 @@ h1,h2,h3{ text-wrap: balance; }
    Block weiter unten). */
 .local-deals .offers-bento__tile:nth-child(3) img{ object-fit: contain; background: var(--pb-white); }
 
+/* Startseite Desktop: Bento-Kacheln exakt am Seitenverhältnis der Bilder
+   ausgerichtet, damit die Motive bis an die Kachelkante reichen — keine
+   weißen Flächen, kein Beschnitt, keine Verzerrung. Statt fester
+   aspect-ratio 4:3 auf dem Grid ergibt sich die Höhe aus den Bildern selbst
+   (height:auto). Die rechte Spaltenbreite ist so berechnet, dass
+   2 × Höhe(rechtes Bild) + 16px Gap = Höhe(großes Bild links):
+     Hero 1078×1459, rechts je 1122×1402 →
+     R = (Breite − 16px) × 0.351309 − 4.1531px
+   Bei anderen Bildformaten müssen diese beiden Zahlen neu berechnet werden.
+   Nur Startseite (.local-deals) und nur Desktop (min-width:761px) —
+   angebote.html und die Mobile-Darstellung bleiben unberührt. */
+@media (min-width: 761px){
+  .local-deals .offers-bento{
+    aspect-ratio: auto;
+    grid-template-columns: 1fr calc((100% - 16px) * 0.351309 - 4.1531px);
+    grid-template-rows: auto auto;
+  }
+  .local-deals .offers-bento__tile img{ height: auto; }
+}
+
 /* Bild 4 (10€-Code) einzeln — auf Desktop ausgeblendet, da Karte 1 der
    3er-Reihe unten dasselbe Motiv zeigt (keine Dopplung). Auf Mobile bleibt
    es sichtbar wie zuvor (siehe display:block-Override im 760px-Block). */
