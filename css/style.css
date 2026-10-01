@@ -1263,28 +1263,30 @@ a.home-footer__info:hover{ color: var(--pb-green); }
    .site-header__inner zwischen Logo und Globus/Profil. Alle Regeln greifen
    nur über ".site-header__inner > .mobile-nav" — auf den Unterseiten liegt
    .mobile-nav außerhalb von .site-header__inner und bleibt unverändert.
-   < 1100px: unverändertes Hamburger-Menü; die geöffnete Liste wird per
+   < 1024px: Hamburger-Menü; die geöffnete Liste wird per
    flex-wrap in eine eigene volle Zeile unter dem Header umgebrochen (gleiche
-   Optik wie bisher). ≥ 1100px: Hamburger ausgeblendet, Menüpunkte in einer
-   Reihe mittig im freien Bereich zwischen Logo und Icons.
+   Optik wie bisher). ≥ 1024px: Hamburger ausgeblendet, Menüpunkte (HOME …
+   JOBS, Großbuchstaben) dauerhaft sichtbar in einer Reihe mittig im freien
+   Bereich zwischen Logo und Icons; „Angebote & Aktionen“ nur im Mobile-Menü.
    ========================================================================== */
 .site-header__inner:has(> .mobile-nav){ flex-wrap: wrap; row-gap: 0; }
 .site-header__inner > .mobile-nav{ order: 10; flex-basis: calc(100% + 40px); margin: 12px -20px -12px; }
 @media (max-width: 760px){
   .site-header__inner > .mobile-nav{ flex-basis: calc(100% + 28px); margin: 8px -14px -8px; }
 }
-@media (min-width: 1100px){
+@media (min-width: 1024px){
   .site-header__inner:has(> .mobile-nav) > .site-header__burger{ display: none; }
   .site-header__inner > .mobile-nav{
     order: 0; display: flex; flex-direction: row; flex: 1 1 auto;
-    justify-content: center; align-items: center; gap: 30px;
+    justify-content: center; align-items: center; gap: clamp(18px, 2.2vw, 36px);
     margin: 0; padding: 0; border-top: none;
   }
   .site-header__inner > .mobile-nav a{
     position: relative; padding: 8px 0; border-bottom: none;
-    font-size: 0.84rem; font-weight: 700; letter-spacing: 0.01em;
-    color: var(--pb-dark); white-space: nowrap; transition: color .15s;
+    font-size: clamp(0.74rem, 0.8vw, 0.84rem); font-weight: 800; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--pb-dark); white-space: nowrap; transition: color .15s;
   }
+  .site-header__inner > .mobile-nav a.mobile-nav__mobile-only{ display: none; }
   .site-header__inner > .mobile-nav a::after{
     content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 2px;
     border-radius: 2px; background: var(--pb-green);
