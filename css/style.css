@@ -1109,6 +1109,9 @@ h1,h2,h3{ text-wrap: balance; }
    Bildfläche bleibt exakt 4:5 wie bei den Nachbarkarten, Bild zentriert per
    cover (nur je ca. 27px Hintergrund links/rechts), Pizza + Hand vollständig. */
 .home-topic:nth-child(2) img{ aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 50%; }
+/* Karte 3 „Schnelle Lieferung“: gleiches Prinzip (Motiv 1149×1369, Liefertasche
+   mit Kartons) — Bildfläche exakt 4:5, zentriert, nur je ca. 27px Rand. */
+.home-topic:nth-child(3) img{ aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 50%; }
 .home-topic__body{ padding: 20px 22px 24px; }
 .home-topic__body h3{ margin: 0 0 8px; font-size: 1.1rem; }
 .home-topic__body p{ margin: 0; color: var(--pb-grey); font-size: 0.92rem; line-height: 1.55; }
