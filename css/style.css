@@ -1274,41 +1274,114 @@ a.home-footer__info:hover{ color: var(--pb-green); }
    .site-header__inner zwischen Logo und Globus/Profil. Alle Regeln greifen
    nur über ".site-header__inner > .mobile-nav" — auf den Unterseiten liegt
    .mobile-nav außerhalb von .site-header__inner und bleibt unverändert.
-   ≤ 760px (Smartphone): Hamburger-Menü mit den bisherigen sechs Einträgen;
-   die geöffnete Liste wird per flex-wrap in eine eigene volle Zeile unter
-   dem Header umgebrochen. ≥ 761px (projektweite Desktop-Grenze): Hamburger
-   vollständig ausgeblendet, MENÜ · GUTSCHEINE & COUPONS · STANDORTE · APP
-   dauerhaft sichtbar in einer Reihe mittig im freien Bereich zwischen Logo
-   und Icons. .mobile-nav__desktop-only / __mobile-only steuern, welche
-   Einträge wo erscheinen. Bewusst ohne :has() (ältere Browser).
+   < 900px: Hamburger-Menü; die geöffnete Liste wird per
+   flex-wrap in eine eigene volle Zeile unter dem Header umgebrochen.
+   „Franchise Konzept“ hat dort einen Pfeil-Button, der die Unterpunkte per
+   Tippen auf- und zuklappt — gilt bis 899px (Smartphone + Tablet hochkant;
+   darunter passen die sechs Punkte nicht neben Logo und Icons). ≥ 900px:
+   Hamburger vollständig ausgeblendet, HOME · ÜBER UNS · SPEISEKARTE · STANDORTE ·
+   FRANCHISE KONZEPT · JOBS dauerhaft in einer Reihe mittig zwischen Logo und
+   Icons. Dropdown unter FRANCHISE KONZEPT (Unterpunkte wie auf pizzabulls.de)
+   öffnet per Hover/Fokus, auf Touch-Geräten per Tippen (js/home-sections.js);
+   es liegt absolut über dem Inhalt und verschiebt nichts.
+   .mobile-nav__mobile-only = nur im Hamburger-Menü. Bewusst ohne :has().
    ========================================================================== */
 .site-header__inner--nav{ flex-wrap: wrap; row-gap: 0; }
 .site-header__inner > .mobile-nav{ order: 10; flex-basis: calc(100% + 40px); margin: 12px -20px -12px; }
-.site-header__inner > .mobile-nav a.mobile-nav__desktop-only{ display: none; }
-/* Sprungziel des Menüpunkts „App“ (Willkommensbonus-/App-Karte) nicht unter dem Sticky-Header verstecken */
 #app{ scroll-margin-top: 120px; }
+
+/* Dropdown im Hamburger-Menü (Smartphone): Zeile = Link + Pfeil-Button */
+.site-header__inner > .mobile-nav .nav-dd{ display: grid; grid-template-columns: 1fr auto; border-bottom: 1px solid var(--pb-border); }
+.site-header__inner > .mobile-nav .nav-dd__trigger{ border-bottom: none; }
+.nav-dd__toggle{
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; padding: 0; border: none; background: none; color: var(--pb-dark); cursor: pointer;
+}
+.nav-dd__toggle svg{ width: 18px; height: 18px; transition: transform .2s; }
+.nav-dd.is-open .nav-dd__toggle svg{ transform: rotate(180deg); }
+.site-header__inner > .mobile-nav .nav-dd__menu{ display: none; grid-column: 1 / -1; padding: 0 0 8px 14px; border-left: 3px solid var(--pb-green); margin: 0 0 12px; }
+.site-header__inner > .mobile-nav .nav-dd.is-open .nav-dd__menu{ display: block; }
+.site-header__inner > .mobile-nav .nav-dd__menu a{ display: block; padding: 10px 0; border-bottom: none; font-size: 0.9rem; font-weight: 600; color: var(--pb-grey); }
+.site-header__inner > .mobile-nav .nav-dd__menu a:hover{ color: var(--pb-green-dark); }
+
 @media (max-width: 760px){
   .site-header__inner > .mobile-nav{ flex-basis: calc(100% + 28px); margin: 8px -14px -8px; }
 }
-@media (min-width: 761px){
+@media (min-width: 900px){
   .site-header__inner--nav > .site-header__burger{ display: none !important; }
   .site-header__inner > .mobile-nav{
     order: 0; display: flex; flex-direction: row; flex: 1 1 auto; min-width: 0;
-    justify-content: center; align-items: center; gap: clamp(14px, 2.6vw, 40px);
+    align-self: stretch; justify-content: center; align-items: stretch; gap: clamp(12px, 2.1vw, 34px);
     margin: 0; padding: 0; border-top: none;
   }
-  .site-header__inner > .mobile-nav a{
-    position: relative; padding: 8px 0; border-bottom: none;
-    font-size: clamp(0.72rem, 1.05vw, 0.9rem); font-weight: 800; letter-spacing: 0.05em;
+  .site-header__inner > .mobile-nav > a,
+  .site-header__inner > .mobile-nav .nav-dd__trigger{
+    position: relative; display: flex; align-items: center; padding: 0; border-bottom: none;
+    font-size: clamp(0.66rem, 0.95vw, 0.86rem); font-weight: 800; letter-spacing: 0.04em;
     text-transform: uppercase; color: var(--pb-dark); white-space: nowrap; transition: color .15s;
   }
-  .site-header__inner > .mobile-nav a.mobile-nav__mobile-only{ display: none; }
-  .site-header__inner > .mobile-nav a.mobile-nav__desktop-only{ display: block; }
-  .site-header__inner > .mobile-nav a::after{
-    content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 2px;
+  .site-header__inner > .mobile-nav > a.mobile-nav__mobile-only{ display: none; }
+  .site-header__inner > .mobile-nav > a::after,
+  .site-header__inner > .mobile-nav .nav-dd__trigger::after{
+    content: ""; position: absolute; left: 0; right: 0; bottom: calc(50% - 15px); height: 2px;
     border-radius: 2px; background: var(--pb-green);
     transform: scaleX(0); transition: transform .15s;
   }
-  .site-header__inner > .mobile-nav a:hover{ color: var(--pb-green-dark); }
-  .site-header__inner > .mobile-nav a:hover::after{ transform: scaleX(1); }
+  .site-header__inner > .mobile-nav > a:hover,
+  .site-header__inner > .mobile-nav .nav-dd:hover .nav-dd__trigger,
+  .site-header__inner > .mobile-nav .nav-dd.is-open .nav-dd__trigger{ color: var(--pb-green-dark); }
+  .site-header__inner > .mobile-nav > a:hover::after,
+  .site-header__inner > .mobile-nav .nav-dd:hover .nav-dd__trigger::after,
+  .site-header__inner > .mobile-nav .nav-dd.is-open .nav-dd__trigger::after{ transform: scaleX(1); }
+
+  /* Dropdown: hängt an .nav-dd (volle Header-Innenhöhe); Karte beginnt exakt an
+     der Header-Unterkante (12px Innenabstand + 1px Rahmen). */
+  .site-header__inner > .mobile-nav .nav-dd{ position: relative; display: flex; align-items: center; gap: 2px; border-bottom: none; }
+  .site-header__inner > .mobile-nav .nav-dd__toggle{ width: 18px; height: 18px; color: inherit; }
+  .site-header__inner > .mobile-nav .nav-dd__toggle svg{ width: 14px; height: 14px; }
+  .site-header__inner > .mobile-nav .nav-dd:hover .nav-dd__toggle,
+  .site-header__inner > .mobile-nav .nav-dd.is-open .nav-dd__toggle{ color: var(--pb-green-dark); }
+  .site-header__inner > .mobile-nav .nav-dd:hover .nav-dd__toggle svg,
+  .site-header__inner > .mobile-nav .nav-dd:focus-within .nav-dd__toggle svg{ transform: rotate(180deg); }
+  .site-header__inner > .mobile-nav .nav-dd__menu{
+    display: block; position: absolute; z-index: 200;
+    top: calc(100% + 13px); left: 50%; transform: translate(-50%, 6px);
+    min-width: 250px; margin: 0; padding: 10px 0 12px;
+    background: var(--pb-white); border: 1px solid var(--pb-border); border-top: 3px solid var(--pb-green);
+    border-radius: 0 0 var(--radius) var(--radius);
+    box-shadow: 0 14px 30px rgba(26,26,26,0.12);
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity .15s, transform .15s, visibility .15s;
+  }
+  /* unsichtbare Brücke über die 13px zwischen Menüpunkt und Karte, damit
+     das Dropdown beim Hinüberfahren mit der Maus offen bleibt */
+  .site-header__inner > .mobile-nav .nav-dd__menu::before{
+    content: ""; position: absolute; left: 0; right: 0; top: -17px; height: 17px;
+  }
+  .site-header__inner > .mobile-nav .nav-dd:hover .nav-dd__menu,
+  .site-header__inner > .mobile-nav .nav-dd:focus-within .nav-dd__menu,
+  .site-header__inner > .mobile-nav .nav-dd.is-open .nav-dd__menu{
+    opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0);
+  }
+  .site-header__inner > .mobile-nav .nav-dd__menu a{
+    display: block; position: relative; padding: 10px 24px 10px 26px;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--pb-dark); white-space: nowrap; border: none; transition: color .15s, background .15s;
+  }
+  .site-header__inner > .mobile-nav .nav-dd__menu a::before{
+    content: ""; position: absolute; left: 12px; top: 50%; width: 6px; height: 6px; margin-top: -3px;
+    border-radius: 50%; background: var(--pb-green); opacity: 0; transition: opacity .15s;
+  }
+  .site-header__inner > .mobile-nav .nav-dd__menu a:hover,
+  .site-header__inner > .mobile-nav .nav-dd__menu a:focus-visible{ background: var(--pb-green-light); color: var(--pb-green-dark); outline: none; }
+  .site-header__inner > .mobile-nav .nav-dd__menu a:hover::before,
+  .site-header__inner > .mobile-nav .nav-dd__menu a:focus-visible::before{ opacity: 1; }
+}
+/* Kleine Desktop-/Laptop-Breiten: etwas kompaktere Menüleiste, damit alle
+   sechs Punkte zwischen Logo und Icons in eine Zeile passen. */
+@media (min-width: 900px) and (max-width: 1099px){
+  .site-header__inner--nav{ gap: 14px; }
+  .site-header__inner > .mobile-nav{ gap: 12px; }
+  .site-header__inner > .mobile-nav > a,
+  .site-header__inner > .mobile-nav .nav-dd__trigger{ font-size: 0.7rem; letter-spacing: 0.02em; }
 }

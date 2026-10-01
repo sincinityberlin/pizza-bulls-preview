@@ -239,4 +239,43 @@
     window.addEventListener('resize', update);
     update();
   }
+
+  /* ---------------------------------------------------------------------- */
+  /* Header-Dropdown (Franchise Konzept): Desktop per Hover/Fokus (CSS).     */
+  /* Touch-Geräte/Smartphone: Pfeil-Button klappt auf und zu; auf Tablets     */
+  /* ohne Hover öffnet der erste Tipp auf den Menüpunkt das Dropdown, der     */
+  /* zweite folgt dem Link. Klick außerhalb oder Escape schließt.            */
+  var dropdowns = Array.prototype.slice.call(document.querySelectorAll('.nav-dd'));
+  if (dropdowns.length){
+    var noHover = window.matchMedia('(hover: none)');
+    var narrow = window.matchMedia('(max-width: 899px)');
+    function setOpen(dd, open){
+      dd.classList.toggle('is-open', open);
+      dd.querySelector('.nav-dd__trigger').setAttribute('aria-expanded', open ? 'true' : 'false');
+      dd.querySelector('.nav-dd__toggle').setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function closeAll(except){
+      dropdowns.forEach(function(dd){ if (dd !== except) setOpen(dd, false); });
+    }
+    dropdowns.forEach(function(dd){
+      dd.querySelector('.nav-dd__toggle').addEventListener('click', function(e){
+        e.preventDefault();
+        var open = !dd.classList.contains('is-open');
+        closeAll(dd);
+        setOpen(dd, open);
+      });
+      dd.querySelector('.nav-dd__trigger').addEventListener('click', function(e){
+        if (narrow.matches || !noHover.matches || dd.classList.contains('is-open')) return;
+        e.preventDefault();
+        closeAll(dd);
+        setOpen(dd, true);
+      });
+    });
+    document.addEventListener('click', function(e){
+      if (!e.target.closest('.nav-dd')) closeAll(null);
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') closeAll(null);
+    });
+  }
 })();
