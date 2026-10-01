@@ -524,6 +524,10 @@ h1,h2,h3{ text-wrap: balance; }
    sonst läge es doppelt über dem Schriftzug im Bild. */
 #about .highlight-card:nth-child(3) img{ object-position: 20% 50%; }
 #about .highlight-card:nth-child(3) .highlight-card__tag{ display: none; }
+/* Startseite, Kachel 2 „Handgemacht“: neues Motiv (1086×1448 = exakt 3:4 wie
+   die Kachel, daher kein Beschnitt) mit fest im Bild enthaltenem rotem
+   Schriftzug — doppeltes HTML-Label hier ebenfalls ausgeblendet. */
+#about .highlight-card:nth-child(2) .highlight-card__tag{ display: none; }
 
 .highlights__stats{
   display: grid;
