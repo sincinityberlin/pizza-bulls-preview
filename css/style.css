@@ -528,6 +528,10 @@ h1,h2,h3{ text-wrap: balance; }
    die Kachel, daher kein Beschnitt) mit fest im Bild enthaltenem rotem
    Schriftzug — doppeltes HTML-Label hier ebenfalls ausgeblendet. */
 #about .highlight-card:nth-child(2) .highlight-card__tag{ display: none; }
+/* Startseite, Kachel 4 „27+ Filialen“: neues Motiv (1081×1455, minimal
+   schmaler als 3:4) vollständig per object-fit:contain — kein Beschnitt,
+   Kachelgröße unverändert (seitlich je ca. 1px Rand). */
+#about .highlight-card:nth-child(4) img{ object-fit: contain; }
 
 .highlights__stats{
   display: grid;
