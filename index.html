@@ -6,7 +6,7 @@
 <title>Pizza Bulls — Fast Like Bulls! Pizza &amp; Burger Lieferdienst</title>
 <meta name="description" content="Pizza Bulls — frisches, hausgemachtes Essen seit 2008. Über 27 Standorte deutschlandweit. Jetzt online bestellen: Lieferung oder Abholung." />
 <link rel="icon" href="assets/images/logo.png" />
-<link rel="stylesheet" href="css/style.css?v=20261001-ab11" />
+<link rel="stylesheet" href="css/style.css?v=20261001-nav13" />
 </head>
 <body>
 
@@ -28,9 +28,11 @@
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Hauptnavigation">
       <a href="speisekarte.html">Menü</a>
-      <a href="angebote.html">Angebote &amp; Aktionen</a>
+      <a class="mobile-nav__desktop-only" href="angebote.html">Gutscheine &amp; Coupons</a>
+      <a class="mobile-nav__mobile-only" href="angebote.html">Angebote &amp; Aktionen</a>
       <a href="standorte.html">Standorte</a>
-      <a href="franchise.html">Franchise</a>
+      <a class="mobile-nav__desktop-only" href="#app">App</a>
+      <a class="mobile-nav__mobile-only" href="franchise.html">Franchise</a>
       <a class="mobile-nav__mobile-only" href="jobs.html">Jobs</a>
       <a class="mobile-nav__mobile-only" href="ueber-uns.html">Über uns</a>
     </nav>
@@ -147,7 +149,7 @@
       <a class="btn btn--green pizza-build__cta" href="#pizza-bulls-club-registrierung" aria-label="Jetzt für den Pizza Bulls Club registrieren (Platzhalter-Link, noch ohne Ziel-URL)">Jetzt registrieren</a>
       <p class="pizza-build__hint">Punkte sammeln &amp; als V.I.P. Mitglied belohnt werden.</p>
     </section>
-    <div class="offers-card">
+    <div class="offers-card" id="app">
       <img src="assets/images/welcome-bonus.jpg" alt="Hol dir jetzt 5€ Willkommensbonus! Frau mit einem Stapel Pizza Bulls Kartons, Pizza Bulls Logo." loading="lazy" />
       <div class="offers-card__body">
         <h3>Willkommensbonus</h3>

@@ -1274,32 +1274,36 @@ a.home-footer__info:hover{ color: var(--pb-green); }
    .site-header__inner zwischen Logo und Globus/Profil. Alle Regeln greifen
    nur über ".site-header__inner > .mobile-nav" — auf den Unterseiten liegt
    .mobile-nav außerhalb von .site-header__inner und bleibt unverändert.
-   < 1024px: Hamburger-Menü; die geöffnete Liste wird per
-   flex-wrap in eine eigene volle Zeile unter dem Header umgebrochen (gleiche
-   Optik wie bisher). ≥ 1024px: Hamburger ausgeblendet, Menüpunkte
-   (Großbuchstaben) dauerhaft sichtbar in einer Reihe mittig im freien
-   Bereich zwischen Logo und Icons (MENÜ, ANGEBOTE & AKTIONEN, STANDORTE,
-   FRANCHISE); Jobs/Über uns nur im Mobile-Menü. Bewusst ohne :has(), damit
-   der Hamburger auch in älteren Browsern auf Desktop verschwindet.
+   ≤ 760px (Smartphone): Hamburger-Menü mit den bisherigen sechs Einträgen;
+   die geöffnete Liste wird per flex-wrap in eine eigene volle Zeile unter
+   dem Header umgebrochen. ≥ 761px (projektweite Desktop-Grenze): Hamburger
+   vollständig ausgeblendet, MENÜ · GUTSCHEINE & COUPONS · STANDORTE · APP
+   dauerhaft sichtbar in einer Reihe mittig im freien Bereich zwischen Logo
+   und Icons. .mobile-nav__desktop-only / __mobile-only steuern, welche
+   Einträge wo erscheinen. Bewusst ohne :has() (ältere Browser).
    ========================================================================== */
 .site-header__inner--nav{ flex-wrap: wrap; row-gap: 0; }
 .site-header__inner > .mobile-nav{ order: 10; flex-basis: calc(100% + 40px); margin: 12px -20px -12px; }
+.site-header__inner > .mobile-nav a.mobile-nav__desktop-only{ display: none; }
+/* Sprungziel des Menüpunkts „App“ (Willkommensbonus-/App-Karte) nicht unter dem Sticky-Header verstecken */
+#app{ scroll-margin-top: 120px; }
 @media (max-width: 760px){
   .site-header__inner > .mobile-nav{ flex-basis: calc(100% + 28px); margin: 8px -14px -8px; }
 }
-@media (min-width: 1024px){
+@media (min-width: 761px){
   .site-header__inner--nav > .site-header__burger{ display: none !important; }
   .site-header__inner > .mobile-nav{
-    order: 0; display: flex; flex-direction: row; flex: 1 1 auto;
-    justify-content: center; align-items: center; gap: clamp(18px, 2.2vw, 36px);
+    order: 0; display: flex; flex-direction: row; flex: 1 1 auto; min-width: 0;
+    justify-content: center; align-items: center; gap: clamp(14px, 2.6vw, 40px);
     margin: 0; padding: 0; border-top: none;
   }
   .site-header__inner > .mobile-nav a{
     position: relative; padding: 8px 0; border-bottom: none;
-    font-size: clamp(0.74rem, 0.8vw, 0.84rem); font-weight: 800; letter-spacing: 0.06em;
+    font-size: clamp(0.72rem, 1.05vw, 0.9rem); font-weight: 800; letter-spacing: 0.05em;
     text-transform: uppercase; color: var(--pb-dark); white-space: nowrap; transition: color .15s;
   }
   .site-header__inner > .mobile-nav a.mobile-nav__mobile-only{ display: none; }
+  .site-header__inner > .mobile-nav a.mobile-nav__desktop-only{ display: block; }
   .site-header__inner > .mobile-nav a::after{
     content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 2px;
     border-radius: 2px; background: var(--pb-green);
