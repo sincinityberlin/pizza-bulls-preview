@@ -813,6 +813,18 @@ h1,h2,h3{ text-wrap: balance; }
    komplette Bild ist also unabhängig von object-fit sichtbar. */
 .local-deals .offers-bento__tile--hero img{ object-fit: contain; background: var(--pb-white); }
 
+/* Startseite: NUR die Big-Bag-Kachel (2. Bento-Kachel, "Wenn Döner und
+   Burger ein Kind hätten!") hier gezielt auf object-fit:contain umgestellt
+   — das neue, helle Originalbild ist breitformatig (16:9) statt quadratisch
+   wie das alte, bei object-fit:cover würde oben/unten beschnitten. Position
+   im Bento-Layout (grid-row/-column) bleibt unverändert, nur das Bild selbst
+   wird vollständig statt ausschnittweise dargestellt. Ausschließlich auf die
+   Startseite beschränkt (.local-deals-Sektion) — angebote.html verwendet für
+   dieselbe Kachel weiterhin das alte Bild mit object-fit:cover, unverändert.
+   Auf Mobile ohnehin irrelevant (height:auto greift bereits, siehe 760px-
+   Block weiter unten). */
+.local-deals .offers-bento__tile:nth-child(2) img{ object-fit: contain; background: var(--pb-white); }
+
 /* Bild 4 (10€-Code) einzeln — auf Desktop ausgeblendet, da Karte 1 der
    3er-Reihe unten dasselbe Motiv zeigt (keine Dopplung). Auf Mobile bleibt
    es sichtbar wie zuvor (siehe display:block-Override im 760px-Block). */
