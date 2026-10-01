@@ -1073,6 +1073,13 @@ h1,h2,h3{ text-wrap: balance; }
   border: 6px solid var(--pb-white); border-radius: calc(var(--radius) + 6px);
   box-shadow: 0 10px 30px rgba(26,26,26,0.16);
 }
+/* Kleines Burger-Bild (1086×1448, 3:4): exakt dieselbe Box wie das frühere
+   4:5-Bild — Inhaltsfläche 4:5 bei gleicher Gesamtbreite (44 % inkl. 2×6px
+   Rand), Bild per cover nur unten um ca. 6 % (leere Arbeitsfläche) gekürzt. */
+.home-about__img--side{
+  box-sizing: content-box; width: calc(44% - 12px); height: auto;
+  aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 0;
+}
 .home-about__content h2{ margin: 0 0 18px; font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.12; }
 .home-about__content h2 em{ display: block; }
 .home-about__text{ margin: 0 0 28px; color: var(--pb-grey); line-height: 1.7; font-size: 1rem; }
