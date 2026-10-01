@@ -517,6 +517,13 @@ h1,h2,h3{ text-wrap: balance; }
 }
 /* Abwechselnd Grün/Rot statt vier identischer grüner Labels */
 .highlight-card:nth-child(2n) .highlight-card__tag{ background: var(--pb-red); }
+/* Startseite, Kachel 3 „Schnelle Lieferung“: neues Motiv (Liefertasche,
+   1149×1369) mit fest im Bild enthaltenem grünem Schriftzug. Beschnitt der
+   3:4-Kachel nur rechts (object-position links), damit der Schriftzug links
+   unten vollständig bleibt; das zusätzliche HTML-Label wird hier ausgeblendet,
+   sonst läge es doppelt über dem Schriftzug im Bild. */
+#about .highlight-card:nth-child(3) img{ object-position: 20% 50%; }
+#about .highlight-card:nth-child(3) .highlight-card__tag{ display: none; }
 
 .highlights__stats{
   display: grid;
