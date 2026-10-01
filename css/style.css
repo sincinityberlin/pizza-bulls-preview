@@ -1105,6 +1105,10 @@ h1,h2,h3{ text-wrap: balance; }
 .home-topics{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
 .home-topic{ border: 1px solid var(--pb-border); border-radius: var(--radius); overflow: hidden; background: var(--pb-white); box-shadow: 0 2px 14px rgba(26,26,26,0.06); }
 .home-topic img{ width: 100%; height: auto; }
+/* Karte 2 „Frische Zutaten“: Motiv 1149×1369 ist etwas breiter als 4:5 —
+   Bildfläche bleibt exakt 4:5 wie bei den Nachbarkarten, Bild zentriert per
+   cover (nur je ca. 27px Hintergrund links/rechts), Pizza + Hand vollständig. */
+.home-topic:nth-child(2) img{ aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 50%; }
 .home-topic__body{ padding: 20px 22px 24px; }
 .home-topic__body h3{ margin: 0 0 8px; font-size: 1.1rem; }
 .home-topic__body p{ margin: 0; color: var(--pb-grey); font-size: 0.92rem; line-height: 1.55; }
