@@ -1535,3 +1535,11 @@ a.home-footer__info:hover{ color: var(--pb-green); }
   .fr-form__grid{ grid-template-columns: 1fr; }
   .fr-form__submit{ width: 100%; justify-content: center; }
 }
+
+/* Startseite „Pizza Highlights“-Kennzahlen: Spalten bleiben gleich breit, auch
+   wenn ein Wert ein langes Wort enthält („SCHNELL & HEISS“) — sonst würde die
+   Spalte wachsen und die übrigen Kennzahlen verschieben. */
+.highlights__stats{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 760px){
+  .highlights__stats{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
