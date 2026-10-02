@@ -248,7 +248,7 @@
   var dropdowns = Array.prototype.slice.call(document.querySelectorAll('.nav-dd'));
   if (dropdowns.length){
     var noHover = window.matchMedia('(hover: none)');
-    var narrow = window.matchMedia('(max-width: 1023px)');
+    var narrow = window.matchMedia('(max-width: 899px)');
     function setOpen(dd, open){
       dd.classList.toggle('is-open', open);
       dd.querySelector('.nav-dd__trigger').setAttribute('aria-expanded', open ? 'true' : 'false');
