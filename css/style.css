@@ -1227,27 +1227,10 @@ h1,h2,h3{ text-wrap: balance; }
 .home-cta p{ margin: 0 auto; max-width: 560px; line-height: 1.6; opacity: 0.95; }
 .home-cta .home-actions{ margin-top: 28px; }
 
-/* Footer (nur Startseite: .home-footer ergänzt die Basis .site-footer) */
-.home-footer__grid{
-  max-width: var(--content-max); margin: 0 auto; padding: 48px 20px 32px;
-  display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.4fr; gap: 32px;
-}
-.home-footer__logo{ display: inline-flex; align-items: center; gap: 12px; margin-bottom: 18px; font-weight: 900; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--pb-dark); }
-.home-footer__logo img{ width: 48px; height: 48px; border-radius: 50%; box-shadow: 0 0 0 2px var(--pb-green); }
-.home-footer__info{ display: flex; align-items: center; gap: 10px; margin: 0 0 10px; font-size: 0.9rem; color: var(--pb-grey); }
-.home-footer__info svg{ width: 18px; height: 18px; color: var(--pb-green); flex-shrink: 0; }
-a.home-footer__info:hover{ color: var(--pb-green); }
-.home-footer__col h4{ margin: 0 0 14px; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pb-green-dark); }
-.home-footer__col:nth-child(3) h4{ color: var(--pb-red); }
-.home-footer__col > a:not(.btn):not(.home-footer__logo):not(.home-footer__info){ display: block; padding: 5px 0; font-size: 0.9rem; color: var(--pb-grey); }
-.home-footer__col > a:not(.btn):not(.home-footer__logo):not(.home-footer__info):hover{ color: var(--pb-green); }
-.home-footer__newsletter p{ margin: 0 0 16px; font-size: 0.9rem; color: var(--pb-grey); line-height: 1.55; }
-.home-footer__bottom{ border-top: 1px solid var(--pb-border); padding: 18px 20px; text-align: center; font-size: 0.8rem; color: var(--pb-grey); }
 
 @media (max-width: 980px){
   .home-about__features{ grid-template-columns: repeat(2, 1fr); }
   .home-reviews__track{ grid-auto-columns: calc((100% - 20px) / 2); }
-  .home-footer__grid{ grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 760px){
@@ -1271,8 +1254,6 @@ a.home-footer__info:hover{ color: var(--pb-green); }
   .home-stores__panel{ max-height: 520px; }
   .home-cta{ padding: 0 12px; margin-bottom: 48px; }
   .home-cta__inner{ padding: 40px 20px; }
-  .home-footer__grid{ grid-template-columns: 1fr 1fr; gap: 28px 20px; padding: 36px 16px 24px; }
-  .home-footer__brand, .home-footer__newsletter{ grid-column: 1 / -1; }
 }
 
 /* ==========================================================================
@@ -1542,4 +1523,71 @@ a.home-footer__info:hover{ color: var(--pb-green); }
 .highlights__stats{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 760px){
   .highlights__stats{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ==========================================================================
+   FOOTER (alle Seiten) — nach dem Footer der bisherigen Pizza-Bulls-Seite:
+   weißer Grund mit dezentem hellgrünem Gemüse-Line-Art-Muster (Kachel 600px,
+   30 % Deckkraft), Marke links, „Seiten“, „Rechtliches“, Newsletter rechts,
+   Copyright-Zeile. Ersetzt die bisherigen Footer-Varianten.
+   ========================================================================== */
+.pb-footer{ position: relative; isolation: isolate; overflow: hidden; background: var(--pb-white); border-top: 1px solid var(--pb-border); }
+.pb-footer::before{
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: url("../assets/images/footer-pattern.png") center / 600px 600px repeat; opacity: 0.3;
+}
+.pb-footer__inner{
+  max-width: var(--content-max); margin: 0 auto; padding: 64px 20px 48px;
+  display: grid; grid-template-columns: 1.35fr 1fr 1fr 1.35fr; gap: 40px;
+}
+.pb-footer__logo{ display: inline-flex; align-items: center; gap: 14px; margin-bottom: 24px; color: var(--pb-dark); }
+.pb-footer__logo img{ width: 56px; height: 56px; border-radius: 50%; object-fit: contain; background: var(--pb-white); box-shadow: 0 0 0 2px var(--pb-green); }
+.pb-footer__logo span{ font-size: 1.4rem; font-weight: 900; line-height: 1.1; letter-spacing: 0.02em; text-transform: uppercase; }
+.pb-footer__info, .pb-footer__links{ list-style: none; margin: 0; padding: 0; }
+.pb-footer__info li{ display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font-size: 0.875rem; color: var(--pb-grey); }
+.pb-footer__info svg{ width: 16px; height: 16px; flex-shrink: 0; color: var(--pb-green); }
+.pb-footer__info a, .pb-footer__links a{ color: var(--pb-grey); transition: color .15s; }
+.pb-footer__info a:hover, .pb-footer__links a:hover{ color: var(--pb-green-dark); }
+.pb-footer h4{ margin: 6px 0 18px; font-size: 0.875rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pb-dark); }
+.pb-footer__links li{ margin: 0 0 11px; font-size: 0.875rem; }
+.pb-footer__newsletter p{ margin: 0 0 20px; font-size: 0.875rem; line-height: 1.6; color: var(--pb-grey); max-width: 300px; }
+.pb-footer__btn{
+  display: inline-flex; align-items: center; justify-content: center; padding: 13px 22px; border-radius: 12px;
+  background: var(--pb-green); color: var(--pb-white); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+  transition: background .15s;
+}
+.pb-footer__btn:hover{ background: var(--pb-green-dark); }
+.pb-footer__bottom{ max-width: var(--content-max); margin: 0 auto; padding: 22px 20px 26px; border-top: 1px solid var(--pb-border); text-align: center; }
+.pb-footer__bottom p{ margin: 0; font-size: 0.75rem; color: var(--pb-grey); }
+@media (max-width: 980px){
+  .pb-footer__inner{ grid-template-columns: 1fr 1fr; gap: 36px 32px; padding: 52px 20px 40px; }
+}
+@media (max-width: 760px){
+  .pb-footer__inner{ grid-template-columns: 1fr 1fr; gap: 30px 20px; padding: 40px 16px 32px; }
+  .pb-footer__brand, .pb-footer__newsletter{ grid-column: 1 / -1; }
+  .pb-footer__logo span{ font-size: 1.2rem; }
+  .pb-footer__bottom{ padding: 18px 16px 22px; }
+}
+
+/* Rechtsseiten (Impressum, Datenschutzerklärung, Cookie-Richtlinie) */
+.legal-updated{ margin: 10px auto 0 !important; font-size: 0.85rem !important; }
+.legal{ max-width: 860px; }
+.legal h2{ margin: 34px 0 12px; font-size: 1.25rem; line-height: 1.3; }
+.legal h2:first-child{ margin-top: 0; }
+.legal h3{ margin: 24px 0 8px; font-size: 1.05rem; }
+.legal p, .legal li{ color: var(--pb-grey); font-size: 0.95rem; line-height: 1.7; }
+.legal p{ margin: 0 0 12px; }
+.legal ul{ margin: 0 0 14px; padding-left: 22px; }
+.legal a{ color: var(--pb-green-dark); text-decoration: underline; text-underline-offset: 2px; word-break: break-word; }
+.legal strong{ color: var(--pb-dark); }
+.legal table{ width: 100%; margin: 8px 0 18px; border-collapse: collapse; font-size: 0.86rem; display: block; overflow-x: auto; }
+.legal th, .legal td{ padding: 10px 12px; border: 1px solid var(--pb-border); text-align: left; vertical-align: top; color: var(--pb-grey); }
+.legal th{ background: var(--pb-green-light); color: var(--pb-dark); font-weight: 700; }
+.legal-facts{ margin: 0 0 22px; padding: 18px 22px; border: 1px solid var(--pb-border); border-radius: var(--radius); background: var(--pb-white); }
+.legal-facts > div{ display: grid; grid-template-columns: 170px 1fr; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--pb-border); font-size: 0.92rem; }
+.legal-facts > div:last-child{ border-bottom: none; }
+.legal-facts dt{ font-weight: 700; color: var(--pb-dark); }
+.legal-facts dd{ margin: 0; color: var(--pb-grey); }
+@media (max-width: 760px){
+  .legal-facts > div{ grid-template-columns: 1fr; gap: 2px; }
 }
