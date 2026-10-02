@@ -6,18 +6,17 @@
 <title>Franchise werden | Pizza Bulls</title>
 <meta name="description" content="Werde Pizza-Bulls-Franchise-Partner: bewährtes Konzept, umfassende Unterstützung, Investitionsübersicht und persönliche Beratung." />
 <link rel="icon" href="assets/images/logo.png" />
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style.css?v=20261002-fr19" />
 </head>
 <body>
 
 <div class="brand-rule" aria-hidden="true"></div>
 
 <!-- ==========================================================================
-     HEADER — identisch zu index.html, nur die Hamburger-Menü-Ziele sind
-     interne Unterseiten statt externer pizzabulls.de-Links.
+     HEADER — identisch zur Startseite (Navigation + Dropdown „Franchise Konzept“).
      ========================================================================== -->
 <header class="site-header" id="siteHeader">
-  <div class="site-header__inner">
+  <div class="site-header__inner site-header__inner--nav">
     <button class="site-header__burger" id="burgerBtn" aria-label="Menü öffnen" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -26,6 +25,27 @@
       <img src="assets/images/logo.png" alt="Pizza Bulls" width="52" height="52" />
       <span class="site-header__wordmark">PIZZABULLS</span>
     </a>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Hauptnavigation">
+      <a href="index.html#top">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="speisekarte.html">Speisekarte</a>
+      <a class="mobile-nav__mobile-only" href="angebote.html">Angebote &amp; Aktionen</a>
+      <a href="standorte.html">Standorte</a>
+      <div class="nav-dd">
+        <a class="nav-dd__trigger" href="franchise.html" aria-haspopup="true" aria-expanded="false">Franchise Konzept</a>
+        <button class="nav-dd__toggle" type="button" aria-label="Untermenü Franchise Konzept öffnen" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="nav-dd__menu">
+          <a href="franchise-selbststaendigkeit.html">Selbstständigkeit</a>
+          <a href="franchise-marketing.html">Marketing</a>
+          <a href="franchise-vertrag.html">Vertrag</a>
+          <a href="franchise-unterstuetzung.html">Unterstützung</a>
+          <a href="franchise-eigene-filiale.html">Eigene Filiale</a>
+          <a href="franchise-beispielrechnung.html">Beispielrechnung</a>
+        </div>
+      </div>
+      <a href="jobs.html">Jobs</a>
+    </nav>
 
     <div class="site-header__right">
       <!-- PLATZHALTER: Im Projekt existiert noch keine Sprachauswahl. Sobald eine
@@ -41,17 +61,21 @@
     </div>
   </div>
 
-  <div class="mobile-nav" id="mobileNav">
-    <a href="speisekarte.html">Menü</a>
-    <a href="angebote.html">Angebote &amp; Aktionen</a>
-    <a href="standorte.html">Standorte</a>
-    <a href="franchise.html">Franchise</a>
-    <a href="jobs.html">Jobs</a>
-    <a href="ueber-uns.html">Über uns</a>
-  </div>
 </header>
 
 <main id="top">
+  <nav class="fr-subnav" aria-label="Franchise Konzept">
+    <div class="fr-subnav__inner">
+      <a class="fr-subnav__link" href="franchise.html" aria-current="page">Übersicht</a>
+      <a class="fr-subnav__link" href="franchise-selbststaendigkeit.html">Selbstständigkeit</a>
+      <a class="fr-subnav__link" href="franchise-marketing.html">Marketing</a>
+      <a class="fr-subnav__link" href="franchise-vertrag.html">Vertrag</a>
+      <a class="fr-subnav__link" href="franchise-unterstuetzung.html">Unterstützung</a>
+      <a class="fr-subnav__link" href="franchise-eigene-filiale.html">Eigene Filiale</a>
+      <a class="fr-subnav__link" href="franchise-beispielrechnung.html">Beispielrechnung</a>
+      <a class="fr-subnav__link fr-subnav__link--cta" href="franchise-anfrage.html">Jetzt bewerben</a>
+    </div>
+  </nav>
   <section class="page-hero">
     <a class="page-hero__back" href="index.html#top">&larr; Zurück zur Startseite</a>
     <p class="section-eyebrow">Franchise</p>
@@ -64,6 +88,22 @@
     <div><strong>16+</strong><span>Jahre Erfahrung</span></div>
     <div><strong>16M+</strong><span>Bestellungen/Monat in DE</span></div>
     <div><strong>100%</strong><span>Support</span></div>
+  </section>
+
+  <section class="page-section" aria-label="Franchise Konzept im Detail">
+    <div class="page-section__intro">
+      <p class="section-eyebrow">Franchise Konzept</p>
+      <h2>Alle Themen <em>im Detail</em></h2>
+      <p>Erfahre alles über Selbstständigkeit, Marketing, Vertrag, Unterstützung, den Weg zur eigenen Filiale und die Zahlen.</p>
+    </div>
+    <div class="fr-topic-grid">
+      <a class="fr-topic" href="franchise-selbststaendigkeit.html"><span class="home-feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9 4.5 4h15L21 9M3 9v11h18V9M3 9h18M9 20v-6h6v6"/></svg></span><h3>Selbstständigkeit</h3><p>Dein Traum vom eigenen Lieferdienst – mit erprobtem Konzept und starkem Partner.</p><span class="fr-topic__more">Mehr erfahren &rarr;</span></a>
+      <a class="fr-topic" href="franchise-marketing.html"><span class="home-feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-5v12L3 13v-2Z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span><h3>Marketing</h3><p>Erprobtes Marketingkonzept: Flyer, Mailings, Plakate, Radio- und ÖPNV-Werbung.</p><span class="fr-topic__more">Mehr erfahren &rarr;</span></a>
+      <a class="fr-topic" href="franchise-vertrag.html"><span class="home-feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></span><h3>Vertrag</h3><p>Voraussetzungen, transparente Konditionen und Anforderungen an dein Ladenlokal.</p><span class="fr-topic__more">Mehr erfahren &rarr;</span></a>
+      <a class="fr-topic" href="franchise-unterstuetzung.html"><span class="home-feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></span><h3>Unterstützung</h3><p>Starke Marke, zentraler Einkauf, Kassensystem, System-Handbuch und Schulung.</p><span class="fr-topic__more">Mehr erfahren &rarr;</span></a>
+      <a class="fr-topic" href="franchise-eigene-filiale.html"><span class="home-feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><h3>Eigene Filiale</h3><p>In 6 klar definierten Schritten von der ersten Idee bis zur Eröffnung.</p><span class="fr-topic__more">Mehr erfahren &rarr;</span></a>
+      <a class="fr-topic" href="franchise-beispielrechnung.html"><span class="home-feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 7a7 7 0 1 0 0 10M4 10h10M4 14h10"/></svg></span><h3>Beispielrechnung</h3><p>Gesamtinvestition, Einstiegs-, Franchise- und Werbegebühr im Überblick.</p><span class="fr-topic__more">Mehr erfahren &rarr;</span></a>
+    </div>
   </section>
 
   <section class="page-section" aria-label="Dein Startschuss in die Selbstständigkeit">
@@ -110,60 +150,53 @@
         <tr><td>Werbegebühr (monatlich)</td><td>250 € zzgl. MwSt.</td></tr>
       </tbody>
     </table>
-    <p class="cost-table__note">Alle genannten Zahlen sind Richtwerte und können je nach Standort, Größe und regionalen Gegebenheiten abweichen. Diese Beispielrechnung dient ausschließlich der ersten Orientierung. Quelle: pizzabulls.de/franchise-konzept/beispielrechnung.</p>
+    <p class="cost-table__note">Alle genannten Zahlen sind Richtwerte und können je nach Standort, Größe und regionalen Gegebenheiten abweichen. Diese Beispielrechnung dient ausschließlich der ersten Orientierung. <a href="franchise-beispielrechnung.html">Zur ausführlichen Beispielrechnung</a>.</p>
   </section>
 
   <section class="cta-band" aria-label="Franchise-Anfrage">
     <h2>Lass dich <em>persönlich beraten</em></h2>
     <p>Du möchtest als selbstständiger Unternehmer einen Pizza-&amp;-Burger-Bulls-Lieferdienst betreiben? Dann melde dich bei uns.</p>
-    <a class="btn btn--red" href="mailto:info@pizzabulls.de?subject=Franchise-Anfrage">Franchise-Anfrage per E-Mail</a>
+    <a class="btn btn--red" href="franchise-anfrage.html">Jetzt bewerben</a>
   </section>
 
 </main>
 
-<!-- ==========================================================================
-     FOOTER — identisch zu index.html, Navigationslinks zeigen auf interne
-     Unterseiten statt externer pizzabulls.de-Links (Impressum bleibt extern,
-     da es dafür keine eigene interne Seite in diesem Projekt gibt).
-     ========================================================================== -->
-<footer class="site-footer">
-  <div class="site-footer__top">
-    <div class="site-footer__brand">
-      <img src="assets/images/logo.png" alt="Pizza Bulls" width="56" height="56" />
-      <p>Fast Like Bulls! — Jetzt online bestellen, liefern lassen oder abholen.</p>
+<footer class="site-footer home-footer">
+  <div class="home-footer__grid">
+    <div class="home-footer__col home-footer__brand">
+      <a class="home-footer__logo" href="index.html#top"><img src="assets/images/logo.png" alt="" width="48" height="48" /><span>Pizza &amp; Burger Bulls</span></a>
+      <p class="home-footer__info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Täglich geöffnet</p>
+      <p class="home-footer__info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>Telefonisch erreichbar</p>
+      <a class="home-footer__info" href="mailto:info@pizzabulls.de"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>info@pizzabulls.de</a>
     </div>
-    <a class="btn btn--green site-footer__cta" href="https://pizzabulls.de/speisekarte" target="_blank" rel="noopener">Jetzt bestellen</a>
-  </div>
-
-  <div class="site-footer__grid">
-    <div class="footer-col">
-      <h4>Produkte</h4>
-      <a href="speisekarte.html">Speisekarte</a>
-      <a href="angebote.html">Angebote &amp; Aktionen</a>
-    </div>
-    <div class="footer-col">
-      <h4>Kontakt</h4>
-      <a href="tel:+493088667838">030 / 88 66 78 38</a>
-      <a href="mailto:info@pizzabulls.de">info@pizzabulls.de</a>
-    </div>
-    <div class="footer-col">
-      <h4>Karriere</h4>
-      <a href="jobs.html">Jobs</a>
-      <a href="franchise.html">Franchise</a>
-    </div>
-    <div class="footer-col">
-      <h4>Über Pizza Bulls</h4>
+    <nav class="home-footer__col" aria-label="Seiten">
+      <h4>Seiten</h4>
+      <a href="index.html#top">Home</a>
       <a href="ueber-uns.html">Über uns</a>
-      <a href="standorte.html">Standorte</a>
-      <a href="https://pizzabulls.de/impressum" target="_blank" rel="noopener">Impressum</a>
+      <a href="speisekarte.html">Speisekarte</a>
+      <a href="standorte.html">Standort</a>
+      <a href="franchise.html">Franchise Konzept</a>
+      <a href="franchise-anfrage.html">Franchise Anfrage</a>
+      <a href="jobs.html">Jobs</a>
+    </nav>
+    <nav class="home-footer__col" aria-label="Rechtliches">
+      <h4>Rechtliches</h4>
+      <a href="https://www.pizzabulls.de/datenschutzerklaerung" target="_blank" rel="noopener">Datenschutzerklärung</a>
+      <a href="https://www.pizzabulls.de/cookie-richtlinie" target="_blank" rel="noopener">Cookie-Richtlinie</a>
+      <a href="https://www.pizzabulls.de/impressum" target="_blank" rel="noopener">Impressum</a>
+    </nav>
+    <div class="home-footer__col home-footer__newsletter">
+      <h4>Immer auf dem Laufenden</h4>
+      <p>Erhalte die neuesten Angebote, Aktionen und News direkt von Pizza&amp; Burger Bulls.</p>
+      <a class="btn btn--green" href="#pizza-bulls-club-registrierung" aria-label="Werde V.I.P Mitglied (Platzhalter-Link, noch ohne Ziel-URL)">Werde V.I.P Mitglied</a>
     </div>
   </div>
-
-  <div class="site-footer__bottom">
-    <span>&copy; 2026 Pizza &amp; Burger Bulls Franchise GmbH. Alle Rechte vorbehalten.</span>
+  <div class="home-footer__bottom">
+    <span>&copy; 2026 Pizza &amp; Burger Bulls. Alle Rechte vorbehalten.</span>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/home-sections.js?v=20261002-fr19"></script>
 </body>
 </html>
