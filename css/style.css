@@ -943,10 +943,14 @@ h1,h2,h3{ text-wrap: balance; }
     border: 1px solid var(--pb-border);
     border-radius: var(--radius);
     box-shadow: 0 2px 14px rgba(26,26,26,0.1);
+    /* Spalte: übrige Höhe der Reihe gleichmäßig über/unter der Pizza verteilen
+       statt als Leerfläche unter dem Hinweistext */
+    display: flex; flex-direction: column;
   }
   .offers-cards--home .pizza-build .section-eyebrow{ font-size: 0.68rem; }
   .offers-cards--home .pizza-build__title{ font-size: 1.15rem; margin: 4px 0 16px; }
-  .offers-cards--home .pizza-stage{ width: min(190px, 78%); }
+  /* Pizza-Stage größer (vorher min(190px, 78%)); Animation rechnet in %, skaliert mit */
+  .offers-cards--home .pizza-stage{ width: min(330px, 92%); margin: auto; flex-shrink: 0; }
   .offers-cards--home .pizza-build__cta{ margin-top: 18px; width: 100%; justify-content: center; }
   .offers-cards--home .pizza-build__hint{ margin-top: 14px; font-size: 0.76rem; }
 }
