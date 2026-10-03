@@ -1779,3 +1779,7 @@ h1,h2,h3{ text-wrap: balance; }
   .home-page .order-bar__choices,
   .home-page .pb-footer__bottom{ width: calc(100% - 40px); }
 }
+/* Mobile: Highlights auf denselben 12px-Seitenrand wie alle anderen Reihen */
+@media (max-width: 760px){
+  .home-page .highlights{ padding-left: 12px; padding-right: 12px; }
+}
