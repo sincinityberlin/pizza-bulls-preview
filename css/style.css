@@ -1754,3 +1754,28 @@ h1,h2,h3{ text-wrap: balance; }
   .aa-head{ margin-bottom: 22px; }
   .aa-grid{ grid-template-columns: minmax(0, 1fr); gap: 16px; }
 }
+
+/* ==========================================================================
+   STARTSEITE — EINHEITLICHE REIHENBREITE (Desktop ≥ 761px, nur body.home-page)
+   Alle Reihen auf dieselbe Flucht wie die 3er-Kartenreihe/Bestellleiste:
+   Inhaltsbreite 1240px (= --content-max), darunter 20px Seitenrand.
+   Sektionen mit 20px Innenabstand bekommen dafür max-width +40px; die
+   Bento-Begrenzung (980px) entfällt — die Kacheln rechnen in %, Bilder
+   skalieren proportional ohne Beschnitt. Mobile und andere Seiten unverändert.
+   ========================================================================== */
+@media (min-width: 761px){
+  .home-page .local-deals,
+  .home-page .trust-bar,
+  .home-page .brand-banner,
+  .home-page .highlights,
+  .home-page .home-about,
+  .home-page .home-nationwide,
+  .home-page .home-reviews,
+  .home-page .home-stores,
+  .home-page .home-cta,
+  .home-page .pb-footer__inner{ max-width: calc(var(--content-max) + 40px); }
+  .home-page .local-deals .offers-bento{ max-width: none; }
+  .home-page .offers-cards--home,
+  .home-page .order-bar__choices,
+  .home-page .pb-footer__bottom{ width: calc(100% - 40px); }
+}
