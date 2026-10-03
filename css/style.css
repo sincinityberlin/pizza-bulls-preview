@@ -1796,10 +1796,10 @@ h1,h2,h3{ text-wrap: balance; }
 }
 
 /* ==========================================================================
-   WEBSITE-HINTERGRUND: horizontaler Verlauf links #FFFFFF → rechts #779639
+   WEBSITE-HINTERGRUND: vertikaler Verlauf oben #FFFFFF → unten #779639
    (Nutzer-Vorgabe). Nur Seiten-/Sektionsflächen; Header, Bestellleiste,
    Karten, Bilder und Footer behalten ihren eigenen Hintergrund.
    ========================================================================== */
-body, .fr-page, .aa-page{ background: linear-gradient(90deg, #FFFFFF 0%, #779639 100%); }
+body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #779639 100%); }
 .highlights{ background: transparent; }
 .pizza-build{ background: transparent; } /* Desktop-Karte bleibt weiß (.offers-cards--home .pizza-build) */
