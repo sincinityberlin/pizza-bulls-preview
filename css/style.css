@@ -1783,3 +1783,23 @@ h1,h2,h3{ text-wrap: balance; }
 @media (max-width: 760px){
   .home-page .highlights{ padding-left: 12px; padding-right: 12px; }
 }
+
+/* ==========================================================================
+   HEADER-SCHRIFTZUG (alle Seiten): Bild IMG_8729.jpg („pizza bulls – Fast
+   like bulls!“) statt des grünen Text-Schriftzugs „PIZZABULLS“. Gleiche Breite
+   wie der bisherige Schriftzug (126px / Mobile 105px), Höhe proportional —
+   Logo-Block und Navigation bleiben unverändert. Weißer Bildgrund = weißer Header.
+   ========================================================================== */
+.site-header__logo img.site-header__wordmark-img{ width: 126px; height: auto; object-fit: contain; }
+@media (max-width: 760px){
+  .site-header__logo img.site-header__wordmark-img{ width: 105px; }
+}
+
+/* ==========================================================================
+   WEBSITE-HINTERGRUND: horizontaler Verlauf links #FFFFFF → rechts #779639
+   (Nutzer-Vorgabe). Nur Seiten-/Sektionsflächen; Header, Bestellleiste,
+   Karten, Bilder und Footer behalten ihren eigenen Hintergrund.
+   ========================================================================== */
+body, .fr-page, .aa-page{ background: linear-gradient(90deg, #FFFFFF 0%, #779639 100%); }
+.highlights{ background: transparent; }
+.pizza-build{ background: transparent; } /* Desktop-Karte bleibt weiß (.offers-cards--home .pizza-build) */
