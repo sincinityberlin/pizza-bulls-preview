@@ -1106,6 +1106,14 @@ h1,h2,h3{ text-wrap: balance; }
 .home-stat strong{ display: block; font-size: clamp(1.8rem, 3.6vw, 2.4rem); font-weight: 900; color: var(--pb-green); line-height: 1.1; }
 .home-stat:nth-child(2n) strong{ color: var(--pb-red); }
 .home-stat span{ display: block; margin-top: 6px; font-size: 0.78rem; font-weight: 700; color: var(--pb-grey); text-transform: uppercase; letter-spacing: 0.06em; }
+/* Text-Kennzahl „SCHNELL & HEISS / GELIEFERT“ (statt „30 min Lieferzeit“):
+   Schrift relativ zur Boxbreite, damit sie einzeilig in die unveränderte Box
+   passt; Zeilenhöhe wie bei den Zahlen daneben → gleiche Boxhöhe/Label-Lage. */
+.home-stat--text{ container-type: inline-size; }
+.home-stat--text strong{
+  font-size: min(9.5cqi, 1.6rem); white-space: nowrap;
+  line-height: calc(clamp(1.8rem, 3.6vw, 2.4rem) * 1.1);
+}
 .home-topics{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
 .home-topic{ border: 1px solid var(--pb-border); border-radius: var(--radius); overflow: hidden; background: var(--pb-white); box-shadow: 0 2px 14px rgba(26,26,26,0.06); }
 .home-topic img{ width: 100%; height: auto; }
