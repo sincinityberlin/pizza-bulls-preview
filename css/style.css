@@ -1864,3 +1864,18 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
      ".site-header__inner > .mobile-nav" sicher ueberschreibt. */
   .site-header__inner--nav > nav.mobile-nav{ gap: 14px; }
 }
+
+/* ==========================================================================
+   BEWERTUNGSSTERNE IN GOLD (Nutzervorgabe 04.10.2026)
+   Auf dem grünen Seitenverlauf hoben sich die grünen Sterne kaum ab. Gilt für
+   die fünf Sterne neben der Gesamtnote 4.9 und die Sterne in jeder
+   Bewertungskarte — beide nutzen dieselbe Klasse, deshalb genügt eine Regel,
+   bewusst auf ".home-reviews" begrenzt. Größe (18px), Abstände und Position
+   bleiben unverändert; der nicht gefüllte Stern der 4-Sterne-Bewertung behält
+   sein Grau, sonst wäre "4 von 5" nicht mehr erkennbar.
+   ========================================================================== */
+.home-reviews .home-review__star svg{ fill: #FFD700; }
+/* Der nicht gefuellte Stern der 4-Sterne-Bewertung behaelt sein bisheriges
+   Grau - sonst saehen alle Bewertungen nach 5 von 5 aus. Hoehere
+   Spezifitaet, weil die Gold-Regel sonst gleichrangig gewinnt. */
+.home-reviews .home-review__star.is-empty svg{ fill: var(--pb-border); }
