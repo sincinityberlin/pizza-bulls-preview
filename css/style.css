@@ -1815,3 +1815,52 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
 .home-reviews .home-section-head h2 em,
 .home-stores .home-section-head h2 em,
 .home-stores .home-section-head .section-eyebrow{ color: #FFFFFF; }
+
+/* Erweiterung 04.10.2026: alle Texte, die in der gruenen Haelfte DIREKT auf dem
+   Seitenverlauf liegen, sind weiss. Bewusst einzeln aufgefuehrt statt per "*" -
+   so bleiben die Texte in den weissen Karten (Angebotskacheln, Bewertungs-
+   karten, Standortliste) unveraendert dunkel. Die roten Akzente
+   (".section-eyebrow" der Highlights, rote Kennzahl) bleiben als Markenfarbe
+   erhalten; Buttons, Bilder und Icons sind nicht beruehrt. */
+.highlights .highlights__intro h2,
+.highlights .highlights__intro h2 em,
+.highlights .highlights__stats strong,
+.highlights .highlights__stats span,
+.home-about .home-about__content .section-eyebrow,
+.home-about .home-about__content h2,
+.home-about .home-about__content h2 em,
+.home-about .home-about__content .home-about__text,
+.home-nationwide .home-section-head .section-eyebrow,
+.home-nationwide .home-section-head h2,
+.home-nationwide .home-section-head h2 em,
+.home-nationwide .home-section-head p,
+.home-nationwide .home-note,
+.home-reviews .home-section-head h2,
+.home-reviews .home-section-head p,
+.home-reviews .home-section-head .home-reviews__source,
+.home-reviews .home-section-head .home-reviews__score strong,
+.home-reviews .home-section-head .home-reviews__score .home-reviews__total,
+.home-reviews .home-reviews__hint,
+.home-stores .home-section-head h2,
+.home-stores .home-section-head p{ color: #FFFFFF; }
+
+/* Rote Kennzahl und rote Eyebrow der Highlights behalten die Markenfarbe -
+   sie stehen dort noch auf hellem Verlauf und sind gut lesbar. */
+.highlights .highlights__intro .section-eyebrow{ color: var(--pb-red); }
+
+/* ==========================================================================
+   HEADER-LOGO GROESSER (Nutzervorgabe 04.10.2026)
+   Bulle 70 -> 92 px, goldener Schriftzug 126 -> 160 px (beide proportional,
+   object-fit: contain bleibt). Damit die sieben Navigationspunkte in EINER
+   Zeile bleiben und nichts ueberlappt, wird der horizontale Abstand der
+   Navigation von 20 auf 14 px verringert - gemessen am gerenderten Header bei
+   1440/1280/1100 px. Nur Desktop (>= 761 px); die Mobile-Groessen in der
+   Regel "@media (max-width: 760px)" bleiben unveraendert.
+   ========================================================================== */
+@media (min-width: 1100px){
+  .site-header__logo img{ width: 92px; height: 92px; }
+  .site-header__logo img.site-header__wordmark-img{ width: 160px; height: auto; }
+  /* Zwei Klassen + Typ, damit die Regel die bestehende
+     ".site-header__inner > .mobile-nav" sicher ueberschreibt. */
+  .site-header__inner--nav > nav.mobile-nav{ gap: 14px; }
+}
