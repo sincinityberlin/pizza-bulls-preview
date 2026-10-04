@@ -1803,3 +1803,15 @@ h1,h2,h3{ text-wrap: balance; }
 body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #779639 100%); }
 .highlights{ background: transparent; }
 .pizza-build{ background: transparent; } /* Desktop-Karte bleibt weiß (.offers-cards--home .pizza-build) */
+
+/* ==========================================================================
+   KONTRAST AUF DEM GRÜNEN SEITENVERLAUF (Nutzervorgabe 04.10.2026)
+   Seit der Verlauf nach unten grün wird, standen in den unteren Abschnitten
+   grüne Texte auf grünem Grund. Nur die drei tatsächlich betroffenen Stellen
+   werden weiß — gemessen am gerenderten Stand: beide hervorgehobenen Wörter
+   (<em>) und die Eyebrow-Zeile von „Unsere Standorte“. Schwarze Überschriften,
+   weiße Karten, Buttons und alles andere bleiben unverändert.
+   ========================================================================== */
+.home-reviews .home-section-head h2 em,
+.home-stores .home-section-head h2 em,
+.home-stores .home-section-head .section-eyebrow{ color: #FFFFFF; }
