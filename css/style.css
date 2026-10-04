@@ -1879,3 +1879,25 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
    Grau - sonst saehen alle Bewertungen nach 5 von 5 aus. Hoehere
    Spezifitaet, weil die Gold-Regel sonst gleichrangig gewinnt. */
 .home-reviews .home-review__star.is-empty svg{ fill: var(--pb-border); }
+
+/* ==========================================================================
+   KONTRAST UNTEN: HELLER BUTTON + WEISSER CTA-KASTEN (Nutzervorgabe 04.10.2026)
+   Beide Elemente liegen im tiefgrünen Teil des Seitenverlaufs.
+   1) "Alle Standorte ansehen" wird weiß mit grüner Schrift - bewusst nur
+      dieser eine Button über ".home-stores .home-actions", damit die
+      übrigen .btn--green (Banner, Willkommensbonus, Highlights) bleiben.
+   2) Der CTA-Kasten wird weiß, Überschrift und Text grün. Die beiden Buttons
+      darin werden umgekehrt eingefärbt, sonst wären sie auf Weiß unsichtbar:
+      "Speisekarte" grün gefüllt, "Store finden" grüne Kontur. Hover-Zustände
+      mitgeführt. Form, Größe, Abrundung, Abstände und Funktion bleiben gleich.
+   ========================================================================== */
+.home-stores .home-actions .btn--green{ background: #FFFFFF; color: #779639; }
+.home-stores .home-actions .btn--green:hover{ background: var(--pb-green-light); color: var(--pb-green-dark); }
+
+.home-cta .home-cta__inner{ background: #FFFFFF; color: #779639; }
+.home-cta .home-cta__inner h2,
+.home-cta .home-cta__inner p{ color: #779639; }
+.home-cta .home-cta__inner .btn--white{ background: #779639; color: #FFFFFF; }
+.home-cta .home-cta__inner .btn--white:hover{ background: var(--pb-green-dark); color: #FFFFFF; }
+.home-cta .home-cta__inner .btn--outline{ border-color: #779639; color: #779639; }
+.home-cta .home-cta__inner .btn--outline:hover{ background: #779639; color: #FFFFFF; }
