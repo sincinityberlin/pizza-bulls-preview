@@ -1986,22 +1986,23 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
 }
 
 /* ==========================================================================
-   GRUENER HEADER GROESSER (Nutzervorgabe 05.10.2026)
-   Bulle, Schriftzug, Menue und die beiden Icons wachsen fliessend mit der
-   Fensterbreite - von 900 px (Beginn des gruenen Headers) bis ca. 1500 px,
-   danach feste Hoechstwerte. Alle Werte linear zwischen zwei Messpunkten:
+   GRUENER HEADER - KOMPAKT, SCHARF, KRAEFTIG (Nutzervorgaben 05.10.2026)
+   - Bulle: bulle-header.png (353x387, aus pizza-club-piece.png freigestellt,
+     nur Emblem + (R), ohne "Fast like bulls!") statt der 100x100-Datei mit
+     ~30 % leerem Rand -> scharf, und der Header verliert die leere Hoehe.
+   - Schriftzug: wortmarke-pizza-bulls.png (1715x288 = 2x, ohne Tagline,
+     scharfe Kontur, Goldfarben unveraendert).
+   Beide nur ab 900 px per <picture>; darunter (weisser Header) unveraendert.
+   Werte linear zwischen 900 und 1440 px, danach Hoechstwerte:
                     900 px   1440 px   max
-     Bulle           90 px    168 px   176 px
-     Schriftzug     198 px    370 px   387 px  (= 2,2 x Bulle, wie bisher)
-     Menueschrift    11 px     15 px   15,5 px
-     Menueabstand    10 px     24 px   26 px
-     Icons           44 px     52 px   54 px
-   Damit das in eine Zeile passt, nutzen die Inhalte der gruenen Leiste bis
-   1600 px Breite (vorher 1240 px); Innenabstand links und rechts gleich.
-   Header-Hoehe = Bulle + 2 x 12 px. Farben, Menuepunkte, Dropdown und alles
-   unter 900 px (weisser Header, Hamburger, Mobile) bleiben unveraendert.
-   Nur der Header mit Menueleiste (.site-header__inner--nav); die alten
-   Unterseiten mit Hamburger-Header sind nicht betroffen.
+     Bulle (Hoehe)   76 px    116 px   120 px
+     Schriftzug     200 px    380 px   395 px
+     Menueschrift    11,2     16 px    16,5 px  (Strichstaerke 900)
+     Menueabstand    10 px    26 px    28 px
+     Icons           46 px    56 px    58 px   (Rand 2 px, Linien 2,3)
+   Header-Hoehe = Bulle + 2 x 12 px (Dropdown-Lage bleibt dadurch gleich).
+   Inhalte der gruenen Leiste bis 1600 px breit, Innenabstand links = rechts.
+   Nur Header mit Menueleiste (.site-header__inner--nav).
    ========================================================================== */
 @media (min-width: 900px){
   .site-header__inner.site-header__inner--nav{
@@ -2011,25 +2012,29 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
   }
   .site-header__inner--nav .site-header__logo{ gap: 6px; align-items: center; }
   .site-header__inner--nav .site-header__logo img{
-    width: clamp(90px, calc(14.444vw - 40px), 176px); height: auto;
+    width: auto; height: clamp(76px, calc(7.407vw + 9.33px), 120px);
   }
   .site-header__inner--nav .site-header__logo img.site-header__wordmark-img{
-    width: clamp(198px, calc(31.78vw - 88px), 387px); height: auto;
+    width: clamp(200px, calc(33.33vw - 100px), 395px); height: auto;
   }
   .site-header__inner--nav > nav.mobile-nav{
-    gap: clamp(10px, calc(2.5926vw - 13.33px), 26px);
+    gap: clamp(10px, calc(2.963vw - 16.67px), 28px);
   }
   .site-header__inner--nav > .mobile-nav > a,
   .site-header__inner--nav > .mobile-nav .nav-dd__trigger{
-    font-size: clamp(11px, calc(0.7407vw + 4.333px), 15.5px); letter-spacing: 0.04em;
+    font-size: clamp(11.2px, calc(0.8889vw + 3.2px), 16.5px);
+    font-weight: 900; letter-spacing: 0.035em;
   }
+  .site-header__inner--nav > .mobile-nav .nav-dd__toggle svg{ stroke-width: 3; }
   .site-header__inner--nav .site-header__right{ gap: clamp(10px, calc(0.74vw + 3.33px), 16px); }
   .site-header__inner--nav .site-header__right .site-header__icon-btn{
-    width: clamp(44px, calc(1.4815vw + 30.67px), 54px);
-    height: clamp(44px, calc(1.4815vw + 30.67px), 54px);
+    width: clamp(46px, calc(1.852vw + 29.33px), 58px);
+    height: clamp(46px, calc(1.852vw + 29.33px), 58px);
+    border-width: 2px; border-color: #FFFFFF;
   }
   .site-header__inner--nav .site-header__right .site-header__icon-btn svg{
-    width: clamp(20px, calc(0.926vw + 11.67px), 26px);
-    height: clamp(20px, calc(0.926vw + 11.67px), 26px);
+    width: clamp(21px, calc(1.111vw + 11px), 28px);
+    height: clamp(21px, calc(1.111vw + 11px), 28px);
+    stroke-width: 2.3;
   }
 }
