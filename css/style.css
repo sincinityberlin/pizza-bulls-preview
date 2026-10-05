@@ -2040,3 +2040,64 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
     stroke-width: 2.3;
   }
 }
+
+/* ==========================================================================
+   MOBILE / TABLET: GRUENER HEADER WIE AUF DESKTOP (Nutzervorgabe 05.10.2026)
+   Gilt nur unter 900 px - die Desktop-Regeln oben bleiben unberuehrt.
+   - Header gruen #779639, Hamburger-Striche und Icons weiss (Rand 2 px,
+     Linien 2,3) wie auf Desktop.
+   - Das geoeffnete Hamburger-Menue bleibt eine weisse Flaeche mit dunkler
+     Schrift (wie das Desktop-Dropdown), sonst waere es auf Gruen unlesbar.
+   - Seiten mit Menueleiste (.site-header__inner--nav): scharfer Bulle
+     bulle-header-logo.png (mit schwarzem "Fast like bulls!") und Schriftzug
+     wortmarke-pizza-bulls.png (ohne goldenes "Fast like bulls!") - beide per
+     HTML auch unter 900 px. Groessen fliessend:
+                     360 px   390 px   430 px   768 px   899 px
+       Bulle (Hoehe)  54       55       57       74       80
+       Schriftzug    118      148      188      200      200  (= Restbreite)
+       Icons          38       38       38       42       44
+     Breitenbudget bei 360/390 px: Rand 2x14 + Burger 40 + 2 Luecken 12 +
+     Bulle + 6 + Schriftzug + Icons 2x38+8 -> 14 px Reserve, nichts ragt raus.
+   ========================================================================== */
+@media (max-width: 899px){
+  .site-header{ background: #779639; border-bottom-color: rgba(255, 255, 255, 0.25); }
+  .site-header__burger span{ background: #FFFFFF; }
+  .site-header__right .site-header__icon-btn{ color: #FFFFFF; border: 2px solid #FFFFFF; background: transparent; }
+  .site-header__right .site-header__icon-btn:hover{ color: #779639; background: #FFFFFF; border-color: #FFFFFF; }
+  .site-header__right .site-header__icon-btn svg{ stroke-width: 2.3; }
+  .site-header .mobile-nav{ background: #FFFFFF; }
+
+  .site-header__inner--nav > .site-header__burger{ width: 40px; height: 40px; }
+  .site-header__inner--nav .site-header__logo{ gap: 6px; align-items: center; min-width: 0; }
+  .site-header__inner--nav .site-header__logo img{
+    width: auto; height: clamp(54px, calc(4.824vw + 36.6px), 82px);
+  }
+  .site-header__inner--nav .site-header__logo img.site-header__wordmark-img{
+    width: clamp(118px, calc(100vw - 242px), 200px); height: auto;
+  }
+  .site-header__inner--nav .site-header__right .site-header__icon-btn{
+    width: clamp(38px, calc(1.113vw + 33.7px), 44px);
+    height: clamp(38px, calc(1.113vw + 33.7px), 44px);
+  }
+  .site-header__inner--nav .site-header__right .site-header__icon-btn svg{
+    width: clamp(18px, calc(0.557vw + 16px), 21px);
+    height: clamp(18px, calc(0.557vw + 16px), 21px);
+  }
+}
+
+/* Bewertungs-Slider: die Pfeile sassen 22 px ausserhalb, der Seitenrand ist
+   aber nur 20 px -> 2 px horizontale Scrollleiste zwischen 761 und 1283 px.
+   Nur in diesem Bereich 2 px nach innen; darueber unveraendert. */
+@media (max-width: 1283px){
+  .home-reviews__nav--prev{ left: -20px; }
+  .home-reviews__nav--next{ right: -20px; }
+}
+
+/* Mobile-Lesbarkeit (Nutzervorgabe 05.10.2026: keine zu kleinen Texte):
+   Vertrauensleiste 0,62rem (9,9 px) und Offen/Geschlossen-Plaketten
+   0,66rem (10,6 px) auf 0,7rem (11,2 px). Nur bis 760 px; Desktop unveraendert. */
+@media (max-width: 760px){
+  .trust-bar__item span:last-child{ font-size: 0.7rem; }
+  .home-store__status,
+  .location-card__status{ font-size: 0.7rem; }
+}
