@@ -1790,9 +1790,12 @@ h1,h2,h3{ text-wrap: balance; }
    wie der bisherige Schriftzug (126px / Mobile 105px), Höhe proportional —
    Logo-Block und Navigation bleiben unverändert. Weißer Bildgrund = weißer Header.
    ========================================================================== */
-.site-header__logo img.site-header__wordmark-img{ width: 126px; height: auto; object-fit: contain; }
+.site-header__logo img.site-header__wordmark-img{ width: 107px; height: auto; object-fit: contain; }
+/* 107 statt 126 px: der Schriftzug ist seit 05.10.2026 freigestellt (ohne den
+   weissen Rand des alten JPEGs). 107 px zeigen die Schrift exakt so gross wie
+   vorher 126 px mit Rand - unter 1100 px bleibt die Darstellung unveraendert. */
 @media (max-width: 760px){
-  .site-header__logo img.site-header__wordmark-img{ width: 105px; }
+  .site-header__logo img.site-header__wordmark-img{ width: 90px; }   /* entspricht den frueheren 105px mit weissem Rand */
 }
 
 /* ==========================================================================
@@ -1858,11 +1861,16 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
    Regel "@media (max-width: 760px)" bleiben unveraendert.
    ========================================================================== */
 @media (min-width: 1100px){
-  /* Stand 05.10.2026: Bulle 70 -> 120 px, Schriftzug 126 -> 208 px. Beide
-     behalten ihr Seitenverhaeltnis (height:auto bzw. quadratisch), es wird
-     nichts gestreckt oder beschnitten. */
-  .site-header__logo img{ width: 120px; height: 120px; }
-  .site-header__logo img.site-header__wordmark-img{ width: 208px; height: auto; }
+  /* Stand 05.10.2026: Bulle 70 -> 150 px, Schriftzug deutlich groesser.
+     Der Schriftzug ist jetzt die freigestellte PNG-Fassung desselben
+     Originals (877x209 statt 1013x517 mit weissem Rand) - deshalb die
+     andere Pixelbreite bei groesserer sichtbarer Schrift.
+     Beide behalten ihr Seitenverhaeltnis, nichts gestreckt oder beschnitten. */
+  /* Fliessend: bei 1100 px bleibt genug Luft zur Navigation, ab ca. 1440 px
+     die volle Groesse. height:auto => Seitenverhaeltnis kommt aus der Datei,
+     nichts wird gestreckt. */
+  .site-header__logo img{ width: clamp(120px, 10.4vw, 150px); height: auto; }
+  .site-header__logo img.site-header__wordmark-img{ width: clamp(264px, 22.9vw, 330px); height: auto; }
   /* Bulle und Schriftzug ruecken zusammen - sie sollen als EINE Marke wirken. */
   .site-header__logo{ gap: 6px; align-items: center; }
   /* Der Markenblock klebt nicht mehr am linken Rand. Nur links mehr Luft,
@@ -1947,4 +1955,32 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
   .app-modal__title{ font-size: 1.35rem; }
   .app-modal__choice{ gap: 12px; padding: 12px 14px; }
   .app-modal__choice img{ width: 112px; }
+}
+
+
+/* ==========================================================================
+   GRUENE KOPFLEISTE (Nutzervorgabe 05.10.2026)
+   Die gesamte obere Leiste traegt jetzt das Pizza-Bulls-Gruen #779639 - ueber
+   die volle Bildschirmbreite, ohne weisse Raender. Navigationspunkte, Pfeil
+   und die runden Icons rechts stehen in Weiss; der Unterstrich beim Hover
+   ebenfalls. Das Dropdown-Menue bleibt eine weisse Karte mit dunkler Schrift,
+   damit es lesbar bleibt. Mobile (< 900px) ist davon nicht beruehrt.
+   ========================================================================== */
+@media (min-width: 900px){
+  /* Gruen nur fuer die Desktop-Leiste - unter 900px (Hamburger-Menue) bleibt
+     der Header unveraendert weiss, wie vom Nutzer verlangt. */
+  .site-header{ background: #779639; border-bottom-color: rgba(255, 255, 255, 0.25); }
+  .site-header__inner > .mobile-nav > a,
+  .site-header__inner > .mobile-nav .nav-dd__trigger{ color: #FFFFFF; }
+  .site-header__inner > .mobile-nav > a:hover,
+  .site-header__inner > .mobile-nav .nav-dd:hover .nav-dd__trigger,
+  .site-header__inner > .mobile-nav .nav-dd.is-open .nav-dd__trigger{ color: #FFFFFF; }
+  .site-header__inner > .mobile-nav > a::after,
+  .site-header__inner > .mobile-nav .nav-dd__trigger::after{ background: #FFFFFF; }
+  .site-header__inner > .mobile-nav .nav-dd__toggle,
+  .site-header__inner > .mobile-nav .nav-dd:hover .nav-dd__toggle,
+  .site-header__inner > .mobile-nav .nav-dd.is-open .nav-dd__toggle{ color: #FFFFFF; }
+  /* Runde Icons rechts: weisse Kontur und weisses Symbol auf Gruen. */
+  .site-header__right .site-header__icon-btn{ color: #FFFFFF; border-color: rgba(255, 255, 255, 0.55); background: transparent; }
+  .site-header__right .site-header__icon-btn:hover{ color: #779639; background: #FFFFFF; border-color: #FFFFFF; }
 }
