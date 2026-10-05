@@ -1858,11 +1858,21 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
    Regel "@media (max-width: 760px)" bleiben unveraendert.
    ========================================================================== */
 @media (min-width: 1100px){
-  .site-header__logo img{ width: 92px; height: 92px; }
-  .site-header__logo img.site-header__wordmark-img{ width: 160px; height: auto; }
-  /* Zwei Klassen + Typ, damit die Regel die bestehende
-     ".site-header__inner > .mobile-nav" sicher ueberschreibt. */
-  .site-header__inner--nav > nav.mobile-nav{ gap: 14px; }
+  /* Stand 05.10.2026: Bulle 70 -> 120 px, Schriftzug 126 -> 208 px. Beide
+     behalten ihr Seitenverhaeltnis (height:auto bzw. quadratisch), es wird
+     nichts gestreckt oder beschnitten. */
+  .site-header__logo img{ width: 120px; height: 120px; }
+  .site-header__logo img.site-header__wordmark-img{ width: 208px; height: auto; }
+  /* Bulle und Schriftzug ruecken zusammen - sie sollen als EINE Marke wirken. */
+  .site-header__logo{ gap: 6px; align-items: center; }
+  /* Der Markenblock klebt nicht mehr am linken Rand. Nur links mehr Luft,
+     damit rechts nichts verrutscht. */
+  .site-header__inner--nav{ padding-left: 40px; }
+  /* Die Navigation steht mittig in ihrem eigenen, flexiblen Bereich
+     (flex:1 + justify-content:center) und hat bei 1440 px 125 px Luft zu
+     beiden Seiten - deshalb kann der Abstand zwischen den Punkten wieder auf
+     die urspruenglichen 20 px zurueck (vorher auf 14 px verengt). */
+  .site-header__inner--nav > nav.mobile-nav{ gap: 20px; }
 }
 
 /* ==========================================================================
