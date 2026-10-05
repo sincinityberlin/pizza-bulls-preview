@@ -2163,3 +2163,35 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
 /* Club-Button ist jetzt ein <button> statt <a>: Schrift erben, damit er
    exakt wie vorher aussieht (Buttons erben font-family sonst nicht). */
 button.pizza-build__cta{ font-family: inherit; }
+
+/* ==========================================================================
+   NEUKUNDEN-RABATT-BANNER (Nutzervorgabe 05.10.2026)
+   Kleiner schwebender Button unten rechts (fixed, liegt ueber dem Inhalt,
+   verschiebt nichts). Oeffnet dasselbe VIP-Popup wie "Jetzt registrieren"
+   (data-vip-modal-open, js/vip-club.js). Weiss, duenner gruener Rahmen,
+   gruene Schrift, dezenter Schatten. Abstand beruecksichtigt die Safe-Area
+   (iPhone-Home-Indikator). Liegt unter den Popups (z-index 900 < 1000).
+   Ganz am Seitenende (Copyright-Zeile sichtbar) blendet js/vip-club.js ihn
+   aus, damit er die letzte Zeile nicht verdeckt.
+   ========================================================================== */
+.vip-teaser{
+  position: fixed; z-index: 900;
+  right: max(20px, calc(env(safe-area-inset-right) + 12px));
+  bottom: max(20px, calc(env(safe-area-inset-bottom) + 12px));
+  padding: 11px 18px; border: 1.5px solid var(--pb-green); border-radius: 12px;
+  background: #FFFFFF; color: var(--pb-green-dark);
+  font-family: inherit; font-size: 0.9rem; font-weight: 800; line-height: 1.2; letter-spacing: 0.01em;
+  white-space: nowrap; cursor: pointer;
+  box-shadow: 0 6px 18px rgba(26, 26, 26, 0.14);
+  transition: opacity .2s ease, transform .2s ease, background .15s ease, color .15s ease;
+}
+.vip-teaser:hover{ background: var(--pb-green-light); }
+.vip-teaser:focus-visible{ outline: 3px solid rgba(120, 152, 58, 0.45); outline-offset: 2px; }
+.vip-teaser.is-hidden{ opacity: 0; transform: translateY(8px); pointer-events: none; }
+@media (max-width: 760px){
+  .vip-teaser{
+    right: max(12px, calc(env(safe-area-inset-right) + 8px));
+    bottom: max(12px, calc(env(safe-area-inset-bottom) + 8px));
+    padding: 9px 13px; font-size: 0.8rem; border-radius: 10px;
+  }
+}

@@ -6,7 +6,7 @@
 <title>Marketing &amp; Werbung für Partner | Pizza Bulls</title>
 <meta name="description" content="Bewährtes Marketingkonzept für Pizza & Burger Bulls Franchise-Partner: Flyer, Mailings, Plakate, Radio- und ÖPNV-Werbung für 250 € monatlich." />
 <link rel="icon" href="../../assets/images/logo.png" />
-<link rel="stylesheet" href="../../css/style.css?v=20261005-fx48" />
+<link rel="stylesheet" href="../../css/style.css?v=20261005-fx49" />
 </head>
 <body class="fr-page">
 
@@ -195,7 +195,56 @@
   </div>
 </footer>
 
-<script src="../../js/main.js?v=20261005-fx48"></script>
-<script src="../../js/home-sections.js?v=20261005-fx48"></script>
+<!-- NEUKUNDEN-RABATT-BANNER (Nutzervorgabe 05.10.2026): schwebt unten rechts,
+     oeffnet dasselbe VIP-Popup (#vipModal) wie "Jetzt registrieren". -->
+<button class="vip-teaser" type="button" data-vip-modal-open aria-haspopup="dialog">Neukunde? 10€ Rabatt</button>
+
+<!-- ==========================================================================
+     VIP-CLUB-POPUP (Nutzervorgabe 05.10.2026)
+     Oeffnet sich ueber "Jetzt registrieren" in der Pizza-Bulls-Club-Karte.
+     Ansicht 1: Angebot -> "Erhalte jetzt 10€ Rabatt" -> Ansicht 2: Formular.
+     WICHTIG: Noch KEIN Newsletter-/CRM-System angeschlossen. Der Versand ist
+     vorbereitet ueber data-endpoint am <form> (POST, JSON). Solange es leer
+     ist, wird nichts gesendet und dem Nutzer ehrlich gesagt, dass die
+     Anmeldung noch nicht freigeschaltet ist - kein vorgetaeuschter Rabattcode.
+     ========================================================================== -->
+<div class="app-modal vip-modal" id="vipModal" hidden>
+  <div class="app-modal__backdrop" data-vip-modal-close></div>
+  <div class="app-modal__box vip-modal__box" role="dialog" aria-modal="true" aria-labelledby="vipModalTitle">
+    <button class="app-modal__close" type="button" aria-label="Schließen" data-vip-modal-close>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <h2 class="vip-modal__title" id="vipModalTitle">VIP Mitglieder Club</h2>
+    <p class="vip-modal__lead">Trete unserer VIP-E-Mail-Liste bei</p>
+    <p class="vip-modal__offer">Erhalte 10&nbsp;€ Rabatt</p>
+
+    <div class="vip-modal__step" data-vip-step="1">
+      <p class="vip-modal__sub">Wenn Du Dich anmeldest</p>
+      <button class="vip-modal__btn" type="button" data-vip-weiter>Erhalte jetzt 10&nbsp;€ Rabatt</button>
+      <button class="vip-modal__decline" type="button" data-vip-modal-close>Nein, danke</button>
+    </div>
+
+    <div class="vip-modal__step" data-vip-step="2" hidden>
+      <p class="vip-modal__sub">auf die nächsten 3 Bestellungen</p>
+      <form class="vip-modal__form" id="vipForm" data-endpoint="" novalidate>
+        <label class="vip-modal__field">
+          <span class="vip-modal__label">Vorname</span>
+          <input type="text" name="vorname" autocomplete="given-name" required maxlength="60" />
+        </label>
+        <label class="vip-modal__field">
+          <span class="vip-modal__label">E-Mail <small>(Promo-Code wird an diese E-Mail gesendet)</small></span>
+          <input type="email" name="email" autocomplete="email" inputmode="email" required maxlength="120" />
+        </label>
+        <button class="vip-modal__btn" type="submit">Belohnung erhalten</button>
+        <p class="vip-modal__status" role="status" aria-live="polite"></p>
+        <p class="vip-modal__consent">Mit dem Klick auf „Belohnung erhalten“ stimmst du zu, E-Mails und SMS mit Angeboten von Pizza &amp; Burger Bulls zu erhalten. Die Einwilligung kannst du jederzeit widerrufen, z.&nbsp;B. über den Abmeldelink in jeder E-Mail. Mehr dazu in unserer <a href="../../datenschutz.html">Datenschutzerklärung</a>.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="../../js/main.js?v=20261005-fx49"></script>
+<script src="../../js/vip-club.js?v=20261005-fx49"></script>
+<script src="../../js/home-sections.js?v=20261005-fx49"></script>
 </body>
 </html>

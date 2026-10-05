@@ -1,6 +1,7 @@
 /* ==========================================================================
    VIP-CLUB-POPUP (Nutzervorgabe 05.10.2026)
-   "Jetzt registrieren" in der Pizza-Bulls-Club-Karte -> Ansicht 1 (Angebot)
+   "Jetzt registrieren" in der Pizza-Bulls-Club-Karte und der schwebende
+   Banner "Neukunde? 10€ Rabatt" (.vip-teaser) -> Ansicht 1 (Angebot)
    -> "Erhalte jetzt 10€ Rabatt" -> Ansicht 2 (Formular Vorname + E-Mail).
    Schliessen: X, "Nein, danke", Klick auf den abgedunkelten Hintergrund, ESC.
 
@@ -63,6 +64,16 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !modal.hidden) schliessen();
   });
+
+  /* Neukunden-Banner unten rechts: ganz am Seitenende ausblenden, sobald die
+     Copyright-Zeile des Footers sichtbar ist - sonst wuerde er sie verdecken. */
+  var teaser = document.querySelector('.vip-teaser');
+  var fussZeile = document.querySelector('.pb-footer__bottom');
+  if (teaser && fussZeile && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (eintraege) {
+      teaser.classList.toggle('is-hidden', eintraege[0].isIntersecting);
+    }).observe(fussZeile);
+  }
 
   form.addEventListener('input', function (e) {
     if (e.target.matches('input')) e.target.classList.remove('is-invalid');
