@@ -67,3 +67,38 @@ document.addEventListener('DOMContentLoaded', () => {
     section.classList.add('is-playing');
   }
 });
+
+/* App-Download-Popup (Nutzervorgabe 04.10.2026)
+   Oeffnen ueber [data-app-modal-open], schliessen ueber das X, Klick auf den
+   abgedunkelten Hintergrund oder ESC. Der Fokus springt beim Oeffnen auf den
+   Schliessen-Knopf und beim Schliessen zurueck auf den ausloesenden Button. */
+(function () {
+  var modal = document.getElementById('appModal');
+  if (!modal) return;
+  var letzterAusloeser = null;
+
+  function oeffnen(ausloeser) {
+    letzterAusloeser = ausloeser || null;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    var schliessen = modal.querySelector('.app-modal__close');
+    if (schliessen) schliessen.focus();
+  }
+
+  function schliessen() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if (letzterAusloeser) letzterAusloeser.focus();
+    letzterAusloeser = null;
+  }
+
+  document.addEventListener('click', function (e) {
+    var auf = e.target.closest('[data-app-modal-open]');
+    if (auf) { e.preventDefault(); oeffnen(auf); return; }
+    if (!modal.hidden && e.target.closest('[data-app-modal-close]')) { e.preventDefault(); schliessen(); }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) schliessen();
+  });
+})();

@@ -1901,3 +1901,40 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
 .home-cta .home-cta__inner .btn--white:hover{ background: var(--pb-green-dark); color: #FFFFFF; }
 .home-cta .home-cta__inner .btn--outline{ border-color: #779639; color: #779639; }
 .home-cta .home-cta__inner .btn--outline:hover{ background: #779639; color: #FFFFFF; }
+
+/* ==========================================================================
+   APP-DOWNLOAD-POPUP (Nutzervorgabe 04.10.2026)
+   Abgedunkelter, leicht unscharfer Seitenhintergrund + grosse weisse Box mit
+   stark abgerundeten Ecken. Nur dieses Popup - am uebrigen Layout aendert
+   sich nichts, solange es geschlossen ist (`[hidden]`).
+   ========================================================================== */
+.app-modal[hidden]{ display: none; }
+.app-modal{ position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.app-modal__backdrop{ position: absolute; inset: 0; background: rgba(26, 26, 26, 0.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.app-modal__box{
+  position: relative; width: min(460px, 100%); max-height: calc(100vh - 40px); overflow-y: auto;
+  background: #FFFFFF; border-radius: 28px; padding: 40px 28px 32px; text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+.app-modal__close{
+  position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; display: grid; place-items: center;
+  border: 0; border-radius: 50%; background: transparent; color: var(--pb-dark); cursor: pointer;
+}
+.app-modal__close:hover{ background: var(--pb-green-light); }
+.app-modal__close svg{ width: 20px; height: 20px; }
+.app-modal__title{ margin: 0 0 6px; font-size: 1.6rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.01em; color: var(--pb-dark); }
+.app-modal__subtitle{ margin: 0 0 24px; color: var(--pb-grey); font-size: 0.98rem; }
+.app-modal__choices{ display: grid; gap: 14px; }
+.app-modal__choice{
+  display: flex; align-items: center; gap: 16px; padding: 14px 18px;
+  border: 2px solid var(--pb-border); border-radius: 18px; background: #FFFFFF;
+  color: var(--pb-dark); font-weight: 800; text-align: left; transition: border-color .15s ease, background .15s ease;
+}
+.app-modal__choice:hover{ border-color: #779639; background: var(--pb-green-light); }
+.app-modal__choice img{ width: 132px; height: auto; flex: none; }
+@media (max-width: 760px){
+  .app-modal__box{ padding: 34px 18px 26px; border-radius: 24px; }
+  .app-modal__title{ font-size: 1.35rem; }
+  .app-modal__choice{ gap: 12px; padding: 12px 14px; }
+  .app-modal__choice img{ width: 112px; }
+}
