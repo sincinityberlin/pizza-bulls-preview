@@ -2101,3 +2101,65 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
   .home-store__status,
   .location-card__status{ font-size: 0.7rem; }
 }
+
+/* ==========================================================================
+   VIP-CLUB-POPUP (Nutzervorgabe 05.10.2026)
+   Abdunklung, weisse Box (Radius 28 px), X und Zentrierung kommen von
+   .app-modal (siehe APP-DOWNLOAD-POPUP). Hier nur der Inhalt der beiden
+   Ansichten. Farben aus der Markenpalette.
+   ========================================================================== */
+.vip-modal__step[hidden]{ display: none; }
+.vip-modal__box{ padding: 44px 32px 30px; }
+.vip-modal__title{
+  margin: 0 0 10px; font-size: 1.05rem; font-weight: 900; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--pb-green-dark, #4f6a1f);
+}
+.vip-modal__lead{
+  margin: 0 0 14px; font-size: 0.95rem; font-weight: 800; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--pb-dark);
+}
+.vip-modal__offer{
+  margin: 0; font-size: clamp(2rem, 8.5vw, 2.7rem); line-height: 1.05; font-weight: 900;
+  text-transform: uppercase; color: var(--pb-red);
+}
+.vip-modal__sub{ margin: 8px 0 22px; font-size: 1.05rem; font-weight: 600; color: var(--pb-grey); }
+.vip-modal__btn{
+  display: block; width: 100%; padding: 17px 20px; border: 0; border-radius: 14px;
+  background: var(--pb-green); color: #FFFFFF; font: inherit; font-size: 1.05rem; font-weight: 900;
+  letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer;
+  box-shadow: 0 8px 20px rgba(120, 152, 58, 0.35); transition: background .15s ease, transform .15s ease;
+}
+.vip-modal__btn:hover{ background: var(--pb-green-dark, #4f6a1f); }
+.vip-modal__btn:active{ transform: translateY(1px); }
+.vip-modal__btn:disabled{ opacity: 0.6; cursor: wait; }
+.vip-modal__decline{
+  margin: 16px auto 0; padding: 6px 10px; border: 0; background: none; font: inherit;
+  font-size: 0.95rem; color: var(--pb-grey); text-decoration: underline; text-underline-offset: 3px; cursor: pointer;
+}
+.vip-modal__decline:hover{ color: var(--pb-dark); }
+.vip-modal__form{ display: grid; gap: 14px; text-align: left; }
+.vip-modal__field{ display: grid; gap: 6px; }
+.vip-modal__label{ font-size: 0.86rem; font-weight: 800; color: var(--pb-dark); }
+.vip-modal__label small{ font-weight: 600; color: var(--pb-grey); }
+.vip-modal__field input{
+  width: 100%; padding: 14px 16px; border: 2px solid var(--pb-border); border-radius: 12px;
+  font: inherit; font-size: 16px; color: var(--pb-dark); background: #FFFFFF;
+}
+.vip-modal__field input:focus{ outline: none; border-color: var(--pb-green); box-shadow: 0 0 0 3px rgba(120, 152, 58, 0.2); }
+.vip-modal__field input.is-invalid{ border-color: var(--pb-red); }
+.vip-modal__form .vip-modal__btn{ margin-top: 4px; }
+.vip-modal__status{ margin: 0; min-height: 0; font-size: 0.9rem; font-weight: 700; text-align: center; }
+.vip-modal__status:empty{ display: none; }
+.vip-modal__status.is-error{ color: var(--pb-red); }
+.vip-modal__status.is-info{ color: var(--pb-dark); background: var(--pb-grey-light); border-radius: 10px; padding: 10px 12px; }
+.vip-modal__status.is-success{ color: var(--pb-green-dark, #4f6a1f); }
+.vip-modal__consent{ margin: 2px 0 0; font-size: 0.78rem; line-height: 1.45; color: var(--pb-grey); text-align: center; }
+.vip-modal__consent a{ color: inherit; text-decoration: underline; }
+@media (max-width: 760px){
+  .vip-modal__box{ padding: 40px 20px 24px; }
+  .vip-modal__lead{ font-size: 0.86rem; }
+  .vip-modal__btn{ padding: 16px 14px; font-size: 0.98rem; }
+}
+/* Club-Button ist jetzt ein <button> statt <a>: Schrift erben, damit er
+   exakt wie vorher aussieht (Buttons erben font-family sonst nicht). */
+button.pizza-build__cta{ font-family: inherit; }

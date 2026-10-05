@@ -6,7 +6,7 @@
 <title>Pizza Bulls — Fast Like Bulls! Pizza &amp; Burger Lieferdienst</title>
 <meta name="description" content="Pizza Bulls — frisches, hausgemachtes Essen seit 2008. Über 27 Standorte deutschlandweit. Jetzt online bestellen: Lieferung oder Abholung." />
 <link rel="icon" href="assets/images/logo.png" />
-<link rel="stylesheet" href="css/style.css?v=20261005-fx47" />
+<link rel="stylesheet" href="css/style.css?v=20261005-fx48" />
 </head>
 <body class="home-page">
 
@@ -152,9 +152,8 @@
           <img class="pizza-club__piece" src="assets/images/pizza-club-piece.png" alt="Pizza Bulls Club" />
         </div>
       </div>
-      <!-- PLATZHALTER-LINK: Im Projekt existiert noch keine echte Pizza-Bulls-Club-
-           Registrierungsseite. href hier durch die echte URL ersetzen, sobald bekannt. -->
-      <a class="btn btn--green pizza-build__cta" href="#pizza-bulls-club-registrierung" aria-label="Jetzt für den Pizza Bulls Club registrieren (Platzhalter-Link, noch ohne Ziel-URL)">Jetzt registrieren</a>
+      <!-- Oeffnet das VIP-Club-Popup (#vipModal, js/vip-club.js) auf derselben Seite. -->
+      <button class="btn btn--green pizza-build__cta" type="button" data-vip-modal-open aria-haspopup="dialog">Jetzt registrieren</button>
       <p class="pizza-build__hint">Punkte sammeln &amp; als V.I.P. Mitglied belohnt werden.</p>
     </section>
     <div class="offers-card" id="app">
@@ -531,8 +530,53 @@
   </div>
 </div>
 
-<script src="js/main.js?v=20261005-fx47"></script>
+<!-- ==========================================================================
+     VIP-CLUB-POPUP (Nutzervorgabe 05.10.2026)
+     Oeffnet sich ueber "Jetzt registrieren" in der Pizza-Bulls-Club-Karte.
+     Ansicht 1: Angebot -> "Erhalte jetzt 10€ Rabatt" -> Ansicht 2: Formular.
+     WICHTIG: Noch KEIN Newsletter-/CRM-System angeschlossen. Der Versand ist
+     vorbereitet ueber data-endpoint am <form> (POST, JSON). Solange es leer
+     ist, wird nichts gesendet und dem Nutzer ehrlich gesagt, dass die
+     Anmeldung noch nicht freigeschaltet ist - kein vorgetaeuschter Rabattcode.
+     ========================================================================== -->
+<div class="app-modal vip-modal" id="vipModal" hidden>
+  <div class="app-modal__backdrop" data-vip-modal-close></div>
+  <div class="app-modal__box vip-modal__box" role="dialog" aria-modal="true" aria-labelledby="vipModalTitle">
+    <button class="app-modal__close" type="button" aria-label="Schließen" data-vip-modal-close>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <h2 class="vip-modal__title" id="vipModalTitle">VIP Mitglieder Club</h2>
+    <p class="vip-modal__lead">Trete unserer VIP-E-Mail-Liste bei</p>
+    <p class="vip-modal__offer">Erhalte 10&nbsp;€ Rabatt</p>
+
+    <div class="vip-modal__step" data-vip-step="1">
+      <p class="vip-modal__sub">Wenn Du Dich anmeldest</p>
+      <button class="vip-modal__btn" type="button" data-vip-weiter>Erhalte jetzt 10&nbsp;€ Rabatt</button>
+      <button class="vip-modal__decline" type="button" data-vip-modal-close>Nein, danke</button>
+    </div>
+
+    <div class="vip-modal__step" data-vip-step="2" hidden>
+      <p class="vip-modal__sub">auf die nächsten 3 Bestellungen</p>
+      <form class="vip-modal__form" id="vipForm" data-endpoint="" novalidate>
+        <label class="vip-modal__field">
+          <span class="vip-modal__label">Vorname</span>
+          <input type="text" name="vorname" autocomplete="given-name" required maxlength="60" />
+        </label>
+        <label class="vip-modal__field">
+          <span class="vip-modal__label">E-Mail <small>(Promo-Code wird an diese E-Mail gesendet)</small></span>
+          <input type="email" name="email" autocomplete="email" inputmode="email" required maxlength="120" />
+        </label>
+        <button class="vip-modal__btn" type="submit">Belohnung erhalten</button>
+        <p class="vip-modal__status" role="status" aria-live="polite"></p>
+        <p class="vip-modal__consent">Mit dem Klick auf „Belohnung erhalten“ stimmst du zu, E-Mails und SMS mit Angeboten von Pizza &amp; Burger Bulls zu erhalten. Die Einwilligung kannst du jederzeit widerrufen, z.&nbsp;B. über den Abmeldelink in jeder E-Mail. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js?v=20261005-fx48"></script>
+<script src="js/vip-club.js?v=20261005-fx48"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="js/home-sections.js?v=20261005-fx47"></script>
+<script src="js/home-sections.js?v=20261005-fx48"></script>
 </body>
 </html>
