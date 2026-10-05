@@ -2195,3 +2195,123 @@ button.pizza-build__cta{ font-family: inherit; }
     padding: 9px 13px; font-size: 0.8rem; border-radius: 10px;
   }
 }
+
+/* ==========================================================================
+   APP-SEITE /app/ (Nutzervorgabe 05.10.2026)
+   Gruener Hero (#779639) mit Code BULLS als Coupon (weiss, gruener
+   gestrichelter Rand, Kopier-Button), weisse Karte "So funktioniert's" mit
+   5 Schritten, weisse Karte Download mit den offiziellen Store-Badges.
+   Reihenbreite wie Startseite (1240 px, Mobile 12 px Rand). Nur body.app-page.
+   ========================================================================== */
+.app-page .app-hero,
+.app-page .app-panel{ width: calc(100% - 40px); max-width: var(--content-max); margin-left: auto; margin-right: auto; }
+.app-page .app-hero{ margin-top: 28px; }
+.app-hero__card{
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 40px; align-items: center;
+  padding: 48px; border-radius: 28px; background: #779639; color: #FFFFFF;
+  box-shadow: 0 18px 40px rgba(60, 80, 25, 0.22);
+}
+.app-hero__eyebrow{
+  display: inline-block; margin: 0 0 16px; padding: 6px 14px; border-radius: 999px;
+  background: #FFFFFF; color: #779639; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.app-hero__text h1{ margin: 0; font-size: clamp(1.8rem, 3.3vw, 2.9rem); line-height: 1.05; font-weight: 900; text-transform: uppercase; letter-spacing: 0.01em; color: #FFFFFF; }
+.app-hero__deal{ margin: 14px 0 0; font-size: clamp(3rem, 6.6vw, 5.4rem); line-height: 1; font-weight: 900; text-transform: uppercase; color: #FFFFFF; }
+.app-hero__deal-amount{ display: inline-block; padding: 0.04em 0.16em 0.02em; border-radius: 0.16em; background: var(--pb-red); box-shadow: 0 8px 20px rgba(140, 8, 20, 0.3); }
+.app-hero__with{ margin: 14px 0 18px; font-size: 1.2rem; font-weight: 700; color: #FFFFFF; }
+.app-hero__with strong{ font-weight: 900; letter-spacing: 0.12em; }
+.app-hero__note{ margin: 18px 0 0; max-width: 520px; font-size: 1rem; line-height: 1.55; color: rgba(255, 255, 255, 0.95); }
+.app-hero__media img{ display: block; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28); }
+
+/* Coupon-Flaeche mit Code + Kopier-Button */
+.app-code{
+  display: inline-grid; grid-template-columns: auto auto; grid-template-rows: auto auto; column-gap: 18px; align-items: center;
+  padding: 12px 12px 12px 20px; border: 2px dashed #779639; border-radius: 16px; background: #FFFFFF;
+  box-shadow: 0 0 0 5px #FFFFFF, 0 12px 26px rgba(0, 0, 0, 0.18);
+}
+.app-code__label{ grid-column: 1; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pb-grey); }
+.app-code__value{ grid-column: 1; font-size: 2rem; line-height: 1.05; font-weight: 900; letter-spacing: 0.2em; color: var(--pb-green-dark); user-select: all; }
+.app-code__copy{
+  grid-column: 2; grid-row: 1 / span 2;
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; border: 0; border-radius: 12px;
+  background: #779639; color: #FFFFFF; font-family: inherit; font-size: 0.82rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase;
+  cursor: pointer; transition: background .15s ease;
+}
+.app-code__copy svg{ width: 18px; height: 18px; flex: none; }
+.app-code__copy:hover{ background: var(--pb-green-dark); }
+.app-code__copy.is-copied,
+.app-step__copy.is-copied{ background: var(--pb-red); border-color: var(--pb-red); color: #FFFFFF; }
+.app-code__status{ position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Store-Badges (offizielle Grafiken); Google-Grafik hat oben/unten
+   transparenten Rand -> etwas hoeher, damit beide gleich gross wirken. */
+.app-stores{ display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 24px; }
+.app-store-btn{ display: inline-flex; border-radius: 10px; transition: transform .15s ease; }
+.app-store-btn:hover{ transform: translateY(-2px); }
+.app-store-btn:focus-visible{ outline: 3px solid #FFFFFF; outline-offset: 3px; }
+.app-store-btn--apple img{ height: 50px; width: auto; }
+.app-store-btn--google img{ height: 65px; width: auto; margin: -7.5px 0; }
+
+/* Weisse Karten */
+.app-panel{
+  margin-top: 28px; padding: 46px 40px; border-radius: 28px; background: #FFFFFF; text-align: center;
+  box-shadow: 0 12px 32px rgba(26, 26, 26, 0.08);
+}
+.app-panel__eyebrow{ margin: 0 0 8px; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; color: #779639; }
+.app-panel h2{ margin: 0; font-size: clamp(1.45rem, 2.8vw, 2.2rem); line-height: 1.12; font-weight: 900; text-transform: uppercase; color: var(--pb-dark); }
+.app-steps{ list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; text-align: left; }
+.app-step{
+  position: relative; display: flex; flex-direction: column; gap: 10px; padding: 24px 20px 22px;
+  border: 1px solid var(--pb-border); border-radius: 20px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(26, 26, 26, 0.05);
+}
+.app-step__num{ position: absolute; top: 14px; right: 18px; font-size: 2.4rem; line-height: 1; font-weight: 900; color: rgba(119, 150, 57, 0.22); }
+.app-step__icon{ display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: var(--pb-green-light); color: #779639; }
+.app-step__icon svg{ width: 28px; height: 28px; }
+.app-step h3{ margin: 6px 0 0; font-size: 1rem; line-height: 1.25; font-weight: 900; text-transform: uppercase; color: var(--pb-dark); }
+.app-step p{ margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--pb-grey); }
+.app-step--code{ border: 2px solid #779639; background: #F7FAF0; }
+.app-step--code .app-step__icon{ background: #779639; color: #FFFFFF; }
+.app-step__code{
+  display: inline-block; padding: 1px 8px; border: 2px dashed #779639; border-radius: 8px; background: #FFFFFF;
+  font-size: 1.08em; font-weight: 900; letter-spacing: 0.14em; color: var(--pb-green-dark);
+}
+.app-step__copy{
+  align-self: flex-start; margin-top: auto; padding: 9px 14px; border: 2px solid #779639; border-radius: 999px; background: #FFFFFF;
+  font-family: inherit; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; color: #779639; cursor: pointer;
+  transition: background .15s ease, color .15s ease;
+}
+.app-step__copy:hover{ background: #779639; color: #FFFFFF; }
+
+.app-download{ margin-bottom: 56px; }
+.app-download__icon{ display: inline-grid; place-items: center; width: 60px; height: 60px; margin-bottom: 14px; border-radius: 18px; background: #779639; color: #FFFFFF; }
+.app-download__icon svg{ width: 30px; height: 30px; }
+.app-download p{ margin: 10px 0 0; color: var(--pb-grey); }
+.app-download .app-stores{ justify-content: center; gap: 16px; }
+.app-download .app-store-btn:focus-visible{ outline-color: #779639; }
+
+@media (max-width: 1099px){
+  .app-steps{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .app-step:last-child{ grid-column: 1 / -1; }
+}
+@media (max-width: 899px){
+  .app-hero__card{ grid-template-columns: minmax(0, 1fr); gap: 28px; padding: 36px 28px; text-align: center; }
+  .app-hero__note{ margin-left: auto; margin-right: auto; }
+  .app-hero .app-stores{ justify-content: center; }
+}
+@media (max-width: 760px){
+  .app-page .app-hero,
+  .app-page .app-panel{ width: calc(100% - 24px); }
+  .app-page .app-hero{ margin-top: 18px; }
+  .app-hero__card{ padding: 28px 18px; border-radius: 24px; }
+  .app-hero__deal{ font-size: clamp(2.4rem, 11.5vw, 3rem); }
+  .app-hero__with{ font-size: 1.05rem; }
+  .app-code{ column-gap: 12px; padding: 10px 10px 10px 14px; }
+  .app-code__value{ font-size: 1.6rem; letter-spacing: 0.16em; }
+  .app-code__copy{ padding: 12px 12px; }
+  .app-panel{ margin-top: 18px; padding: 30px 16px; border-radius: 24px; }
+  .app-steps{ grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 22px; }
+  .app-step{ padding: 20px 18px; }
+  .app-store-btn--apple img{ height: 48px; }
+  .app-store-btn--google img{ height: 62px; margin: -7px 0; }
+  .app-download{ margin-bottom: 40px; }
+}
