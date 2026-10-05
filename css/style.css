@@ -1984,3 +1984,52 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
   .site-header__right .site-header__icon-btn{ color: #FFFFFF; border-color: rgba(255, 255, 255, 0.55); background: transparent; }
   .site-header__right .site-header__icon-btn:hover{ color: #779639; background: #FFFFFF; border-color: #FFFFFF; }
 }
+
+/* ==========================================================================
+   GRUENER HEADER GROESSER (Nutzervorgabe 05.10.2026)
+   Bulle, Schriftzug, Menue und die beiden Icons wachsen fliessend mit der
+   Fensterbreite - von 900 px (Beginn des gruenen Headers) bis ca. 1500 px,
+   danach feste Hoechstwerte. Alle Werte linear zwischen zwei Messpunkten:
+                    900 px   1440 px   max
+     Bulle           90 px    168 px   176 px
+     Schriftzug     198 px    370 px   387 px  (= 2,2 x Bulle, wie bisher)
+     Menueschrift    11 px     15 px   15,5 px
+     Menueabstand    10 px     24 px   26 px
+     Icons           44 px     52 px   54 px
+   Damit das in eine Zeile passt, nutzen die Inhalte der gruenen Leiste bis
+   1600 px Breite (vorher 1240 px); Innenabstand links und rechts gleich.
+   Header-Hoehe = Bulle + 2 x 12 px. Farben, Menuepunkte, Dropdown und alles
+   unter 900 px (weisser Header, Hamburger, Mobile) bleiben unveraendert.
+   Nur der Header mit Menueleiste (.site-header__inner--nav); die alten
+   Unterseiten mit Hamburger-Header sind nicht betroffen.
+   ========================================================================== */
+@media (min-width: 900px){
+  .site-header__inner.site-header__inner--nav{
+    max-width: 1600px;
+    padding-left: clamp(24px, calc(3.5vw - 8px), 56px);
+    padding-right: clamp(24px, calc(3.5vw - 8px), 56px);
+  }
+  .site-header__inner--nav .site-header__logo{ gap: 6px; align-items: center; }
+  .site-header__inner--nav .site-header__logo img{
+    width: clamp(90px, calc(14.444vw - 40px), 176px); height: auto;
+  }
+  .site-header__inner--nav .site-header__logo img.site-header__wordmark-img{
+    width: clamp(198px, calc(31.78vw - 88px), 387px); height: auto;
+  }
+  .site-header__inner--nav > nav.mobile-nav{
+    gap: clamp(10px, calc(2.5926vw - 13.33px), 26px);
+  }
+  .site-header__inner--nav > .mobile-nav > a,
+  .site-header__inner--nav > .mobile-nav .nav-dd__trigger{
+    font-size: clamp(11px, calc(0.7407vw + 4.333px), 15.5px); letter-spacing: 0.04em;
+  }
+  .site-header__inner--nav .site-header__right{ gap: clamp(10px, calc(0.74vw + 3.33px), 16px); }
+  .site-header__inner--nav .site-header__right .site-header__icon-btn{
+    width: clamp(44px, calc(1.4815vw + 30.67px), 54px);
+    height: clamp(44px, calc(1.4815vw + 30.67px), 54px);
+  }
+  .site-header__inner--nav .site-header__right .site-header__icon-btn svg{
+    width: clamp(20px, calc(0.926vw + 11.67px), 26px);
+    height: clamp(20px, calc(0.926vw + 11.67px), 26px);
+  }
+}
