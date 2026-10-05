@@ -1987,20 +1987,22 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
 
 /* ==========================================================================
    GRUENER HEADER - KOMPAKT, SCHARF, KRAEFTIG (Nutzervorgaben 05.10.2026)
-   - Bulle: bulle-header.png (353x387, aus pizza-club-piece.png freigestellt,
-     nur Emblem + (R), ohne "Fast like bulls!") statt der 100x100-Datei mit
+   - Bulle: bulle-header-logo.png (369x436, aus pizza-club-piece.png
+     freigestellt: Emblem + (R) + schwarzes "Fast like bulls!", das zum Logo
+     gehoert und bleiben muss) statt der 100x100-Datei mit
      ~30 % leerem Rand -> scharf, und der Header verliert die leere Hoehe.
    - Schriftzug: wortmarke-pizza-bulls.png (1715x288 = 2x, ohne Tagline,
      scharfe Kontur, Goldfarben unveraendert).
    Beide nur ab 900 px per <picture>; darunter (weisser Header) unveraendert.
    Werte linear zwischen 900 und 1440 px, danach Hoechstwerte:
                     900 px   1440 px   max
-     Bulle (Hoehe)   76 px    116 px   120 px
+     Bulle (Hoehe)   86 px    131 px   135 px  (inkl. Textzeile; Emblem wie zuvor)
      Schriftzug     200 px    380 px   395 px
      Menueschrift    11,2     16 px    16,5 px  (Strichstaerke 900)
      Menueabstand    10 px    26 px    28 px
      Icons           46 px    56 px    58 px   (Rand 2 px, Linien 2,3)
    Header-Hoehe = Bulle + 2 x 12 px (Dropdown-Lage bleibt dadurch gleich).
+   NUR das goldene "Fast like bulls!" unter dem Schriftzug ist entfernt.
    Inhalte der gruenen Leiste bis 1600 px breit, Innenabstand links = rechts.
    Nur Header mit Menueleiste (.site-header__inner--nav).
    ========================================================================== */
@@ -2012,7 +2014,7 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
   }
   .site-header__inner--nav .site-header__logo{ gap: 6px; align-items: center; }
   .site-header__inner--nav .site-header__logo img{
-    width: auto; height: clamp(76px, calc(7.407vw + 9.33px), 120px);
+    width: auto; height: clamp(86px, calc(8.345vw + 10.51px), 135px);
   }
   .site-header__inner--nav .site-header__logo img.site-header__wordmark-img{
     width: clamp(200px, calc(33.33vw - 100px), 395px); height: auto;
