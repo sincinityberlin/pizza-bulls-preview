@@ -6,7 +6,7 @@
 <title>Pizza Bulls — Fast Like Bulls! Pizza &amp; Burger Lieferdienst</title>
 <meta name="description" content="Pizza Bulls — frisches, hausgemachtes Essen seit 2008. Über 27 Standorte deutschlandweit. Jetzt online bestellen: Lieferung oder Abholung." />
 <link rel="icon" href="assets/images/logo.png" />
-<link rel="stylesheet" href="css/style.css?v=20261007-ci54" />
+<link rel="stylesheet" href="css/style.css?v=20261007-ci55" />
 </head>
 <body class="home-page">
 
@@ -573,6 +573,24 @@
         <p class="vip-modal__consent">Mit dem Klick auf „Belohnung erhalten“ stimmst du zu, E-Mails und SMS mit Angeboten von Pizza &amp; Burger Bulls zu erhalten. Die Einwilligung kannst du jederzeit widerrufen, z.&nbsp;B. über den Abmeldelink in jeder E-Mail. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
       </form>
     </div>
+
+    <!-- Ansicht 3: Erfolg - erscheint NUR nach erfolgreicher Anmeldung
+         (Endpunkt antwortet mit 2xx), siehe js/vip-club.js. -->
+    <div class="vip-modal__step vip-success" data-vip-step="3" hidden>
+      <h2 class="vip-success__title" id="vipSuccessTitle">Herzlichen Glückwunsch! Du hast verdient</h2>
+      <p class="vip-success__deal">10&nbsp;€ Rabatt</p>
+      <p class="vip-success__sub">auf die nächsten 3 Online Bestellungen</p>
+      <div class="vip-success__code">
+        <span class="vip-success__code-text">Code: <strong>BULLS</strong></span>
+        <button class="vip-success__copy" type="button" data-vip-copy="BULLS" aria-describedby="vipCopyStatus">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          <span data-vip-copy-label>Kopieren</span>
+        </button>
+      </div>
+      <p class="vip-success__copystatus" id="vipCopyStatus" role="status" aria-live="polite"></p>
+      <a class="vip-modal__btn vip-success__cta" href="https://www.pizzabulls.de/menu">Meinen Rabatt einlösen</a>
+      <p class="vip-success__note">Kann nicht mit anderen Rabatten oder Treuepunkten kombiniert werden.</p>
+    </div>
   </div>
 </div>
 
@@ -580,9 +598,9 @@
      oeffnet dasselbe VIP-Popup (#vipModal) wie "Jetzt registrieren". -->
 <button class="vip-teaser" type="button" data-vip-modal-open aria-haspopup="dialog">Neukunde? 10€ Rabatt</button>
 
-<script src="js/main.js?v=20261007-ci54"></script>
-<script src="js/vip-club.js?v=20261007-ci54"></script>
+<script src="js/main.js?v=20261007-ci55"></script>
+<script src="js/vip-club.js?v=20261007-ci55"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="js/home-sections.js?v=20261007-ci54"></script>
+<script src="js/home-sections.js?v=20261007-ci55"></script>
 </body>
 </html>

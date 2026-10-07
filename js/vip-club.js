@@ -2,7 +2,10 @@
    VIP-CLUB-POPUP (Nutzervorgabe 05.10.2026)
    "Jetzt registrieren" in der Pizza-Bulls-Club-Karte und der schwebende
    Banner "Neukunde? 10€ Rabatt" (.vip-teaser) -> Ansicht 1 (Angebot)
-   -> "Erhalte jetzt 10€ Rabatt" -> Ansicht 2 (Formular Vorname + E-Mail).
+   -> "Erhalte jetzt 10€ Rabatt" -> Ansicht 2 (Formular Vorname + E-Mail)
+   -> NUR nach erfolgreicher Anmeldung (Endpunkt antwortet 2xx): Ansicht 3
+   (Erfolg: "10€ Rabatt", CODE BULLS mit Kopieren-Button, "Meinen Rabatt
+   einloesen" -> https://www.pizzabulls.de/menu im selben Tab).
    Schliessen: X, "Nein, danke", Klick auf den abgedunkelten Hintergrund, ESC.
 
    Versand: Es ist noch KEIN Newsletter-/CRM-System angeschlossen. Sobald ein
@@ -19,11 +22,37 @@
   var status = modal.querySelector('.vip-modal__status');
   var schritt1 = modal.querySelector('[data-vip-step="1"]');
   var schritt2 = modal.querySelector('[data-vip-step="2"]');
+  var schritt3 = modal.querySelector('[data-vip-step="3"]');
+  var box = modal.querySelector('.vip-modal__box');
   var letzterAusloeser = null;
 
   function zeigeSchritt(nr) {
     schritt1.hidden = nr !== 1;
     schritt2.hidden = nr !== 2;
+    if (schritt3) schritt3.hidden = nr !== 3;
+    /* Erfolgsansicht: gemeinsame Kopfzeilen ausblenden, Dialog-Titel umstellen */
+    box.classList.toggle('is-success', nr === 3);
+    box.setAttribute('aria-labelledby', nr === 3 ? 'vipSuccessTitle' : 'vipModalTitle');
+  }
+
+  /* Code in die Zwischenablage: Clipboard-API, sonst unsichtbares Textfeld */
+  function kopieren(text) {
+    function klassisch() {
+      var feld = document.createElement('textarea');
+      feld.value = text; feld.setAttribute('readonly', '');
+      feld.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+      document.body.appendChild(feld); feld.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+      document.body.removeChild(feld);
+      return ok;
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).catch(function () {
+        if (!klassisch()) throw new Error('copy');
+      });
+    }
+    return klassisch() ? Promise.resolve() : Promise.reject(new Error('copy'));
   }
 
   function meldung(text, art) {
@@ -53,6 +82,28 @@
     if (auf) { e.preventDefault(); oeffnen(auf); return; }
     if (modal.hidden) return;
     if (e.target.closest('[data-vip-modal-close]')) { e.preventDefault(); schliessen(); return; }
+    var kopierKnopf = e.target.closest('[data-vip-copy]');
+    if (kopierKnopf) {
+      e.preventDefault();
+      var code = kopierKnopf.getAttribute('data-vip-copy');
+      var label = kopierKnopf.querySelector('[data-vip-copy-label]');
+      var info = document.getElementById('vipCopyStatus');
+      kopieren(code).then(function () {
+        kopierKnopf.classList.add('is-copied');
+        if (label) label.textContent = 'Kopiert!';
+        if (info) info.textContent = 'Code ' + code + ' wurde kopiert.';
+      }).catch(function () {
+        if (info) info.textContent = 'Automatisches Kopieren nicht möglich – bitte den Code ' + code + ' abschreiben.';
+      }).then(function () {
+        clearTimeout(kopierKnopf._zurueck);
+        kopierKnopf._zurueck = setTimeout(function () {
+          kopierKnopf.classList.remove('is-copied');
+          if (label) label.textContent = 'Kopieren';
+          if (info) info.textContent = '';
+        }, 2200);
+      });
+      return;
+    }
     if (e.target.closest('[data-vip-weiter]')) {
       e.preventDefault();
       zeigeSchritt(2);
@@ -115,8 +166,12 @@
       body: JSON.stringify({ vorname: vorname.value, email: email.value, quelle: 'vip-club' })
     }).then(function (antwort) {
       if (!antwort.ok) throw new Error('HTTP ' + antwort.status);
-      meldung('Danke, ' + vorname.value + '! Deine Anmeldung ist eingegangen.', 'success');
+      /* Anmeldung bestaetigt -> Erfolgsansicht mit Code */
       form.reset();
+      meldung('');
+      zeigeSchritt(3);
+      var einloesen = modal.querySelector('.vip-success__cta');
+      if (einloesen) einloesen.focus();
     }).catch(function () {
       meldung('Das hat leider nicht geklappt. Bitte versuche es später noch einmal.', 'error');
     }).then(function () {
