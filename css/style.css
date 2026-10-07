@@ -1,28 +1,44 @@
 /* ==========================================================================
-   PIZZA BULLS — Design System
-   GRÜN + ROT + WEISS als gleichberechtigte Markenfarben (ca. 60% Weiß /
-   20% Grün / 20% Rot). Grün (#78983a) gemessen aus dem echten Pizza-Bulls-
-   Auftritt; Rot (#cc0814) aus den offiziellen Pizza-Bulls-Kampagnenmotiven
-   (Hero "50% Rabatt") — beide zentral als Variablen, konsequent im ganzen
-   Design wiederverwendet statt neuer/ähnlicher Töne. Weiß bleibt die
-   dominante Grundfläche; Grün und Rot werden gezielt als Akzente
-   eingesetzt (Buttons, Labels, Icons, Badges) statt als große Flächen.
+   PIZZA BULLS — Design System (CI-Umstellung 07.10.2026)
+   Verbindliche Grundlage: "Pizza Bulls SOCIAL-MEDIA-MARKENSTILRICHTLINIE".
+   NUR diese sechs Markenfarben werden verwendet:
+     Primaer:   Gruen #779639 · Weiss #FFFFFF · Grau #606163
+     Sekundaer: Dunkelrot #913133 · Anthrazit #373535 · Creme #F7F0C1
+   Alle weiteren Variablen sind daraus ABGELEITET - entweder direkt eine
+   Markenfarbe (z. B. Hover = Anthrazit) oder eine Markenfarbe mit
+   Transparenz (helle Flaechen, Rahmen, Schatten). Keine eigenen Toene.
+   Schrift: Laut Richtlinie Columbia-DemiBold (Ueberschriften) /
+   Columbia-Medium (Unterueberschriften), sekundaer Arial. Columbia-Dateien
+   liegen NICHT vor -> Arial (zulaessige CI-Schrift). Sobald die Dateien da
+   sind: @font-face anlegen und "Columbia-DemiBold"/"Columbia-Medium" in
+   --pb-font-heading / --pb-font-subheading voranstellen.
    ========================================================================== */
 
 :root{
-  --pb-green: #78983a;
-  --pb-green-dark: #64802f;
-  --pb-green-deep: #35431c; /* sehr dunkles Grün, punktuell für dunkle Akzentflächen */
-  --pb-green-bright: #a3c15c; /* für Text/Icons auf dunklem Grund */
-  --pb-green-light: #eef3e4;
-  --pb-red: #cc0814;
-  --pb-red-dark: #a90711;
-  --pb-red-light: #fbe9ea;
-  --pb-dark: #1a1a1a;
-  --pb-grey: #606062;
-  --pb-grey-light: #f1f1f1;
-  --pb-white: #ffffff;
-  --pb-border: #e4e4e5;
+  /* Offizielle Markenfarben */
+  --pb-green: #779639;
+  --pb-white: #FFFFFF;
+  --pb-gray: #606163;
+  --pb-red: #913133;
+  --pb-dark: #373535;
+  --pb-cream: #F7F0C1;
+
+  /* Abgeleitete Werte (nur Markenfarben bzw. Markenfarbe + Transparenz) */
+  --pb-grey: var(--pb-gray);
+  --pb-green-dark: var(--pb-dark);          /* Hover/Active gruener Elemente */
+  --pb-green-deep: var(--pb-dark);
+  --pb-green-bright: var(--pb-cream);       /* Akzent auf dunklem/gruenem Grund */
+  --pb-green-light: rgba(119, 150, 57, 0.12);
+  --pb-red-dark: var(--pb-dark);            /* Hover/Active roter Elemente */
+  --pb-red-light: rgba(145, 49, 51, 0.10);
+  --pb-grey-light: rgba(96, 97, 99, 0.08);
+  --pb-border: rgba(96, 97, 99, 0.20);
+
+  /* Schriften (Columbia fehlt -> Arial, siehe oben) */
+  --pb-font-heading: Arial, Helvetica, sans-serif;
+  --pb-font-subheading: Arial, Helvetica, sans-serif;
+  --pb-font-body: Arial, Helvetica, sans-serif;
+
   --content-max: 1240px;
   --radius: 16px;
   --radius-sm: 10px;
@@ -33,7 +49,7 @@
 html{ scroll-behavior: smooth; }
 body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--pb-font-body);
   color: var(--pb-dark);
   background: var(--pb-white);
   -webkit-font-smoothing: antialiased;
@@ -265,7 +281,7 @@ h1,h2,h3{ text-wrap: balance; }
   display: block;
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 2px 14px rgba(26,26,26,0.1);
+  box-shadow: 0 2px 14px rgba(55, 53, 53,0.1);
 }
 .local-deals__card img{ display: block; width: 100%; height: auto; }
 
@@ -325,7 +341,7 @@ h1,h2,h3{ text-wrap: balance; }
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--pb-white);
-  box-shadow: 0 2px 14px rgba(26,26,26,0.1);
+  box-shadow: 0 2px 14px rgba(55, 53, 53,0.1);
 }
 .brand-banner__media{ position: relative; aspect-ratio: 4/3; }
 .brand-banner__media img{ width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -341,7 +357,7 @@ h1,h2,h3{ text-wrap: balance; }
   text-transform: uppercase;
   padding: 7px 16px;
   border-radius: 999px;
-  box-shadow: 0 2px 10px rgba(26,26,26,0.25);
+  box-shadow: 0 2px 10px rgba(55, 53, 53,0.25);
 }
 .brand-banner__content{
   display: flex;
@@ -394,7 +410,7 @@ h1,h2,h3{ text-wrap: balance; }
   bottom: -6%;
   width: 68%;
   height: 10%;
-  background: radial-gradient(ellipse at center, rgba(26,26,26,0.18), transparent 72%);
+  background: radial-gradient(ellipse at center, rgba(55, 53, 53,0.18), transparent 72%);
   transform: translateX(-50%);
 }
 
@@ -499,7 +515,7 @@ h1,h2,h3{ text-wrap: balance; }
   border-radius: var(--radius);
   overflow: hidden;
   aspect-ratio: 3/4;
-  box-shadow: 0 4px 16px rgba(26,26,26,0.08);
+  box-shadow: 0 4px 16px rgba(55, 53, 53,0.08);
 }
 .highlight-card img{ width: 100%; height: 100%; object-fit: cover; }
 .highlight-card__tag{
@@ -799,7 +815,7 @@ h1,h2,h3{ text-wrap: balance; }
   margin: 0 auto;
   aspect-ratio: 4 / 3;
 }
-.offers-bento__tile{ display: block; border-radius: var(--radius); overflow: hidden; box-shadow: 0 2px 14px rgba(26,26,26,0.1); }
+.offers-bento__tile{ display: block; border-radius: var(--radius); overflow: hidden; box-shadow: 0 2px 14px rgba(55, 53, 53,0.1); }
 .offers-bento__tile img{ width: 100%; height: 100%; display: block; object-fit: cover; }
 .offers-bento__tile:nth-child(1){ grid-column: 1; grid-row: 1 / span 2; }
 .offers-bento__tile:nth-child(2){ grid-column: 2; grid-row: 1; }
@@ -871,7 +887,7 @@ h1,h2,h3{ text-wrap: balance; }
    3er-Reihe unten dasselbe Motiv zeigt (keine Dopplung). Auf Mobile bleibt
    es sichtbar wie zuvor (siehe display:block-Override im 760px-Block). */
 .offers-single{ display: none; }
-.offers-single .local-deals__card{ box-shadow: 0 2px 14px rgba(26,26,26,0.1); }
+.offers-single .local-deals__card{ box-shadow: 0 2px 14px rgba(55, 53, 53,0.1); }
 
 /* Startseite: das 10€-Code-Motiv erscheint auf Desktop jetzt als dritte
    Karte in der .offers-cards-Reihe weiter unten (Pizza Bulls Club /
@@ -897,7 +913,7 @@ h1,h2,h3{ text-wrap: balance; }
   border: 1px solid var(--pb-border);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 2px 14px rgba(26,26,26,0.1);
+  box-shadow: 0 2px 14px rgba(55, 53, 53,0.1);
 }
 .offers-card img{ width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
 .offers-card__body{ display: flex; flex-direction: column; flex: 1; gap: 8px; padding: 20px 20px 24px; }
@@ -942,7 +958,7 @@ h1,h2,h3{ text-wrap: balance; }
     padding: 26px 18px 30px;
     border: 1px solid var(--pb-border);
     border-radius: var(--radius);
-    box-shadow: 0 2px 14px rgba(26,26,26,0.1);
+    box-shadow: 0 2px 14px rgba(55, 53, 53,0.1);
     /* Spalte: übrige Höhe der Reihe gleichmäßig über/unter der Pizza verteilen
        statt als Leerfläche unter dem Hinweistext */
     display: flex; flex-direction: column;
@@ -1071,11 +1087,11 @@ h1,h2,h3{ text-wrap: balance; }
 .home-about__inner{ display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .home-about__media{ position: relative; padding: 0 0 56px; }
 .home-about__img{ width: 100%; height: auto; border-radius: var(--radius); }
-.home-about__img--main{ width: 72%; box-shadow: 0 2px 14px rgba(26,26,26,0.1); }
+.home-about__img--main{ width: 72%; box-shadow: 0 2px 14px rgba(55, 53, 53,0.1); }
 .home-about__img--side{
   position: absolute; right: 0; bottom: 0; width: 44%;
   border: 6px solid var(--pb-white); border-radius: calc(var(--radius) + 6px);
-  box-shadow: 0 10px 30px rgba(26,26,26,0.16);
+  box-shadow: 0 10px 30px rgba(55, 53, 53,0.16);
 }
 /* Kleines Burger-Bild (1086×1448, 3:4): exakt dieselbe Box wie das frühere
    4:5-Bild — Inhaltsfläche 4:5 bei gleicher Gesamtbreite (44 % inkl. 2×6px
@@ -1115,7 +1131,7 @@ h1,h2,h3{ text-wrap: balance; }
   line-height: calc(clamp(1.8rem, 3.6vw, 2.4rem) * 1.1);
 }
 .home-topics{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
-.home-topic{ border: 1px solid var(--pb-border); border-radius: var(--radius); overflow: hidden; background: var(--pb-white); box-shadow: 0 2px 14px rgba(26,26,26,0.06); }
+.home-topic{ border: 1px solid var(--pb-border); border-radius: var(--radius); overflow: hidden; background: var(--pb-white); box-shadow: 0 2px 14px rgba(55, 53, 53,0.06); }
 .home-topic img{ width: 100%; height: auto; }
 /* Karte 2 „Frische Zutaten“: Motiv 1149×1369 ist etwas breiter als 4:5 —
    Bildfläche bleibt exakt 4:5 wie bei den Nachbarkarten, Bild zentriert per
@@ -1166,7 +1182,7 @@ h1,h2,h3{ text-wrap: balance; }
   width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--pb-border);
   background: var(--pb-white); color: var(--pb-dark); cursor: pointer;
   display: inline-flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 14px rgba(26,26,26,0.12); transition: opacity .15s, background .15s;
+  box-shadow: 0 4px 14px rgba(55, 53, 53,0.12); transition: opacity .15s, background .15s;
 }
 .home-reviews__nav:hover{ background: var(--pb-green-light); }
 .home-reviews__nav:disabled{ opacity: 0; pointer-events: none; }
@@ -1223,7 +1239,7 @@ h1,h2,h3{ text-wrap: balance; }
   display: block; width: 26px; height: 26px; margin: 2px 0 0;
   background: var(--pb-red); border: 3px solid var(--pb-white);
   border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
-  box-shadow: 0 3px 8px rgba(26,26,26,0.3);
+  box-shadow: 0 3px 8px rgba(55, 53, 53,0.3);
 }
 .home-stores .leaflet-container{ font: inherit; }
 .home-stores .leaflet-tile{ filter: grayscale(0.8) brightness(1.05) contrast(0.9); }
@@ -1350,7 +1366,7 @@ h1,h2,h3{ text-wrap: balance; }
     min-width: 250px; margin: 0; padding: 10px 0 12px;
     background: var(--pb-white); border: 1px solid var(--pb-border); border-top: 3px solid var(--pb-green);
     border-radius: 0 0 var(--radius) var(--radius);
-    box-shadow: 0 14px 30px rgba(26,26,26,0.12);
+    box-shadow: 0 14px 30px rgba(55, 53, 53,0.12);
     opacity: 0; visibility: hidden; pointer-events: none;
     transition: opacity .15s, transform .15s, visibility .15s;
   }
@@ -1417,7 +1433,7 @@ h1,h2,h3{ text-wrap: balance; }
 
 .fr-split{ display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
 .fr-split--reverse .fr-split__media{ order: 2; }
-.fr-split__media img{ width: 100%; height: auto; border-radius: var(--radius); box-shadow: 0 2px 14px rgba(26,26,26,0.1); }
+.fr-split__media img{ width: 100%; height: auto; border-radius: var(--radius); box-shadow: 0 2px 14px rgba(55, 53, 53,0.1); }
 .fr-split__content h2{ margin: 0 0 16px; font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.15; }
 .fr-split__content h2 em, .fr-table-card h2 em{ font-style: normal; color: var(--pb-green); }
 .fr-text{ margin: 0 0 14px; color: var(--pb-grey); line-height: 1.7; font-size: 0.96rem; }
@@ -1471,7 +1487,7 @@ h1,h2,h3{ text-wrap: balance; }
 
 .fr-topic-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .fr-topic{ display: flex; flex-direction: column; border: 1px solid var(--pb-border); border-radius: var(--radius); padding: 22px; background: var(--pb-white); transition: border-color .15s, box-shadow .15s, transform .15s; }
-.fr-topic:hover{ border-color: var(--pb-green); box-shadow: 0 8px 24px rgba(26,26,26,0.08); transform: translateY(-2px); }
+.fr-topic:hover{ border-color: var(--pb-green); box-shadow: 0 8px 24px rgba(55, 53, 53,0.08); transform: translateY(-2px); }
 .fr-topic .home-feature__icon{ margin-bottom: 12px; }
 .fr-topic h3{ margin: 0 0 6px; font-size: 1.05rem; }
 .fr-topic p{ margin: 0 0 14px; flex: 1; color: var(--pb-grey); font-size: 0.9rem; line-height: 1.55; }
@@ -1481,7 +1497,7 @@ h1,h2,h3{ text-wrap: balance; }
 
 /* Formular */
 .fr-form-section{ padding-top: 8px; }
-.fr-form-card{ max-width: 820px; margin: 0 auto; border: 1px solid var(--pb-border); border-radius: calc(var(--radius) + 4px); padding: 34px; background: var(--pb-white); box-shadow: 0 6px 24px rgba(26,26,26,0.06); }
+.fr-form-card{ max-width: 820px; margin: 0 auto; border: 1px solid var(--pb-border); border-radius: calc(var(--radius) + 4px); padding: 34px; background: var(--pb-white); box-shadow: 0 6px 24px rgba(55, 53, 53,0.06); }
 .fr-form h2, .fr-confirm h2{ margin: 0 0 22px; font-size: clamp(1.4rem, 3vw, 1.9rem); }
 .fr-form h2 em, .fr-confirm h2 em{ font-style: normal; color: var(--pb-green); }
 .fr-form__grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px 18px; }
@@ -1673,7 +1689,7 @@ h1,h2,h3{ text-wrap: balance; }
 .frx-tags li{ display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--pb-border); background: var(--pb-white); font-size: 0.8rem; font-weight: 600; color: var(--pb-dark); }
 .frx-tags svg{ width: 14px; height: 14px; color: var(--pb-green); }
 .frx-tags--overlay{ position: absolute; left: 16px; right: 16px; bottom: 16px; margin: 0; }
-.frx-tags--overlay li{ box-shadow: 0 4px 12px rgba(26,26,26,0.12); border-color: transparent; }
+.frx-tags--overlay li{ box-shadow: 0 4px 12px rgba(55, 53, 53,0.12); border-color: transparent; }
 .frx-mini-stats{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 22px 0 24px; }
 .frx-mini-stats > div{ padding: 16px; border-radius: var(--radius); border: 1px solid var(--pb-border); text-align: center; }
 .frx-mini-stats strong{ display: block; font-size: 1.7rem; font-weight: 900; color: var(--pb-green); line-height: 1.1; }
@@ -1729,7 +1745,7 @@ h1,h2,h3{ text-wrap: balance; }
 .aa-card{
   display: flex; flex-direction: column; gap: 14px; padding: 12px 12px 18px;
   border-radius: 20px; background: var(--pb-white);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 6px 18px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 2px rgba(55, 53, 53,0.04), 0 6px 18px rgba(55, 53, 53,0.05);
 }
 .aa-card__media{ flex: 1; display: flex; align-items: center; justify-content: center; }
 .aa-card__media img{ width: 100%; height: auto; object-fit: contain; border-radius: 12px; }
@@ -1799,11 +1815,11 @@ h1,h2,h3{ text-wrap: balance; }
 }
 
 /* ==========================================================================
-   WEBSITE-HINTERGRUND: vertikaler Verlauf oben #FFFFFF → unten #779639
+   WEBSITE-HINTERGRUND: vertikaler Verlauf oben var(--pb-white) → unten var(--pb-green)
    (Nutzer-Vorgabe). Nur Seiten-/Sektionsflächen; Header, Bestellleiste,
    Karten, Bilder und Footer behalten ihren eigenen Hintergrund.
    ========================================================================== */
-body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #779639 100%); }
+body, .fr-page, .aa-page{ background: linear-gradient(180deg, var(--pb-white) 0%, var(--pb-green) 100%); }
 .highlights{ background: transparent; }
 .pizza-build{ background: transparent; } /* Desktop-Karte bleibt weiß (.offers-cards--home .pizza-build) */
 
@@ -1817,7 +1833,7 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
    ========================================================================== */
 .home-reviews .home-section-head h2 em,
 .home-stores .home-section-head h2 em,
-.home-stores .home-section-head .section-eyebrow{ color: #FFFFFF; }
+.home-stores .home-section-head .section-eyebrow{ color: var(--pb-white); }
 
 /* Erweiterung 04.10.2026: alle Texte, die in der gruenen Haelfte DIREKT auf dem
    Seitenverlauf liegen, sind weiss. Bewusst einzeln aufgefuehrt statt per "*" -
@@ -1845,7 +1861,7 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
 .home-reviews .home-section-head .home-reviews__score .home-reviews__total,
 .home-reviews .home-reviews__hint,
 .home-stores .home-section-head h2,
-.home-stores .home-section-head p{ color: #FFFFFF; }
+.home-stores .home-section-head p{ color: var(--pb-white); }
 
 /* Rote Kennzahl und rote Eyebrow der Highlights behalten die Markenfarbe -
    sie stehen dort noch auf hellem Verlauf und sind gut lesbar. */
@@ -1909,16 +1925,16 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
       "Speisekarte" grün gefüllt, "Store finden" grüne Kontur. Hover-Zustände
       mitgeführt. Form, Größe, Abrundung, Abstände und Funktion bleiben gleich.
    ========================================================================== */
-.home-stores .home-actions .btn--green{ background: #FFFFFF; color: #779639; }
+.home-stores .home-actions .btn--green{ background: var(--pb-white); color: var(--pb-green); }
 .home-stores .home-actions .btn--green:hover{ background: var(--pb-green-light); color: var(--pb-green-dark); }
 
-.home-cta .home-cta__inner{ background: #FFFFFF; color: #779639; }
+.home-cta .home-cta__inner{ background: var(--pb-white); color: var(--pb-green); }
 .home-cta .home-cta__inner h2,
-.home-cta .home-cta__inner p{ color: #779639; }
-.home-cta .home-cta__inner .btn--white{ background: #779639; color: #FFFFFF; }
-.home-cta .home-cta__inner .btn--white:hover{ background: var(--pb-green-dark); color: #FFFFFF; }
-.home-cta .home-cta__inner .btn--outline{ border-color: #779639; color: #779639; }
-.home-cta .home-cta__inner .btn--outline:hover{ background: #779639; color: #FFFFFF; }
+.home-cta .home-cta__inner p{ color: var(--pb-green); }
+.home-cta .home-cta__inner .btn--white{ background: var(--pb-green); color: var(--pb-white); }
+.home-cta .home-cta__inner .btn--white:hover{ background: var(--pb-green-dark); color: var(--pb-white); }
+.home-cta .home-cta__inner .btn--outline{ border-color: var(--pb-green); color: var(--pb-green); }
+.home-cta .home-cta__inner .btn--outline:hover{ background: var(--pb-green); color: var(--pb-white); }
 
 /* ==========================================================================
    APP-DOWNLOAD-POPUP (Nutzervorgabe 04.10.2026)
@@ -1928,11 +1944,11 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
    ========================================================================== */
 .app-modal[hidden]{ display: none; }
 .app-modal{ position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; }
-.app-modal__backdrop{ position: absolute; inset: 0; background: rgba(26, 26, 26, 0.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.app-modal__backdrop{ position: absolute; inset: 0; background: rgba(55, 53, 53, 0.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
 .app-modal__box{
   position: relative; width: min(460px, 100%); max-height: calc(100vh - 40px); overflow-y: auto;
-  background: #FFFFFF; border-radius: 28px; padding: 40px 28px 32px; text-align: center;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  background: var(--pb-white); border-radius: 28px; padding: 40px 28px 32px; text-align: center;
+  box-shadow: 0 24px 60px rgba(55, 53, 53, 0.28);
 }
 .app-modal__close{
   position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; display: grid; place-items: center;
@@ -1945,10 +1961,10 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
 .app-modal__choices{ display: grid; gap: 14px; }
 .app-modal__choice{
   display: flex; align-items: center; gap: 16px; padding: 14px 18px;
-  border: 2px solid var(--pb-border); border-radius: 18px; background: #FFFFFF;
+  border: 2px solid var(--pb-border); border-radius: 18px; background: var(--pb-white);
   color: var(--pb-dark); font-weight: 800; text-align: left; transition: border-color .15s ease, background .15s ease;
 }
-.app-modal__choice:hover{ border-color: #779639; background: var(--pb-green-light); }
+.app-modal__choice:hover{ border-color: var(--pb-green); background: var(--pb-green-light); }
 .app-modal__choice img{ width: 132px; height: auto; flex: none; }
 @media (max-width: 760px){
   .app-modal__box{ padding: 34px 18px 26px; border-radius: 24px; }
@@ -1960,7 +1976,7 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
 
 /* ==========================================================================
    GRUENE KOPFLEISTE (Nutzervorgabe 05.10.2026)
-   Die gesamte obere Leiste traegt jetzt das Pizza-Bulls-Gruen #779639 - ueber
+   Die gesamte obere Leiste traegt jetzt das Pizza-Bulls-Gruen var(--pb-green) - ueber
    die volle Bildschirmbreite, ohne weisse Raender. Navigationspunkte, Pfeil
    und die runden Icons rechts stehen in Weiss; der Unterstrich beim Hover
    ebenfalls. Das Dropdown-Menue bleibt eine weisse Karte mit dunkler Schrift,
@@ -1969,20 +1985,20 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
 @media (min-width: 900px){
   /* Gruen nur fuer die Desktop-Leiste - unter 900px (Hamburger-Menue) bleibt
      der Header unveraendert weiss, wie vom Nutzer verlangt. */
-  .site-header{ background: #779639; border-bottom-color: rgba(255, 255, 255, 0.25); }
+  .site-header{ background: var(--pb-green); border-bottom-color: rgba(255, 255, 255, 0.25); }
   .site-header__inner > .mobile-nav > a,
-  .site-header__inner > .mobile-nav .nav-dd__trigger{ color: #FFFFFF; }
+  .site-header__inner > .mobile-nav .nav-dd__trigger{ color: var(--pb-white); }
   .site-header__inner > .mobile-nav > a:hover,
   .site-header__inner > .mobile-nav .nav-dd:hover .nav-dd__trigger,
-  .site-header__inner > .mobile-nav .nav-dd.is-open .nav-dd__trigger{ color: #FFFFFF; }
+  .site-header__inner > .mobile-nav .nav-dd.is-open .nav-dd__trigger{ color: var(--pb-white); }
   .site-header__inner > .mobile-nav > a::after,
-  .site-header__inner > .mobile-nav .nav-dd__trigger::after{ background: #FFFFFF; }
+  .site-header__inner > .mobile-nav .nav-dd__trigger::after{ background: var(--pb-white); }
   .site-header__inner > .mobile-nav .nav-dd__toggle,
   .site-header__inner > .mobile-nav .nav-dd:hover .nav-dd__toggle,
-  .site-header__inner > .mobile-nav .nav-dd.is-open .nav-dd__toggle{ color: #FFFFFF; }
+  .site-header__inner > .mobile-nav .nav-dd.is-open .nav-dd__toggle{ color: var(--pb-white); }
   /* Runde Icons rechts: weisse Kontur und weisses Symbol auf Gruen. */
-  .site-header__right .site-header__icon-btn{ color: #FFFFFF; border-color: rgba(255, 255, 255, 0.55); background: transparent; }
-  .site-header__right .site-header__icon-btn:hover{ color: #779639; background: #FFFFFF; border-color: #FFFFFF; }
+  .site-header__right .site-header__icon-btn{ color: var(--pb-white); border-color: rgba(255, 255, 255, 0.55); background: transparent; }
+  .site-header__right .site-header__icon-btn:hover{ color: var(--pb-green); background: var(--pb-white); border-color: var(--pb-white); }
 }
 
 /* ==========================================================================
@@ -2032,7 +2048,7 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
   .site-header__inner--nav .site-header__right .site-header__icon-btn{
     width: clamp(46px, calc(1.852vw + 29.33px), 58px);
     height: clamp(46px, calc(1.852vw + 29.33px), 58px);
-    border-width: 2px; border-color: #FFFFFF;
+    border-width: 2px; border-color: var(--pb-white);
   }
   .site-header__inner--nav .site-header__right .site-header__icon-btn svg{
     width: clamp(21px, calc(1.111vw + 11px), 28px);
@@ -2044,7 +2060,7 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
 /* ==========================================================================
    MOBILE / TABLET: GRUENER HEADER WIE AUF DESKTOP (Nutzervorgabe 05.10.2026)
    Gilt nur unter 900 px - die Desktop-Regeln oben bleiben unberuehrt.
-   - Header gruen #779639, Hamburger-Striche und Icons weiss (Rand 2 px,
+   - Header gruen var(--pb-green), Hamburger-Striche und Icons weiss (Rand 2 px,
      Linien 2,3) wie auf Desktop.
    - Das geoeffnete Hamburger-Menue bleibt eine weisse Flaeche mit dunkler
      Schrift (wie das Desktop-Dropdown), sonst waere es auf Gruen unlesbar.
@@ -2060,12 +2076,12 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
      Bulle + 6 + Schriftzug + Icons 2x38+8 -> 14 px Reserve, nichts ragt raus.
    ========================================================================== */
 @media (max-width: 899px){
-  .site-header{ background: #779639; border-bottom-color: rgba(255, 255, 255, 0.25); }
-  .site-header__burger span{ background: #FFFFFF; }
-  .site-header__right .site-header__icon-btn{ color: #FFFFFF; border: 2px solid #FFFFFF; background: transparent; }
-  .site-header__right .site-header__icon-btn:hover{ color: #779639; background: #FFFFFF; border-color: #FFFFFF; }
+  .site-header{ background: var(--pb-green); border-bottom-color: rgba(255, 255, 255, 0.25); }
+  .site-header__burger span{ background: var(--pb-white); }
+  .site-header__right .site-header__icon-btn{ color: var(--pb-white); border: 2px solid var(--pb-white); background: transparent; }
+  .site-header__right .site-header__icon-btn:hover{ color: var(--pb-green); background: var(--pb-white); border-color: var(--pb-white); }
   .site-header__right .site-header__icon-btn svg{ stroke-width: 2.3; }
-  .site-header .mobile-nav{ background: #FFFFFF; }
+  .site-header .mobile-nav{ background: var(--pb-white); }
 
   .site-header__inner--nav > .site-header__burger{ width: 40px; height: 40px; }
   .site-header__inner--nav .site-header__logo{ gap: 6px; align-items: center; min-width: 0; }
@@ -2112,7 +2128,7 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
 .vip-modal__box{ padding: 44px 32px 30px; }
 .vip-modal__title{
   margin: 0 0 10px; font-size: 1.05rem; font-weight: 900; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--pb-green-dark, #4f6a1f);
+  text-transform: uppercase; color: var(--pb-green-dark);
 }
 .vip-modal__lead{
   margin: 0 0 14px; font-size: 0.95rem; font-weight: 800; letter-spacing: 0.04em;
@@ -2125,11 +2141,11 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
 .vip-modal__sub{ margin: 8px 0 22px; font-size: 1.05rem; font-weight: 600; color: var(--pb-grey); }
 .vip-modal__btn{
   display: block; width: 100%; padding: 17px 20px; border: 0; border-radius: 14px;
-  background: var(--pb-green); color: #FFFFFF; font: inherit; font-size: 1.05rem; font-weight: 900;
+  background: var(--pb-green); color: var(--pb-white); font: inherit; font-size: 1.05rem; font-weight: 900;
   letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer;
-  box-shadow: 0 8px 20px rgba(120, 152, 58, 0.35); transition: background .15s ease, transform .15s ease;
+  box-shadow: 0 8px 20px rgba(119, 150, 57, 0.35); transition: background .15s ease, transform .15s ease;
 }
-.vip-modal__btn:hover{ background: var(--pb-green-dark, #4f6a1f); }
+.vip-modal__btn:hover{ background: var(--pb-green-dark); }
 .vip-modal__btn:active{ transform: translateY(1px); }
 .vip-modal__btn:disabled{ opacity: 0.6; cursor: wait; }
 .vip-modal__decline{
@@ -2143,16 +2159,16 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, #FFFFFF 0%, #77963
 .vip-modal__label small{ font-weight: 600; color: var(--pb-grey); }
 .vip-modal__field input{
   width: 100%; padding: 14px 16px; border: 2px solid var(--pb-border); border-radius: 12px;
-  font: inherit; font-size: 16px; color: var(--pb-dark); background: #FFFFFF;
+  font: inherit; font-size: 16px; color: var(--pb-dark); background: var(--pb-white);
 }
-.vip-modal__field input:focus{ outline: none; border-color: var(--pb-green); box-shadow: 0 0 0 3px rgba(120, 152, 58, 0.2); }
+.vip-modal__field input:focus{ outline: none; border-color: var(--pb-green); box-shadow: 0 0 0 3px rgba(119, 150, 57, 0.2); }
 .vip-modal__field input.is-invalid{ border-color: var(--pb-red); }
 .vip-modal__form .vip-modal__btn{ margin-top: 4px; }
 .vip-modal__status{ margin: 0; min-height: 0; font-size: 0.9rem; font-weight: 700; text-align: center; }
 .vip-modal__status:empty{ display: none; }
 .vip-modal__status.is-error{ color: var(--pb-red); }
 .vip-modal__status.is-info{ color: var(--pb-dark); background: var(--pb-grey-light); border-radius: 10px; padding: 10px 12px; }
-.vip-modal__status.is-success{ color: var(--pb-green-dark, #4f6a1f); }
+.vip-modal__status.is-success{ color: var(--pb-green-dark); }
 .vip-modal__consent{ margin: 2px 0 0; font-size: 0.78rem; line-height: 1.45; color: var(--pb-grey); text-align: center; }
 .vip-modal__consent a{ color: inherit; text-decoration: underline; }
 @media (max-width: 760px){
@@ -2179,14 +2195,14 @@ button.pizza-build__cta{ font-family: inherit; }
   right: max(20px, calc(env(safe-area-inset-right) + 12px));
   bottom: max(20px, calc(env(safe-area-inset-bottom) + 12px));
   padding: 11px 18px; border: 1.5px solid var(--pb-green); border-radius: 12px;
-  background: #FFFFFF; color: var(--pb-green-dark);
+  background: var(--pb-white); color: var(--pb-green-dark);
   font-family: inherit; font-size: 0.9rem; font-weight: 800; line-height: 1.2; letter-spacing: 0.01em;
   white-space: nowrap; cursor: pointer;
-  box-shadow: 0 6px 18px rgba(26, 26, 26, 0.14);
+  box-shadow: 0 6px 18px rgba(55, 53, 53, 0.14);
   transition: opacity .2s ease, transform .2s ease, background .15s ease, color .15s ease;
 }
 .vip-teaser:hover{ background: var(--pb-green-light); }
-.vip-teaser:focus-visible{ outline: 3px solid rgba(120, 152, 58, 0.45); outline-offset: 2px; }
+.vip-teaser:focus-visible{ outline: 3px solid rgba(119, 150, 57, 0.45); outline-offset: 2px; }
 .vip-teaser.is-hidden{ opacity: 0; transform: translateY(8px); pointer-events: none; }
 @media (max-width: 760px){
   .vip-teaser{
@@ -2198,7 +2214,7 @@ button.pizza-build__cta{ font-family: inherit; }
 
 /* ==========================================================================
    APP-SEITE /app/ (Nutzervorgabe 05.10.2026)
-   Gruener Hero (#779639) mit Code BULLS als Coupon (weiss, gruener
+   Gruener Hero (var(--pb-green)) mit Code BULLS als Coupon (weiss, gruener
    gestrichelter Rand, Kopier-Button), weisse Karte "So funktioniert's" mit
    5 Schritten, weisse Karte Download mit den offiziellen Store-Badges.
    Reihenbreite wie Startseite (1240 px, Mobile 12 px Rand). Nur body.app-page.
@@ -2208,39 +2224,39 @@ button.pizza-build__cta{ font-family: inherit; }
 .app-page .app-hero{ margin-top: 28px; }
 .app-hero__card{
   display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 40px; align-items: center;
-  padding: 48px; border-radius: 28px; background: #779639; color: #FFFFFF;
-  box-shadow: 0 18px 40px rgba(60, 80, 25, 0.22);
+  padding: 48px; border-radius: 28px; background: var(--pb-green); color: var(--pb-white);
+  box-shadow: 0 18px 40px rgba(55, 53, 53, 0.22);
 }
 .app-hero__eyebrow{
   display: inline-block; margin: 0 0 16px; padding: 6px 14px; border-radius: 999px;
-  background: #FFFFFF; color: #779639; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase;
+  background: var(--pb-white); color: var(--pb-green); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase;
 }
-.app-hero__text h1{ margin: 0; font-size: clamp(1.8rem, 3.3vw, 2.9rem); line-height: 1.05; font-weight: 900; text-transform: uppercase; letter-spacing: 0.01em; color: #FFFFFF; }
-.app-hero__deal{ margin: 14px 0 0; font-size: clamp(3rem, 6.6vw, 5.4rem); line-height: 1; font-weight: 900; text-transform: uppercase; color: #FFFFFF; }
-.app-hero__deal-amount{ display: inline-block; padding: 0.04em 0.16em 0.02em; border-radius: 0.16em; background: var(--pb-red); box-shadow: 0 8px 20px rgba(140, 8, 20, 0.3); }
-.app-hero__with{ margin: 14px 0 18px; font-size: 1.2rem; font-weight: 700; color: #FFFFFF; }
+.app-hero__text h1{ margin: 0; font-size: clamp(1.8rem, 3.3vw, 2.9rem); line-height: 1.05; font-weight: 900; text-transform: uppercase; letter-spacing: 0.01em; color: var(--pb-white); }
+.app-hero__deal{ margin: 14px 0 0; font-size: clamp(3rem, 6.6vw, 5.4rem); line-height: 1; font-weight: 900; text-transform: uppercase; color: var(--pb-white); }
+.app-hero__deal-amount{ display: inline-block; padding: 0.04em 0.16em 0.02em; border-radius: 0.16em; background: var(--pb-red); box-shadow: 0 8px 20px rgba(145, 49, 51, 0.3); }
+.app-hero__with{ margin: 14px 0 18px; font-size: 1.2rem; font-weight: 700; color: var(--pb-white); }
 .app-hero__with strong{ font-weight: 900; letter-spacing: 0.12em; }
 .app-hero__note{ margin: 18px 0 0; max-width: 520px; font-size: 1rem; line-height: 1.55; color: rgba(255, 255, 255, 0.95); }
-.app-hero__media img{ display: block; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28); }
+.app-hero__media img{ display: block; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 14px 34px rgba(55, 53, 53, 0.28); }
 
 /* Coupon-Flaeche mit Code + Kopier-Button */
 .app-code{
   display: inline-grid; grid-template-columns: auto auto; grid-template-rows: auto auto; column-gap: 18px; align-items: center;
-  padding: 12px 12px 12px 20px; border: 2px dashed #779639; border-radius: 16px; background: #FFFFFF;
-  box-shadow: 0 0 0 5px #FFFFFF, 0 12px 26px rgba(0, 0, 0, 0.18);
+  padding: 12px 12px 12px 20px; border: 2px dashed var(--pb-green); border-radius: 16px; background: var(--pb-white);
+  box-shadow: 0 0 0 5px var(--pb-white), 0 12px 26px rgba(55, 53, 53, 0.18);
 }
 .app-code__label{ grid-column: 1; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pb-grey); }
 .app-code__value{ grid-column: 1; font-size: 2rem; line-height: 1.05; font-weight: 900; letter-spacing: 0.2em; color: var(--pb-green-dark); user-select: all; }
 .app-code__copy{
   grid-column: 2; grid-row: 1 / span 2;
   display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; border: 0; border-radius: 12px;
-  background: #779639; color: #FFFFFF; font-family: inherit; font-size: 0.82rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase;
+  background: var(--pb-green); color: var(--pb-white); font-family: inherit; font-size: 0.82rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase;
   cursor: pointer; transition: background .15s ease;
 }
 .app-code__copy svg{ width: 18px; height: 18px; flex: none; }
 .app-code__copy:hover{ background: var(--pb-green-dark); }
 .app-code__copy.is-copied,
-.app-step__copy.is-copied{ background: var(--pb-red); border-color: var(--pb-red); color: #FFFFFF; }
+.app-step__copy.is-copied{ background: var(--pb-red); border-color: var(--pb-red); color: var(--pb-white); }
 .app-code__status{ position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* Store-Badges (offizielle Grafiken); Google-Grafik hat oben/unten
@@ -2248,46 +2264,46 @@ button.pizza-build__cta{ font-family: inherit; }
 .app-stores{ display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 24px; }
 .app-store-btn{ display: inline-flex; border-radius: 10px; transition: transform .15s ease; }
 .app-store-btn:hover{ transform: translateY(-2px); }
-.app-store-btn:focus-visible{ outline: 3px solid #FFFFFF; outline-offset: 3px; }
+.app-store-btn:focus-visible{ outline: 3px solid var(--pb-white); outline-offset: 3px; }
 .app-store-btn--apple img{ height: 50px; width: auto; }
 .app-store-btn--google img{ height: 65px; width: auto; margin: -7.5px 0; }
 
 /* Weisse Karten */
 .app-panel{
-  margin-top: 28px; padding: 46px 40px; border-radius: 28px; background: #FFFFFF; text-align: center;
-  box-shadow: 0 12px 32px rgba(26, 26, 26, 0.08);
+  margin-top: 28px; padding: 46px 40px; border-radius: 28px; background: var(--pb-white); text-align: center;
+  box-shadow: 0 12px 32px rgba(55, 53, 53, 0.08);
 }
-.app-panel__eyebrow{ margin: 0 0 8px; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; color: #779639; }
+.app-panel__eyebrow{ margin: 0 0 8px; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pb-green); }
 .app-panel h2{ margin: 0; font-size: clamp(1.45rem, 2.8vw, 2.2rem); line-height: 1.12; font-weight: 900; text-transform: uppercase; color: var(--pb-dark); }
 .app-steps{ list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; text-align: left; }
 .app-step{
   position: relative; display: flex; flex-direction: column; gap: 10px; padding: 24px 20px 22px;
-  border: 1px solid var(--pb-border); border-radius: 20px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(26, 26, 26, 0.05);
+  border: 1px solid var(--pb-border); border-radius: 20px; background: var(--pb-white); box-shadow: 0 6px 18px rgba(55, 53, 53, 0.05);
 }
 .app-step__num{ position: absolute; top: 14px; right: 18px; font-size: 2.4rem; line-height: 1; font-weight: 900; color: rgba(119, 150, 57, 0.22); }
-.app-step__icon{ display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: var(--pb-green-light); color: #779639; }
+.app-step__icon{ display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: var(--pb-green-light); color: var(--pb-green); }
 .app-step__icon svg{ width: 28px; height: 28px; }
 .app-step h3{ margin: 6px 0 0; font-size: 1rem; line-height: 1.25; font-weight: 900; text-transform: uppercase; color: var(--pb-dark); }
 .app-step p{ margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--pb-grey); }
-.app-step--code{ border: 2px solid #779639; background: #F7FAF0; }
-.app-step--code .app-step__icon{ background: #779639; color: #FFFFFF; }
+.app-step--code{ border: 2px solid var(--pb-green); background: var(--pb-cream); }
+.app-step--code .app-step__icon{ background: var(--pb-green); color: var(--pb-white); }
 .app-step__code{
-  display: inline-block; padding: 1px 8px; border: 2px dashed #779639; border-radius: 8px; background: #FFFFFF;
+  display: inline-block; padding: 1px 8px; border: 2px dashed var(--pb-green); border-radius: 8px; background: var(--pb-white);
   font-size: 1.08em; font-weight: 900; letter-spacing: 0.14em; color: var(--pb-green-dark);
 }
 .app-step__copy{
-  align-self: flex-start; margin-top: auto; padding: 9px 14px; border: 2px solid #779639; border-radius: 999px; background: #FFFFFF;
-  font-family: inherit; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; color: #779639; cursor: pointer;
+  align-self: flex-start; margin-top: auto; padding: 9px 14px; border: 2px solid var(--pb-green); border-radius: 999px; background: var(--pb-white);
+  font-family: inherit; font-size: 0.78rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; color: var(--pb-green); cursor: pointer;
   transition: background .15s ease, color .15s ease;
 }
-.app-step__copy:hover{ background: #779639; color: #FFFFFF; }
+.app-step__copy:hover{ background: var(--pb-green); color: var(--pb-white); }
 
 .app-download{ margin-bottom: 56px; }
-.app-download__icon{ display: inline-grid; place-items: center; width: 60px; height: 60px; margin-bottom: 14px; border-radius: 18px; background: #779639; color: #FFFFFF; }
+.app-download__icon{ display: inline-grid; place-items: center; width: 60px; height: 60px; margin-bottom: 14px; border-radius: 18px; background: var(--pb-green); color: var(--pb-white); }
 .app-download__icon svg{ width: 30px; height: 30px; }
 .app-download p{ margin: 10px 0 0; color: var(--pb-grey); }
 .app-download .app-stores{ justify-content: center; gap: 16px; }
-.app-download .app-store-btn:focus-visible{ outline-color: #779639; }
+.app-download .app-store-btn:focus-visible{ outline-color: var(--pb-green); }
 
 @media (max-width: 1099px){
   .app-steps{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -2315,3 +2331,28 @@ button.pizza-build__cta{ font-family: inherit; }
   .app-store-btn--google img{ height: 62px; margin: -7px 0; }
   .app-download{ margin-bottom: 40px; }
 }
+
+
+/* ==========================================================================
+   CI-SCHRIFTEN GLOBAL (07.10.2026) - Ueberschriften/Navigation/Buttons ueber
+   --pb-font-heading, Formularelemente erben die Seitenschrift (Buttons und
+   Eingabefelder tun das sonst nicht). Groessen/Hierarchien unveraendert.
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6,
+.btn, .mobile-nav, .site-header__wordmark, .order-bar,
+.app-modal__title, .vip-modal__title, .vip-modal__offer{ font-family: var(--pb-font-heading); }
+button, input, select, textarea{ font-family: inherit; }
+
+/* CI fuer Fremd-Bedienelemente der Standortkarte (Leaflet-Standard: Schwarz,
+   Blau #0078a8, Monospace) - nur Farben/Schrift, Funktion unveraendert.
+   Hamburger-Button: Textfarbe erben statt Browser-Schwarz. */
+.site-header__burger{ color: inherit; }
+.home-stores .leaflet-container{ background: var(--pb-grey-light); }
+.home-stores .leaflet-container .leaflet-control-zoom.leaflet-bar{ border-color: var(--pb-border); }
+.home-stores .leaflet-control-zoom a{
+  color: var(--pb-dark); background: var(--pb-white); border-bottom-color: var(--pb-border);
+  font-family: var(--pb-font-heading);
+}
+.home-stores .leaflet-control-zoom a:hover{ color: var(--pb-white); background: var(--pb-green); }
+.home-stores .leaflet-control-attribution{ color: var(--pb-gray); background: rgba(255, 255, 255, 0.85); }
+.home-stores .leaflet-control-attribution a{ color: var(--pb-gray); }

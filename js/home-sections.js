@@ -205,7 +205,7 @@
         locateBtn.setAttribute('data-state', 'ok');
         if (map){
           if (userMarker) map.removeLayer(userMarker);
-          userMarker = L.circleMarker([me.lat, me.lon], { radius: 8, color: '#ffffff', weight: 3, fillColor: '#cc0814', fillOpacity: 1 }).addTo(map).bindPopup('Dein Standort');
+          userMarker = L.circleMarker([me.lat, me.lon], { radius: 8, color: '#FFFFFF', weight: 3, fillColor: '#913133', fillOpacity: 1 }).addTo(map).bindPopup('Dein Standort');
         }
         input.value = '';
         applyFilter();
