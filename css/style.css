@@ -2036,12 +2036,12 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, var(--pb-white) 0%
     width: clamp(200px, calc(33.33vw - 100px), 395px); height: auto;
   }
   .site-header__inner--nav > nav.mobile-nav{
-    gap: clamp(10px, calc(2.963vw - 16.67px), 28px);
+    gap: clamp(8px, calc(2.4vw - 13.6px), 28px);   /* 7 Menuepunkte (mit FAQ): 8 px bei 900, 21 px bei 1440 */
   }
   .site-header__inner--nav > .mobile-nav > a,
   .site-header__inner--nav > .mobile-nav .nav-dd__trigger{
     font-size: clamp(11.2px, calc(0.8889vw + 3.2px), 16.5px);
-    font-weight: 900; letter-spacing: 0.035em;
+    font-weight: 900; letter-spacing: 0.015em;     /* seit FAQ (7 Punkte) etwas enger, Groesse unveraendert */
   }
   .site-header__inner--nav > .mobile-nav .nav-dd__toggle svg{ stroke-width: 3; }
   .site-header__inner--nav .site-header__right{ gap: clamp(10px, calc(0.74vw + 3.33px), 16px); }
@@ -2370,4 +2370,88 @@ button, input, select, textarea{ font-family: inherit; }
 @media (min-width: 640px){
   .brand-banner__media{ aspect-ratio: 16/9; }
   .brand-banner__media img{ object-position: 50% 62%; }
+}
+
+/* ==========================================================================
+   FAQ-SEITE /faq/ (Nutzervorgabe 07.10.2026)
+   Kopf auf dem hellen Verlauf, darunter eine weisse Karte mit den 13
+   Kategorien (Akkordeon), darin die Fragen (Akkordeon). Nur CI-Variablen.
+   Aufklappen weich ueber grid-template-rows 0fr -> 1fr; zugeklappte Inhalte
+   sind unsichtbar (auch fuer Tastatur/Screenreader). Ohne JS (.is-ready
+   fehlt) bleibt alles offen. Reihenbreite: max. 960 px, Mobile 12 px Rand.
+   ========================================================================== */
+.faq-page .faq-hero,
+.faq-page .faq-list,
+.faq-page .faq-contact{ width: calc(100% - 40px); max-width: 960px; margin-left: auto; margin-right: auto; }
+.faq-hero{ padding: 48px 0 28px; text-align: center; }
+.faq-hero__eyebrow{ margin: 0 0 10px; font-size: 0.8rem; font-weight: 900; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pb-green); }
+.faq-hero h1{ margin: 0; font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.05; font-weight: 900; text-transform: uppercase; color: var(--pb-dark); }
+.faq-hero__sub{ max-width: 680px; margin: 16px auto 0; font-size: 1.02rem; line-height: 1.6; color: var(--pb-gray); }
+
+.faq-list{ padding: 8px 32px; border-radius: 28px; background: var(--pb-white); box-shadow: 0 12px 32px rgba(55, 53, 53, 0.08); }
+.faq-cat + .faq-cat{ border-top: 1px solid var(--pb-border); }
+.faq-cat__heading,
+.faq-q__heading{ margin: 0; font-family: var(--pb-font-heading); }
+.faq-toggle{
+  display: flex; align-items: center; gap: 14px; width: 100%; margin: 0; border: 0; background: none;
+  font-family: inherit; text-align: left; color: var(--pb-dark); cursor: pointer;
+}
+.faq-toggle:focus-visible{ outline: 3px solid rgba(119, 150, 57, 0.45); outline-offset: 2px; border-radius: 12px; }
+.faq-chevron{ flex: none; width: 22px; height: 22px; margin-left: auto; color: var(--pb-green); transition: transform .25s ease; }
+.faq-toggle[aria-expanded="true"] > .faq-chevron{ transform: rotate(180deg); }
+
+.faq-cat__btn{ min-height: 72px; padding: 16px 4px; font-size: 1.08rem; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; }
+.faq-cat__btn:hover .faq-cat__title{ color: var(--pb-green); }
+.faq-cat__icon{ display: grid; place-items: center; flex: none; width: 44px; height: 44px; border-radius: 14px; background: var(--pb-green-light); color: var(--pb-green); }
+.faq-cat__icon svg{ width: 24px; height: 24px; }
+.faq-cat__btn[aria-expanded="true"] .faq-cat__icon{ background: var(--pb-green); color: var(--pb-white); }
+.faq-cat__count{ flex: none; margin-left: auto; padding: 4px 10px; border-radius: 999px; background: var(--pb-grey-light); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; color: var(--pb-gray); text-transform: none; }
+.faq-cat__count + .faq-chevron{ margin-left: 4px; }
+
+.faq-cat__questions{ margin: 0 0 18px 58px; border-left: 3px solid var(--pb-green); border-radius: 0 0 0 4px; }
+.faq-q + .faq-q{ border-top: 1px solid var(--pb-border); }
+.faq-q__btn{ min-height: 56px; padding: 14px 4px 14px 18px; font-size: 1.02rem; font-weight: 700; line-height: 1.35; }
+.faq-q__btn:hover,
+.faq-q__btn[aria-expanded="true"]{ color: var(--pb-green); }
+.faq-a{ padding: 0 36px 18px 18px; font-size: 0.97rem; line-height: 1.65; color: var(--pb-gray); }
+.faq-a p{ margin: 0 0 10px; }
+.faq-a p:last-child{ margin-bottom: 0; }
+.faq-a a,
+.faq-link{ color: var(--pb-green); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.faq-link{ padding: 0; border: 0; background: none; font: inherit; font-weight: 700; cursor: pointer; }
+.faq-a a:hover,
+.faq-link:hover{ color: var(--pb-dark); }
+.faq-a strong{ color: var(--pb-dark); }
+.faq-code{ display: inline-block; padding: 0 8px; border: 2px dashed var(--pb-green); border-radius: 8px; background: var(--pb-white); letter-spacing: 0.14em; color: var(--pb-dark); }
+
+/* Aufklappen (nur mit JS) */
+.faq-list.is-ready .faq-panel{ display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+.faq-list.is-ready .faq-panel.is-open{ grid-template-rows: 1fr; }
+.faq-list.is-ready .faq-panel__inner{ min-height: 0; overflow: hidden; visibility: hidden; transition: visibility 0s linear .3s; }
+.faq-list.is-ready .faq-panel.is-open > .faq-panel__inner{ visibility: visible; transition-delay: 0s; }
+@media (prefers-reduced-motion: reduce){
+  .faq-list.is-ready .faq-panel, .faq-chevron{ transition: none; }
+}
+
+.faq-contact{ margin-top: 28px; margin-bottom: 56px; padding: 30px 32px; border-radius: 28px; background: var(--pb-white); text-align: center; box-shadow: 0 12px 32px rgba(55, 53, 53, 0.08); }
+.faq-contact h2{ margin: 0 0 8px; font-size: clamp(1.25rem, 2.4vw, 1.6rem); font-weight: 900; text-transform: uppercase; color: var(--pb-dark); }
+.faq-contact p{ margin: 0; color: var(--pb-gray); }
+.faq-contact a{ color: var(--pb-green); font-weight: 700; }
+
+@media (max-width: 760px){
+  .faq-page .faq-hero,
+  .faq-page .faq-list,
+  .faq-page .faq-contact{ width: calc(100% - 24px); }
+  .faq-hero{ padding: 32px 0 20px; }
+  .faq-hero__sub{ font-size: 0.96rem; }
+  .faq-list{ padding: 4px 14px; border-radius: 22px; }
+  .faq-cat__btn{ gap: 10px; min-height: 64px; padding: 12px 2px; font-size: 0.92rem; letter-spacing: 0.02em; }
+  .faq-cat__icon{ width: 38px; height: 38px; border-radius: 12px; }
+  .faq-cat__icon svg{ width: 21px; height: 21px; }
+  .faq-cat__count{ display: none; }
+  .faq-cat__count + .faq-chevron{ margin-left: auto; }
+  .faq-cat__questions{ margin: 0 0 14px 4px; }
+  .faq-q__btn{ padding: 12px 2px 12px 14px; font-size: 0.96rem; }
+  .faq-a{ padding: 0 6px 16px 14px; font-size: 0.94rem; }
+  .faq-contact{ margin-bottom: 40px; padding: 24px 18px; border-radius: 22px; }
 }
