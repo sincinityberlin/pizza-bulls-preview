@@ -2356,3 +2356,18 @@ button, input, select, textarea{ font-family: inherit; }
 .home-stores .leaflet-control-zoom a:hover{ color: var(--pb-white); background: var(--pb-green); }
 .home-stores .leaflet-control-attribution{ color: var(--pb-gray); background: rgba(255, 255, 255, 0.85); }
 .home-stores .leaflet-control-attribution a{ color: var(--pb-gray); }
+
+/* ==========================================================================
+   FRANCHISE-BANNER STARTSEITE: neues Tagfoto (Nutzervorgabe 07.10.2026)
+   franchise-store-tag-2026.jpg (1292x1218, unbearbeitetes Original). Volle
+   Breite, object-fit: cover. Damit Schriftzug, Store und die ganze Figur
+   rechts sichtbar bleiben, ist der Bildbereich ab 640 px 16:9 (vorher 21:9 -
+   dort waere die Figur oben/unten abgeschnitten) und der Ausschnitt etwas
+   nach unten verschoben (Himmel oben / Pflaster unten werden gekuerzt).
+   Unter 640 px bleibt 4:3. Badge und Textbereich unveraendert.
+   ========================================================================== */
+.brand-banner__media img{ object-position: 50% 70%; }
+@media (min-width: 640px){
+  .brand-banner__media{ aspect-ratio: 16/9; }
+  .brand-banner__media img{ object-position: 50% 62%; }
+}
