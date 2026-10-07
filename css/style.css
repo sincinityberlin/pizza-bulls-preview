@@ -2538,3 +2538,90 @@ button, input, select, textarea{ font-family: inherit; }
   .vip-success__code-text{ font-size: 1.1rem; }
   .vip-success__copy{ padding: 10px 12px; }
 }
+
+/* ==========================================================================
+   HEADER-SYMBOLE: SPRACHAUSWAHL + KUNDENKONTO (Nutzervorgabe 07.10.2026)
+   js/pb-sprache.js (Globus) und js/pb-konto.js (Profil). Symbole selbst,
+   Groessen und Positionen unveraendert - nur Aufklappmenues/Fenster.
+   Menues im Stil des Franchise-Dropdowns: weisse Karte, gruene Oberkante.
+   Konto-Fenster nutzt .app-modal + die Formularstile des VIP-Popups.
+   ========================================================================== */
+.site-header__right.pb-header-tools{ position: relative; }
+.pb-pop{
+  position: absolute; top: calc(100% + 12px); right: 0; z-index: 300;
+  min-width: 220px; max-width: calc(100vw - 24px); padding: 8px;
+  background: var(--pb-white); border: 1px solid var(--pb-border); border-top: 3px solid var(--pb-green);
+  border-radius: 0 0 var(--radius) var(--radius); box-shadow: 0 14px 30px rgba(55, 53, 53, 0.14);
+}
+.pb-pop[hidden]{ display: none; }
+.pb-pop__item{
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 46px; padding: 10px 12px;
+  border: 0; border-radius: var(--radius-sm); background: none; text-align: left; text-decoration: none;
+  font-family: var(--pb-font-heading); font-size: 0.95rem; font-weight: 700; color: var(--pb-dark); cursor: pointer;
+}
+.pb-pop__item:hover,
+.pb-pop__item:focus-visible{ background: var(--pb-green-light); color: var(--pb-dark); outline: none; }
+.pb-pop__item.is-disabled{ color: var(--pb-gray); opacity: 0.6; cursor: default; }
+.pb-pop__item.is-disabled:hover{ background: none; }
+.pb-pop__flagge{ font-size: 1.35rem; line-height: 1; }
+.pb-pop__haken{ width: 20px; height: 20px; margin-left: auto; color: var(--pb-green); visibility: hidden; }
+.pb-pop__item[aria-checked="true"]{ color: var(--pb-green); }
+.pb-pop__item[aria-checked="true"] .pb-pop__haken{ visibility: visible; }
+.pb-pop__kopf{ margin: 4px 12px 8px; padding-bottom: 10px; border-bottom: 1px solid var(--pb-border); font-weight: 800; color: var(--pb-dark); }
+.pb-pop__abmelden{ margin-top: 4px; border-top: 1px solid var(--pb-border); border-radius: 0 0 var(--radius-sm) var(--radius-sm); color: var(--pb-red); }
+/* angemeldet: kleiner gruener Punkt am Profil-Symbol */
+.site-header__icon-btn.is-angemeldet{ position: relative; }
+.site-header__icon-btn.is-angemeldet::after{
+  content: ""; position: absolute; right: -1px; top: -1px; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--pb-green); border: 2px solid var(--pb-white);
+}
+
+/* Konto-Fenster */
+.pb-konto__box{ padding: 40px 30px 26px; text-align: left; }
+.pb-konto__titel{ margin: 0 0 16px; padding: 0 34px; text-align: center; font-family: var(--pb-font-heading); font-size: 1.15rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; color: var(--pb-dark); }
+.pb-konto__tabs{ display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 0 0 20px; padding: 4px; border-radius: 999px; background: var(--pb-grey-light); }
+.pb-konto__tabs[hidden]{ display: none; }
+.pb-konto__tabs [role="tab"]{
+  min-height: 44px; padding: 8px 10px; border: 0; border-radius: 999px; background: none; cursor: pointer;
+  font-family: var(--pb-font-heading); font-size: 0.85rem; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; color: var(--pb-gray);
+}
+.pb-konto__tabs [aria-selected="true"]{ background: var(--pb-white); color: var(--pb-green); box-shadow: 0 2px 8px rgba(55, 53, 53, 0.12); }
+.pb-konto__panel[hidden]{ display: none; }
+.pb-konto__reihe{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.pb-konto__pw{ position: relative; display: block; }
+.pb-konto__pw input{ padding-right: 52px; }
+.pb-konto__auge{
+  position: absolute; top: 50%; right: 6px; transform: translateY(-50%); display: grid; place-items: center;
+  width: 40px; height: 40px; border: 0; border-radius: 10px; background: none; color: var(--pb-gray); cursor: pointer;
+}
+.pb-konto__auge svg{ width: 22px; height: 22px; }
+.pb-konto__auge[aria-pressed="true"]{ color: var(--pb-green); }
+.pb-konto__link{
+  padding: 4px 0; border: 0; background: none; cursor: pointer; font-family: inherit; font-size: 0.92rem; font-weight: 700;
+  color: var(--pb-green); text-decoration: underline; text-underline-offset: 3px;
+}
+.pb-konto__link:hover{ color: var(--pb-dark); }
+.pb-konto__vergessen{ justify-self: end; margin-top: -6px; }
+.pb-konto__hinweis{ margin: -8px 0 0; font-size: 0.8rem; color: var(--pb-gray); }
+.pb-konto__check{ display: flex; align-items: flex-start; gap: 10px; font-size: 0.86rem; line-height: 1.45; color: var(--pb-gray); cursor: pointer; }
+.pb-konto__check input{ flex: none; width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--pb-green); }
+.pb-konto__check input.is-invalid{ outline: 2px solid var(--pb-red); outline-offset: 2px; }
+.pb-konto__check a{ color: var(--pb-green); font-weight: 700; }
+.pb-konto__wechsel{ margin: 16px 0 0; text-align: center; font-size: 0.92rem; color: var(--pb-gray); }
+.pb-konto__untertitel{ margin: 0 0 8px; font-family: var(--pb-font-heading); font-size: 1.05rem; font-weight: 900; text-transform: uppercase; color: var(--pb-dark); }
+.pb-konto__text{ margin: 0 0 16px; font-size: 0.94rem; line-height: 1.5; color: var(--pb-gray); }
+@media (max-width: 760px){
+  .pb-konto__box{ padding: 36px 18px 22px; }
+  .pb-konto__reihe{ grid-template-columns: 1fr; gap: 14px; }
+}
+@media (max-height: 700px){
+  .pb-konto__box{ padding-top: 30px; }
+}
+
+/* Rechtsseiten in EN/TR: Hinweis, dass der Text deutsch bleibt */
+.pb-legal-hinweis{
+  max-width: var(--content-max); margin: 20px auto 0; padding: 12px 18px; width: calc(100% - 40px);
+  border-radius: var(--radius-sm); background: var(--pb-cream); color: var(--pb-dark); font-weight: 700; text-align: center;
+}
+/* Uebersetzung wird geladen: deutschen Text nicht aufblitzen lassen */
+html.pb-i18n-laedt body{ opacity: 0; }
