@@ -3,7 +3,9 @@
    Verbindliche Grundlage: "Pizza Bulls SOCIAL-MEDIA-MARKENSTILRICHTLINIE".
    NUR diese sechs Markenfarben werden verwendet:
      Primaer:   Gruen #779639 · Weiss #FFFFFF · Grau #606163
-     Sekundaer: Dunkelrot #913133 · Anthrazit #373535 · Creme #F7F0C1
+     Sekundaer: Anthrazit #373535 · Creme #F7F0C1
+     ROT: auf Nutzerwunsch (07.10.2026) NICHT das CI-Dunkelrot #913133,
+     sondern wieder das klassische Pizza-Bulls-Rot #cc0814 (+ #a90711 Hover).
    Alle weiteren Variablen sind daraus ABGELEITET - entweder direkt eine
    Markenfarbe (z. B. Hover = Anthrazit) oder eine Markenfarbe mit
    Transparenz (helle Flaechen, Rahmen, Schatten). Keine eigenen Toene.
@@ -19,7 +21,7 @@
   --pb-green: #779639;
   --pb-white: #FFFFFF;
   --pb-gray: #606163;
-  --pb-red: #913133;
+  --pb-red: #cc0814;                        /* klassisches Pizza-Bulls-Rot (wiederhergestellt 07.10.2026, Stand vor CI-Umstellung) */
   --pb-dark: #373535;
   --pb-cream: #F7F0C1;
 
@@ -29,8 +31,8 @@
   --pb-green-deep: var(--pb-dark);
   --pb-green-bright: var(--pb-cream);       /* Akzent auf dunklem/gruenem Grund */
   --pb-green-light: rgba(119, 150, 57, 0.12);
-  --pb-red-dark: var(--pb-dark);            /* Hover/Active roter Elemente */
-  --pb-red-light: rgba(145, 49, 51, 0.10);
+  --pb-red-dark: #a90711;                   /* Hover/Active roter Elemente (Stand vor CI-Umstellung) */
+  --pb-red-light: #fbe9ea;                  /* (Stand vor CI-Umstellung) */
   --pb-grey-light: rgba(96, 97, 99, 0.08);
   --pb-border: rgba(96, 97, 99, 0.20);
 
@@ -2233,7 +2235,7 @@ button.pizza-build__cta{ font-family: inherit; }
 }
 .app-hero__text h1{ margin: 0; font-size: clamp(1.8rem, 3.3vw, 2.9rem); line-height: 1.05; font-weight: 900; text-transform: uppercase; letter-spacing: 0.01em; color: var(--pb-white); }
 .app-hero__deal{ margin: 14px 0 0; font-size: clamp(3rem, 6.6vw, 5.4rem); line-height: 1; font-weight: 900; text-transform: uppercase; color: var(--pb-white); }
-.app-hero__deal-amount{ display: inline-block; padding: 0.04em 0.16em 0.02em; border-radius: 0.16em; background: var(--pb-red); box-shadow: 0 8px 20px rgba(145, 49, 51, 0.3); }
+.app-hero__deal-amount{ display: inline-block; padding: 0.04em 0.16em 0.02em; border-radius: 0.16em; background: var(--pb-red); box-shadow: 0 8px 20px rgba(140, 8, 20, 0.3); }
 .app-hero__with{ margin: 14px 0 18px; font-size: 1.2rem; font-weight: 700; color: var(--pb-white); }
 .app-hero__with strong{ font-weight: 900; letter-spacing: 0.12em; }
 .app-hero__note{ margin: 18px 0 0; max-width: 520px; font-size: 1rem; line-height: 1.55; color: rgba(255, 255, 255, 0.95); }
@@ -2454,4 +2456,44 @@ button, input, select, textarea{ font-family: inherit; }
   .faq-q__btn{ padding: 12px 2px 12px 14px; font-size: 0.96rem; }
   .faq-a{ padding: 0 6px 16px 14px; font-size: 0.94rem; }
   .faq-contact{ margin-bottom: 40px; padding: 24px 18px; border-radius: 22px; }
+}
+
+/* ==========================================================================
+   APP-SEITE: 5 € NEUKUNDENRABATT (Korrektur 07.10.2026)
+   Ersetzt das falsche "10€ Rabatt mit Code BULLS": Hero mit CTA statt
+   Code-Box, Anleitung in 4 Schritten (Desktop nebeneinander, Tablet 2x2,
+   Mobile untereinander mit Pfeil zwischen den Schritten), Hinweis darunter.
+   ========================================================================== */
+.app-hero__cta{
+  display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 14px 26px;
+  border-radius: 999px; background: var(--pb-white); color: var(--pb-green);
+  font-family: var(--pb-font-heading); font-size: 0.95rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase;
+  text-decoration: none; box-shadow: 0 10px 24px rgba(55, 53, 53, 0.18); transition: background .15s ease, color .15s ease;
+}
+.app-hero__cta:hover{ background: var(--pb-green-light); color: var(--pb-dark); }
+.app-hero__cta:focus-visible{ outline: 3px solid var(--pb-white); outline-offset: 3px; }
+.app-hero__with{ margin-bottom: 22px; }
+/* "NEUKUNDENRABATT" ist ein langes Wort: Groesse an die Breite der Textspalte
+   koppeln (Container-Einheit), damit es nie ueber die Karte hinausragt. */
+.app-hero__text{ container-type: inline-size; }
+.app-hero__deal{ font-size: min(8.6cqi, 4.6rem); }
+.app-steps.app-steps--4{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.app-step--highlight{ border: 2px solid var(--pb-green); background: var(--pb-cream); }
+.app-step--highlight .app-step__icon{ background: var(--pb-green); color: var(--pb-white); }
+.app-how__terms{
+  max-width: 720px; margin: 24px auto 0; padding: 12px 18px; border-radius: 14px;
+  background: var(--pb-grey-light); font-size: 0.9rem; line-height: 1.5; color: var(--pb-dark);
+}
+@media (max-width: 1099px){
+  .app-steps.app-steps--4{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .app-steps--4 .app-step:last-child{ grid-column: auto; }
+}
+@media (max-width: 760px){
+  .app-steps.app-steps--4{ grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .app-steps--4 .app-step:not(:last-child)::after{
+    content: ""; position: absolute; left: 50%; bottom: -24px; width: 12px; height: 12px; margin-left: -6px;
+    border-right: 3px solid var(--pb-green); border-bottom: 3px solid var(--pb-green); transform: rotate(45deg);
+  }
+  .app-hero__cta{ width: 100%; max-width: 360px; }
+  .app-hero__deal{ font-size: min(8.6cqi, 3rem); }
 }
