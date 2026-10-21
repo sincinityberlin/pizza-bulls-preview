@@ -2625,3 +2625,100 @@ button, input, select, textarea{ font-family: inherit; }
 }
 /* Uebersetzung wird geladen: deutschen Text nicht aufblitzen lassen */
 html.pb-i18n-laedt body{ opacity: 0; }
+
+/* ==========================================================================
+   SOCIAL MEDIA (Startseite, unter "Pizza Highlights") — 21.10.2026
+   Vorlage: Social-Bereich von pizzabulls.de (roter Banner mit schwebenden
+   Instagram-/TikTok-Symbolen, gruene Buttons, Video-Karten im Smartphone-
+   Look). Farben nur aus den Tokens (--pb-red, --pb-green, --pb-cream,
+   --pb-dark). Videos im Originalformat 9:16 — kein Beschnitt, keine
+   Verzerrung. Endloslauf/Pause/Ziehen in js/home-social.js.
+   ========================================================================== */
+.home-social{ max-width: var(--content-max); margin: 0 auto; padding: 64px 20px; overflow-x: clip; } /* Symbole ragen ueber den Banner, nie ueber die Seite */
+.home-social__banner{
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 32px;
+  margin: 0 auto; max-width: 1080px; padding: 52px 48px; text-align: center; color: var(--pb-white);
+  border-radius: 40px; background: var(--pb-red) url("../assets/social/social-follow-bg.jpg") center / cover no-repeat;
+  box-shadow: 0 18px 40px rgba(55, 53, 53, 0.22);
+}
+.home-social__banner::before{ /* Rot ueber dem Hintergrundbild (wie Vorlage: 90 %) */
+  content: ""; position: absolute; inset: 0; border-radius: inherit; background: rgba(204, 8, 20, 0.9);
+}
+.home-social__banner::after{ /* feine weisse Innenlinie */
+  content: ""; position: absolute; inset: 12px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.5); pointer-events: none;
+}
+.home-social__text, .home-social__buttons{ position: relative; z-index: 1; }
+.home-social__text{ max-width: 640px; }
+.home-social__text h2{
+  margin: 0; color: var(--pb-white); font-weight: 900; text-transform: uppercase;
+  font-size: clamp(2.2rem, 5.6vw, 4.2rem); line-height: 0.98; letter-spacing: -0.02em;
+}
+.home-social__text h2 span{ display: block; color: var(--pb-cream); }
+.home-social__text p{ margin: 22px auto 0; max-width: 440px; color: var(--pb-white); font-size: 1rem; line-height: 1.65; }
+.home-social__buttons{ display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+.home-social__btn{
+  display: inline-flex; align-items: center; gap: 12px; padding: 12px 32px; border-radius: 999px;
+  border: 2px solid var(--pb-white); background: var(--pb-green); color: var(--pb-white);
+  font-size: 0.875rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none;
+  transition: background-color .2s ease, color .2s ease;
+}
+.home-social__btn svg{ width: 20px; height: 20px; flex: none; }
+.home-social__btn:hover, .home-social__btn:focus-visible{ background: var(--pb-white); color: var(--pb-green); }
+.home-social__btn:focus-visible{ outline: 2px solid var(--pb-white); outline-offset: 3px; }
+.home-social__icon{
+  position: absolute; z-index: 2; width: 176px; height: auto; pointer-events: none;
+  top: 50%; filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.35));
+}
+.home-social__icon--instagram{ left: -48px; margin-top: -88px; animation: pb-social-float-ig 5s ease-in-out infinite; }
+.home-social__icon--tiktok{ right: -48px; margin-top: -88px; animation: pb-social-float-tt 5.6s ease-in-out -2s infinite; }
+@keyframes pb-social-float-ig{ 0%, 100%{ transform: translateY(0) rotate(-4deg); } 50%{ transform: translateY(-14px) rotate(2deg); } }
+@keyframes pb-social-float-tt{ 0%, 100%{ transform: translateY(0) rotate(4deg); } 50%{ transform: translateY(-14px) rotate(-2deg); } }
+
+/* Video-Slider: natives horizontales Scrollen (Wischen/Trackpad), Laufband per JS */
+.home-social__slider{
+  margin-top: 44px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch; cursor: grab;
+  padding: 12px 0 40px; /* Platz fuer Hover-Vergroesserung und Schatten (kein harter Schnitt) */
+}
+.home-social__slider::-webkit-scrollbar{ display: none; }
+.home-social__slider.is-dragging{ cursor: grabbing; }
+.home-social__slider.is-dragging .home-social__card{ pointer-events: none; }
+.home-social__track{ display: flex; gap: 24px; width: max-content; margin: 0; padding: 0 12px; list-style: none; }
+.home-social__item{ flex: none; width: 240px; }
+.home-social__card{
+  display: block; padding: 22px 7px 14px; border-radius: 36px; background: var(--pb-dark);
+  box-shadow: 0 14px 28px rgba(55, 53, 53, 0.28); position: relative; transition: transform .2s ease;
+  -webkit-user-drag: none;
+}
+.home-social__card::before{ /* Lautsprecher-/Kamera-Leiste im Rahmen, verdeckt kein Video */
+  content: ""; position: absolute; top: 8px; left: 50%; width: 56px; height: 7px; margin-left: -28px;
+  border-radius: 999px; background: rgba(255, 255, 255, 0.18);
+}
+.home-social__card:hover{ transform: scale(1.03); }
+.home-social__card:focus-visible{ outline: 3px solid var(--pb-green); outline-offset: 4px; }
+.home-social__screen{ display: block; aspect-ratio: 9 / 16; overflow: hidden; border-radius: 26px; background: #000; }
+.home-social__screen video{ display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+
+@media (max-width: 1100px){
+  .home-social__icon{ width: 136px; margin-top: -68px; }
+  .home-social__icon--instagram{ left: -14px; }
+  .home-social__icon--tiktok{ right: -14px; }
+  .home-social__banner{ padding: 48px 112px; }
+}
+@media (max-width: 760px){
+  .home-social{ padding: 44px 12px; }
+  .home-social__banner{ padding: 56px 22px 52px; border-radius: 28px; gap: 28px; }
+  .home-social__banner::after{ inset: 8px; border-radius: 21px; }
+  .home-social__icon{ width: 84px; top: auto; margin-top: 0; }
+  .home-social__icon--instagram{ left: -6px; top: -26px; }
+  .home-social__icon--tiktok{ right: -6px; bottom: -26px; }
+  .home-social__text p{ margin-top: 18px; font-size: 0.95rem; }
+  .home-social__btn{ padding: 12px 24px; }
+  .home-social__slider{ margin-top: 36px; }
+  .home-social__track{ gap: 16px; }
+  .home-social__item{ width: 208px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .home-social__icon{ animation: none; }
+  .home-social__card{ transition: none; }
+}

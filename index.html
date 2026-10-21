@@ -6,7 +6,7 @@
 <title>Pizza Bulls — Fast Like Bulls! Pizza &amp; Burger Lieferdienst</title>
 <meta name="description" content="Pizza Bulls — frisches, hausgemachtes Essen seit 2008. Über 27 Standorte deutschlandweit. Jetzt online bestellen: Lieferung oder Abholung." />
 <link rel="icon" href="assets/images/logo.png" />
-<link rel="stylesheet" href="css/style.css?v=20261007-ci57" />
+<link rel="stylesheet" href="css/style.css?v=20261021-ci58" />
 </head>
 <body class="home-page">
 
@@ -244,6 +244,40 @@
       <div><strong>18+</strong><span>Jahre Erfahrung</span></div>
       <div><strong>1M+</strong><span>Zufriedene Kunden</span></div>
       <div><strong>SCHNELL &amp; HEISS</strong><span>GELIEFERT</span></div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       SOCIAL MEDIA — "Folge uns auf TikTok & Instagram" (Vorlage: pizzabulls.de).
+       Roter Banner + 7 echte Instagram-Reels von @pizzabulls.europe als
+       Endlos-Slider (Logik in js/home-social.js, Klassen .home-social*).
+       Videos/Bilder lokal unter assets/social/ (Reels auf 480x854 verkleinert).
+       ========================================================================== -->
+  <section class="home-social" aria-labelledby="home-social-title">
+    <div class="home-social__banner">
+      <img class="home-social__icon home-social__icon--instagram" src="assets/social/social-follow-instagram.png" alt="" width="500" height="500" loading="lazy" aria-hidden="true" />
+      <img class="home-social__icon home-social__icon--tiktok" src="assets/social/social-follow-tiktok.png" alt="" width="500" height="500" loading="lazy" aria-hidden="true" />
+      <div class="home-social__text">
+        <h2 id="home-social-title">Folge uns auf <span>TikTok &amp; Instagram</span></h2>
+        <p>Schau zu, wie unsere Pizzen und Burger entstehen – und hol dir Appetit für deine nächste Bestellung.</p>
+      </div>
+      <div class="home-social__buttons">
+        <a class="home-social__btn" href="https://www.tiktok.com/@pizzabulls.europe" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="18" r="4"/><path d="M12 18V2l7 4"/></svg>TikTok folgen</a>
+        <a class="home-social__btn" href="https://www.instagram.com/pizzabulls.europe/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram folgen</a>
+      </div>
+    </div>
+
+    <div class="home-social__slider" id="homeSocialSlider">
+      <ul class="home-social__track" aria-label="Videos von Pizza Bulls auf Instagram">
+        <li class="home-social__item"><a class="home-social__card" href="https://www.instagram.com/p/DcOgWCSARbY/" target="_blank" rel="noopener noreferrer" aria-label="Video auf Instagram ansehen (öffnet in neuem Tab)"><span class="home-social__screen"><video src="assets/social/reel-DcOgWCSARbY.mp4" poster="assets/social/reel-DcOgWCSARbY.jpg" width="480" height="854" muted loop playsinline preload="none" aria-hidden="true"></video></span></a></li>
+        <li class="home-social__item"><a class="home-social__card" href="https://www.instagram.com/p/Dbntu-RAM4s/" target="_blank" rel="noopener noreferrer" aria-label="Video auf Instagram ansehen (öffnet in neuem Tab)"><span class="home-social__screen"><video src="assets/social/reel-Dbntu-RAM4s.mp4" poster="assets/social/reel-Dbntu-RAM4s.jpg" width="480" height="854" muted loop playsinline preload="none" aria-hidden="true"></video></span></a></li>
+        <li class="home-social__item"><a class="home-social__card" href="https://www.instagram.com/p/DbcxNo0gOnE/" target="_blank" rel="noopener noreferrer" aria-label="Video auf Instagram ansehen (öffnet in neuem Tab)"><span class="home-social__screen"><video src="assets/social/reel-DbcxNo0gOnE.mp4" poster="assets/social/reel-DbcxNo0gOnE.jpg" width="480" height="854" muted loop playsinline preload="none" aria-hidden="true"></video></span></a></li>
+        <li class="home-social__item"><a class="home-social__card" href="https://www.instagram.com/p/DaStBQJD-Qk/" target="_blank" rel="noopener noreferrer" aria-label="Video auf Instagram ansehen (öffnet in neuem Tab)"><span class="home-social__screen"><video src="assets/social/reel-DaStBQJD-Qk.mp4" poster="assets/social/reel-DaStBQJD-Qk.jpg" width="480" height="854" muted loop playsinline preload="none" aria-hidden="true"></video></span></a></li>
+        <li class="home-social__item"><a class="home-social__card" href="https://www.instagram.com/p/DaIIzZWiaH8/" target="_blank" rel="noopener noreferrer" aria-label="Video auf Instagram ansehen (öffnet in neuem Tab)"><span class="home-social__screen"><video src="assets/social/reel-DaIIzZWiaH8.mp4" poster="assets/social/reel-DaIIzZWiaH8.jpg" width="480" height="854" muted loop playsinline preload="none" aria-hidden="true"></video></span></a></li>
+        <li class="home-social__item"><a class="home-social__card" href="https://www.instagram.com/p/DaEBvm8AbTy/" target="_blank" rel="noopener noreferrer" aria-label="Video auf Instagram ansehen (öffnet in neuem Tab)"><span class="home-social__screen"><video src="assets/social/reel-DaEBvm8AbTy.mp4" poster="assets/social/reel-DaEBvm8AbTy.jpg" width="480" height="854" muted loop playsinline preload="none" aria-hidden="true"></video></span></a></li>
+        <li class="home-social__item"><a class="home-social__card" href="https://www.instagram.com/p/DaDChFjFCNV/" target="_blank" rel="noopener noreferrer" aria-label="Video auf Instagram ansehen (öffnet in neuem Tab)"><span class="home-social__screen"><video src="assets/social/reel-DaDChFjFCNV.mp4" poster="assets/social/reel-DaDChFjFCNV.jpg" width="480" height="854" muted loop playsinline preload="none" aria-hidden="true"></video></span></a></li>
+      </ul>
     </div>
   </section>
 
@@ -598,11 +632,12 @@
      oeffnet dasselbe VIP-Popup (#vipModal) wie "Jetzt registrieren". -->
 <button class="vip-teaser" type="button" data-vip-modal-open aria-haspopup="dialog">Neukunde? 10€ Rabatt</button>
 
-<script src="js/main.js?v=20261007-ci57"></script>
-<script src="js/vip-club.js?v=20261007-ci57"></script>
+<script src="js/main.js?v=20261021-ci58"></script>
+<script src="js/vip-club.js?v=20261021-ci58"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="js/home-sections.js?v=20261007-ci57"></script>
-<script src="js/pb-konto.js?v=20261007-ci57"></script>
-<script src="js/pb-sprache.js?v=20261007-ci57"></script>
+<script src="js/home-sections.js?v=20261021-ci58"></script>
+<script src="js/home-social.js?v=20261021-ci58"></script>
+<script src="js/pb-konto.js?v=20261021-ci58"></script>
+<script src="js/pb-sprache.js?v=20261021-ci58"></script>
 </body>
 </html>
