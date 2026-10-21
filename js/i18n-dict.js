@@ -2,6 +2,8 @@
    Schluessel = deutscher Text bzw. HTML OHNE Attribute (siehe js/pb-sprache.js). */
 window.PB_I18N = {
 "en": {
+"Pizza Bulls auf Instagram (öffnet in neuem Tab)": "Pizza Bulls on Instagram (opens in new tab)",
+"Pizza Bulls auf TikTok (öffnet in neuem Tab)": "Pizza Bulls on TikTok (opens in new tab)",
 "Folge uns auf <span>TikTok &amp; Instagram</span>": "Follow us on <span>TikTok &amp; Instagram</span>",
 "Schau zu, wie unsere Pizzen und Burger entstehen – und hol dir Appetit für deine nächste Bestellung.": "Watch how our pizzas and burgers are made – and work up an appetite for your next order.",
 "TikTok folgen": "Follow on TikTok",
@@ -786,6 +788,8 @@ window.PB_I18N = {
 "Als VIP-Mitglied bist du Teil unserer VIP-E-Mail-Liste: Punkte sammeln und als V.I.P. Mitglied belohnt werden. Die Anmeldung öffnest du über „Jetzt registrieren“ im Pizza-Bulls-Club-Bereich der Startseite, über „Neukunde? 10€ Rabatt“ oder direkt hier: <button>VIP Mitglieder Club</button>.": "As a VIP member you're part of our VIP email list: collect points and get rewarded as a V.I.P. member. You can open the sign-up via „Register now“ in the Pizza Bulls Club section of the home page, via „New customer? 10€ off“ or directly here: <button>VIP Members Club</button>."
 },
 "tr": {
+"Pizza Bulls auf Instagram (öffnet in neuem Tab)": "Instagram'da Pizza Bulls (yeni sekmede açılır)",
+"Pizza Bulls auf TikTok (öffnet in neuem Tab)": "TikTok'ta Pizza Bulls (yeni sekmede açılır)",
 "Folge uns auf <span>TikTok &amp; Instagram</span>": "Bizi takip et: <span>TikTok &amp; Instagram</span>",
 "Schau zu, wie unsere Pizzen und Burger entstehen – und hol dir Appetit für deine nächste Bestellung.": "Pizzalarımızın ve burgerlerimizin nasıl hazırlandığını izle – bir sonraki siparişin için iştahını aç.",
 "TikTok folgen": "TikTok'ta takip et",

@@ -1326,7 +1326,7 @@ h1,h2,h3{ text-wrap: balance; }
 @media (max-width: 760px){
   .site-header__inner > .mobile-nav{ flex-basis: calc(100% + 28px); margin: 8px -14px -8px; }
 }
-@media (min-width: 900px){
+@media (min-width: 1680px){ /* seit 21.10.2026 (Social-Symbole im Header): Menueleiste erst ab 1680 px, vorher 900 px */
   .site-header__inner--nav > .site-header__burger{ display: none !important; }
   .site-header__inner > .mobile-nav{
     order: 0; display: flex; flex-direction: row; flex: 1 1 auto; min-width: 0;
@@ -1399,7 +1399,7 @@ h1,h2,h3{ text-wrap: balance; }
 /* Kleine Desktop-/Laptop-Breiten: etwas kompaktere Menüleiste, damit alle
    sieben Punkte zwischen Logo und Icons in eine Zeile passen (fließend:
    900px → 9px Schrift / 6px Abstand, ab 1024px → 0.66rem, ab 1050px 12px). */
-@media (min-width: 900px) and (max-width: 1099px){
+@media (min-width: 1680px) and (max-width: 1099px){ /* seit 21.10.2026 inaktiv: Menueleiste erst ab 1680 px - wuerde sonst das Hamburger-Menue 900-1099 px verkleinern */
   .site-header__inner--nav{ gap: 14px; }
   .site-header__inner > .mobile-nav{ gap: clamp(6px, calc((100vw - 900px) / 25 + 6px), 12px); }
   .site-header__inner > .mobile-nav > a,
@@ -1984,7 +1984,7 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, var(--pb-white) 0%
    ebenfalls. Das Dropdown-Menue bleibt eine weisse Karte mit dunkler Schrift,
    damit es lesbar bleibt. Mobile (< 900px) ist davon nicht beruehrt.
    ========================================================================== */
-@media (min-width: 900px){
+@media (min-width: 1680px){ /* seit 21.10.2026: vorher 900 px */
   /* Gruen nur fuer die Desktop-Leiste - unter 900px (Hamburger-Menue) bleibt
      der Header unveraendert weiss, wie vom Nutzer verlangt. */
   .site-header{ background: var(--pb-green); border-bottom-color: rgba(255, 255, 255, 0.25); }
@@ -2024,9 +2024,9 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, var(--pb-white) 0%
    Inhalte der gruenen Leiste bis 1600 px breit, Innenabstand links = rechts.
    Nur Header mit Menueleiste (.site-header__inner--nav).
    ========================================================================== */
-@media (min-width: 900px){
+@media (min-width: 1680px){ /* seit 21.10.2026: vorher 900 px */
   .site-header__inner.site-header__inner--nav{
-    max-width: 1600px;
+    max-width: 1720px; /* vorher 1600 px - Platz fuer Instagram/TikTok neben Globus/Profil (21.10.2026) */
     padding-left: clamp(24px, calc(3.5vw - 8px), 56px);
     padding-right: clamp(24px, calc(3.5vw - 8px), 56px);
   }
@@ -2077,7 +2077,7 @@ body, .fr-page, .aa-page{ background: linear-gradient(180deg, var(--pb-white) 0%
      Breitenbudget bei 360/390 px: Rand 2x14 + Burger 40 + 2 Luecken 12 +
      Bulle + 6 + Schriftzug + Icons 2x38+8 -> 14 px Reserve, nichts ragt raus.
    ========================================================================== */
-@media (max-width: 899px){
+@media (max-width: 1679px){ /* seit 21.10.2026: vorher 899 px - gruener Header mit Hamburger bis 1679 px */
   .site-header{ background: var(--pb-green); border-bottom-color: rgba(255, 255, 255, 0.25); }
   .site-header__burger span{ background: var(--pb-white); }
   .site-header__right .site-header__icon-btn{ color: var(--pb-white); border: 2px solid var(--pb-white); background: transparent; }
@@ -2721,4 +2721,30 @@ html.pb-i18n-laedt body{ opacity: 0; }
 @media (prefers-reduced-motion: reduce){
   .home-social__icon{ animation: none; }
   .home-social__card{ transition: none; }
+}
+
+/* ==========================================================================
+   HEADER: INSTAGRAM & TIKTOK (21.10.2026)
+   Zwei runde Symbole links neben Globus/Profil - gleiche Klasse
+   .site-header__icon-btn, dadurch exakt gleiche Groesse, weisse Kontur,
+   weisses Symbol und gleicher Hover wie die vorhandenen Icons.
+   Reihenfolge: Instagram -> TikTok -> Globus -> Profil.
+   Platz: Menueleiste dafuer erst ab 1680 px (siehe oben), darunter gruener
+   Header mit Hamburger. Smartphone (<= 760 px): im Header kein Platz ->
+   Symbole stattdessen unten im aufgeklappten Hamburger-Menue.
+   ========================================================================== */
+.site-header__icon-btn.site-header__social svg,
+.mobile-nav__social svg{ fill: currentColor; stroke: none; }
+.site-header__icon-btn.site-header__social svg .pb-ig-linie,
+.mobile-nav__social svg .pb-ig-linie{ fill: none; stroke: currentColor; }
+.mobile-nav__social{ display: none; }
+@media (max-width: 760px){
+  .site-header__right .site-header__social{ display: none; }
+  .mobile-nav .mobile-nav__social{ display: flex; gap: 12px; padding: 16px 0 6px; }
+  .mobile-nav .mobile-nav__social a.site-header__icon-btn{
+    width: 44px; height: 44px; padding: 0; border: 2px solid var(--pb-green); border-bottom: 2px solid var(--pb-green);
+    background: var(--pb-white); color: var(--pb-green); font-size: 0;
+  }
+  .mobile-nav .mobile-nav__social a.site-header__icon-btn:hover{ background: var(--pb-green); color: var(--pb-white); }
+  .mobile-nav .mobile-nav__social svg{ width: 21px; height: 21px; }
 }

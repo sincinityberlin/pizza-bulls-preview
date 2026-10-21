@@ -39,7 +39,7 @@
 
   var rechts = document.querySelector('.site-header__right');
   if (!rechts) return;
-  var profil = rechts.querySelector('a.site-header__icon-btn, .site-header__icon-btn:last-child');
+  var profil = rechts.querySelector('a.site-header__icon-btn:not(.site-header__social), .site-header__icon-btn:last-child'); /* Instagram/TikTok-Links nicht verwechseln */
   if (!profil) return;
   profil.setAttribute('href', '#konto');
   profil.setAttribute('role', 'button');
