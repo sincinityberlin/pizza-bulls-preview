@@ -1,9 +1,11 @@
 /* ==========================================================================
-   FRANCHISE-ANFRAGE — Validierung + Bestätigungsansicht auf derselben Seite.
-   Der Nutzer verlässt die Website nicht. Ist im Formular ein data-endpoint
-   gesetzt (z. B. Formular-Dienst oder eigener Server), werden die Daten per
-   fetch() dorthin geschickt; ohne Endpunkt (aktueller Stand auf GitHub Pages)
-   wird nichts übertragen und direkt die Bestätigung angezeigt.
+   FRANCHISE-ANFRAGE (Formular auf franchise/#franchise-anfrage)
+   Validierung + Bestaetigungsansicht auf derselben Seite. Ist im Formular ein
+   data-endpoint gesetzt (Formular-Dienst oder eigener Server), werden die Daten
+   per fetch() dorthin geschickt und erst nach erfolgreicher Antwort bestaetigt.
+   OHNE Endpunkt (aktueller Stand auf GitHub Pages) wird NICHTS uebertragen -
+   seit 27.10.2026 sagt das Formular das offen, statt eine Bestaetigung
+   vorzutaeuschen (Vorgabe Nutzer).
    ========================================================================== */
 (function(){
   var form = document.getElementById('franchiseForm');
@@ -64,7 +66,10 @@
     new FormData(form).forEach(function(v, k){ data[k] = typeof v === 'string' ? v.trim() : v; });
 
     var endpoint = form.getAttribute('data-endpoint');
-    if (!endpoint){ showConfirmation(data); return; }
+    if (!endpoint){
+      status.textContent = 'Der Online-Versand ist noch nicht freigeschaltet – deine Angaben wurden nicht gesendet. Bitte schreib uns an info@pizzabulls.de.';
+      return;
+    }
 
     submit.disabled = true;
     submit.textContent = 'Wird gesendet …';

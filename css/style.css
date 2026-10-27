@@ -2748,3 +2748,79 @@ html.pb-i18n-laedt body{ opacity: 0; }
   .mobile-nav .mobile-nav__social a.site-header__icon-btn:hover{ background: var(--pb-green); color: var(--pb-white); }
   .mobile-nav .mobile-nav__social svg{ width: 21px; height: 21px; }
 }
+
+/* ==========================================================================
+   STARTSEITE AKTIONSBEREICH MIT VIDEO (27.10.2026)
+   Ersetzt auf der Startseite die grosse 50-%-Kachel: Video oben ueber die
+   volle Breite (Originalformat 848x480 -> Rahmen exakt im Videoformat, kein
+   Beschnitt, keine Verzerrung), darunter "Big Bag" links und "Aioli" rechts
+   gleich gross (beide Bilder 1122x1402, 4:5, vollstaendig sichtbar).
+   <= 560 px: die beiden Bilder untereinander. Gilt nur fuer .offers-bento--video
+   (nur index.html) - angebote.html und die alte Bento-Logik bleiben unberuehrt.
+   ========================================================================== */
+.local-deals .offers-bento.offers-bento--video{
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto;
+  gap: 12px; max-width: none; margin: 0 auto; aspect-ratio: auto;
+}
+.local-deals .offers-bento--video .offers-bento__tile{ margin: 0; max-width: none; }
+.local-deals .offers-bento--video .offers-bento__tile--video{
+  grid-column: 1 / -1; grid-row: 1; aspect-ratio: 848 / 480; background: var(--pb-dark);
+}
+.local-deals .offers-bento--video .offers-bento__tile:nth-child(2){ grid-column: 1; grid-row: 2; }
+.local-deals .offers-bento--video .offers-bento__tile:nth-child(3){ grid-column: 2; grid-row: 2; }
+.local-deals .offers-bento--video .offers-bento__tile img{ width: 100%; height: auto; aspect-ratio: 1122 / 1402; object-fit: contain; }
+.offers-bento__video{ display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+@media (max-width: 560px){
+  .local-deals .offers-bento.offers-bento--video{ grid-template-columns: 1fr; }
+  .local-deals .offers-bento--video .offers-bento__tile:nth-child(2),
+  .local-deals .offers-bento--video .offers-bento__tile:nth-child(3){ grid-column: 1; grid-row: auto; }
+}
+
+/* ==========================================================================
+   FRANCHISE-BEREICH NACH PIZZABULLS.DE (27.10.2026)
+   Ergaenzende Bausteine fuer die neu aufgebauten Franchise-Seiten - nur
+   Marken-Tokens (Gruen, Rot, Creme, Anthrazit), gleiche Radien wie frx-card.
+   ========================================================================== */
+/* Aufruf-Band ("Bereit fuer deine eigene Filiale?", "Ueberzeugt vom Konzept?") */
+.frx-band{
+  max-width: calc(var(--content-max) - 40px); margin: 24px auto 0; padding: 48px 40px;
+  border-radius: 28px; background: var(--pb-cream); color: var(--pb-dark); text-align: center;
+}
+.frx-band h2{ margin: 10px auto 12px; max-width: 760px; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 900; line-height: 1.12; text-transform: uppercase; }
+.frx-band h2 em{ font-style: normal; color: var(--pb-red); }
+.frx-band > p:not(.section-eyebrow){ max-width: 640px; margin: 0 auto 24px; color: var(--pb-dark); line-height: 1.65; }
+.frx-band .section-eyebrow{ color: var(--pb-green-dark); }
+.frx-band__actions{ display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+/* Hero-Unterzeile "Fast like Bulls!" (Franchise-Uebersicht) */
+.frx-hero__tagline{ margin: -6px 0 14px; font-size: clamp(1.1rem, 2.2vw, 1.5rem); font-weight: 800; font-style: italic; color: var(--pb-cream); }
+/* Zwei Bilder nebeneinander unter dem Hero (Franchise-Uebersicht) */
+.frx-gallery{
+  max-width: calc(var(--content-max) - 40px); margin: 24px auto 0;
+  display: grid; grid-template-columns: 1.34fr 0.78fr; gap: 16px; align-items: start; /* Spalten im Bildformat -> beide Bilder gleich hoch, kein Beschnitt */
+}
+.frx-gallery img{ display: block; width: 100%; height: auto; border-radius: 28px; box-shadow: 0 2px 14px rgba(55, 53, 53, 0.1); }
+/* Hinweisbox im Fliesstext (Marketing: Monatliche Werbegebuehr) und als Ueberschrift h3 */
+.fr-hint--inline{ max-width: none; margin: 18px 0 0; }
+.fr-hint h3{ margin: 0; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pb-green-dark); }
+.fr-page .page-section .fr-hint{ margin-top: 24px; }
+.fr-note--top{ margin: -6px auto 22px; }
+.fr-table-card h3{ margin: 0 0 12px; font-size: 1.3rem; }
+.fr-tables + .fr-hint{ margin-top: 24px; }
+h3.fr-subhead{ text-align: center; margin: 34px 0 16px; }
+.fr-features h4{ margin: 10px 0 6px; font-size: 1rem; }
+/* "Warum Bulls?": 5 Karten in einer Reihe ab 1100 px */
+@media (min-width: 1100px){ .frx-svc-grid--5{ grid-template-columns: repeat(5, 1fr); } }
+/* Schritte "So wirst du Partner": 4 Karten */
+@media (min-width: 981px){
+  .frx-card .fr-steps{ grid-template-columns: repeat(4, 1fr); }
+  .frx-card .fr-step{ flex-direction: column; }
+}
+@media (max-width: 760px){
+  .frx-band{ width: calc(100% - 24px); padding: 36px 20px; border-radius: 22px; }
+  .frx-gallery{ width: calc(100% - 24px); grid-template-columns: 1fr; gap: 12px; }
+  .frx-gallery img{ border-radius: 22px; }
+}
+/* Bild-Etiketten (frx-tags--overlay) auch in .fr-split-Bildern verankern */
+.fr-split__media{ position: relative; }
+/* Hochformat-Bild im Split (Marketing) nicht hoeher als noetig */
+.fr-split__media img.fr-img--portrait{ display: block; max-width: 360px; margin: 0 auto; }
