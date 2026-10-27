@@ -12,7 +12,7 @@
   var confirmBox = document.getElementById('franchiseConfirm');
   if (!form || !confirmBox) return;
 
-  var status = form.querySelector('.fr-form__status');
+  var status = form.querySelector('.fr-form__status, .pb-form-status'); /* .pb-form-status = Referenz-Formular (Franchise-Uebersicht) */
   var submit = form.querySelector('.fr-form__submit');
   var LABELS = { eigenkapital: 'Eigenkapital', erfahrung: 'Gastro-Erfahrung', telefon: 'Telefon' };
 
