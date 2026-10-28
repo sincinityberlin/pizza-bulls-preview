@@ -2,6 +2,7 @@
    Schluessel = deutscher Text bzw. HTML OHNE Attribute (siehe js/pb-sprache.js). */
 window.PB_I18N = {
 "en": {
+"Schnell und heiß geliefert": "Delivered fast and hot",
 "Pizza Bulls Filiale von außen mit grüner Beschilderung pizza bulls und der Werbefläche Nimm mehr, zahl weniger": "Pizza Bulls store from outside with green pizza bulls signage and the advertising panel Take more, pay less",
 "Lieferfahrer in grün-schwarzer Pizza-Bulls-Kleidung mit Lieferrucksack und Helm übergibt einer Kundin Pizza-Bulls-Pizzakartons, daneben ein Roller mit Pizza-Bulls-Branding; unten die Hinweise Frische Produkte, Schnelle Lieferung und Wachsender Markt": "Delivery rider in green and black Pizza Bulls clothing with delivery backpack and helmet hands Pizza Bulls pizza boxes to a customer, next to a Pizza Bulls branded scooter; at the bottom the notes Fresh products, Fast delivery and Growing market",
 "Deine <span>Anfrage</span>": "Your <span>enquiry</span>",
@@ -978,6 +979,7 @@ window.PB_I18N = {
 "Als VIP-Mitglied bist du Teil unserer VIP-E-Mail-Liste: Punkte sammeln und als V.I.P. Mitglied belohnt werden. Die Anmeldung öffnest du über „Jetzt registrieren“ im Pizza-Bulls-Club-Bereich der Startseite, über „Neukunde? 10€ Rabatt“ oder direkt hier: <button>VIP Mitglieder Club</button>.": "As a VIP member you're part of our VIP email list: collect points and get rewarded as a V.I.P. member. You can open the sign-up via „Register now“ in the Pizza Bulls Club section of the home page, via „New customer? 10€ off“ or directly here: <button>VIP Members Club</button>."
 },
 "tr": {
+"Schnell und heiß geliefert": "Hızlı ve sıcak teslim",
 "Pizza Bulls Filiale von außen mit grüner Beschilderung pizza bulls und der Werbefläche Nimm mehr, zahl weniger": "Yeşil pizza bulls tabelası ve Daha fazla al, daha az öde reklam panosuyla Pizza Bulls şubesinin dış görünümü",
 "Lieferfahrer in grün-schwarzer Pizza-Bulls-Kleidung mit Lieferrucksack und Helm übergibt einer Kundin Pizza-Bulls-Pizzakartons, daneben ein Roller mit Pizza-Bulls-Branding; unten die Hinweise Frische Produkte, Schnelle Lieferung und Wachsender Markt": "Yeşil-siyah Pizza Bulls kıyafetli, teslimat sırt çantalı ve kasklı kurye bir müşteriye Pizza Bulls pizza kutularını veriyor, yanında Pizza Bulls markalı bir scooter; altta Taze ürünler, Hızlı teslimat ve Büyüyen pazar notları",
 "Deine <span>Anfrage</span>": "<span>Başvurun</span>",
