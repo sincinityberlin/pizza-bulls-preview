@@ -2750,20 +2750,19 @@ html.pb-i18n-laedt body{ opacity: 0; }
 }
 
 /* ==========================================================================
-   STARTSEITE AKTIONSBEREICH MIT VIDEO (27.10.2026, Groessen 28.10.2026)
-   Kompakt (Nutzervorgabe): Block max. 843 px breit, gesamt ca. 482 px hoch.
-   Oben das Video (848x480) im Rahmen 843x250 mit object-fit: cover - oben und
-   unten beschnitten (im Video steht kein Text), Pizza bleibt mittig sichtbar.
-   Darunter die Querformat-Fassungen "Big Bag" (1600x900, 16:9) links und
-   "Aioli" (1600x800, 2:1) rechts, vollstaendig (kein Beschnitt): Spalten im
-   Verhaeltnis der Bildformate (16:18) -> beide exakt gleich hoch (220 px bei
-   843 px Breite), Breite 391/440 px. Tablet verkleinert proportional.
-   <= 560 px: alles untereinander, Video dort unbeschnitten (16:9).
+   STARTSEITE AKTIONSBEREICH MIT VIDEO (27.10.2026, Groessen 28.10., Breite 28.10.)
+   Buendig mit der 3er-Kachelreihe darunter (Nutzervorgabe): gleicher Container
+   (.local-deals = .offers-cards--home, max. 1240 px), 100 % Breite, Abstand 24 px
+   wie zwischen den Kacheln. Video im abgestimmten Format 843:250 (object-fit:
+   cover, im Video kein Text). Darunter "Big Bag" (16:9) und "Aioli" (2:1) je
+   50 % minus Abstand in gleich hohen Rahmen 1.886:1 (Mittel beider Formate):
+   Big Bag verliert oben/unten je ca. 2,9 %, Aioli links/rechts je ca. 2,9 % -
+   Werbetexte und Produkte vollstaendig. <= 560 px: untereinander, unbeschnitten.
    Nur .offers-bento--video (index.html) - andere Seiten unberuehrt.
    ========================================================================== */
 .local-deals .offers-bento.offers-bento--video{
-  display: grid; grid-template-columns: 16fr 18fr; grid-template-rows: auto auto;
-  gap: 12px; max-width: 843px; margin: 0 auto; aspect-ratio: auto;
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto;
+  gap: 24px; width: 100%; max-width: none; margin: 0 auto; aspect-ratio: auto;
 }
 .local-deals .offers-bento--video .offers-bento__tile{ margin: 0; max-width: none; }
 .local-deals .offers-bento--video .offers-bento__tile--video{
@@ -2771,13 +2770,19 @@ html.pb-i18n-laedt body{ opacity: 0; }
 }
 .local-deals .offers-bento--video .offers-bento__tile:nth-child(2){ grid-column: 1; grid-row: 2; }
 .local-deals .offers-bento--video .offers-bento__tile:nth-child(3){ grid-column: 2; grid-row: 2; }
-.local-deals .offers-bento--video .offers-bento__tile img{ width: 100%; height: auto; object-fit: contain; }
+.local-deals .offers-bento--video .offers-bento__tile:nth-child(2),
+.local-deals .offers-bento--video .offers-bento__tile:nth-child(3){ aspect-ratio: 1.886 / 1; }
+.local-deals .offers-bento--video .offers-bento__tile img{ width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .offers-bento__video{ display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; pointer-events: none; }
+@media (max-width: 760px){
+  .local-deals .offers-bento.offers-bento--video{ gap: 12px; }
+}
 @media (max-width: 560px){
   .local-deals .offers-bento.offers-bento--video{ grid-template-columns: 1fr; }
   .local-deals .offers-bento--video .offers-bento__tile--video{ aspect-ratio: 848 / 480; }
   .local-deals .offers-bento--video .offers-bento__tile:nth-child(2),
-  .local-deals .offers-bento--video .offers-bento__tile:nth-child(3){ grid-column: 1; grid-row: auto; }
+  .local-deals .offers-bento--video .offers-bento__tile:nth-child(3){ grid-column: 1; grid-row: auto; aspect-ratio: auto; }
+  .local-deals .offers-bento--video .offers-bento__tile img{ height: auto; object-fit: contain; }
 }
 
 /* ==========================================================================
