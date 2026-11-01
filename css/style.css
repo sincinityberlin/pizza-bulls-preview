@@ -2750,7 +2750,7 @@ html.pb-i18n-laedt body{ opacity: 0; }
 }
 
 /* ==========================================================================
-   STARTSEITE AKTIONSBEREICH MIT VIDEO (27.10.2026, Groessen 28.10., Breite 28.10.)
+   STARTSEITE AKTIONSBEREICH MIT VIDEO (27.10.2026, Groessen 28.10., Breite 28.10., neues Video 01.11.)
    Buendig mit der 3er-Kachelreihe darunter (Nutzervorgabe): gleicher Container
    (.local-deals = .offers-cards--home, max. 1240 px), 100 % Breite, Abstand 24 px
    wie zwischen den Kacheln. Video im abgestimmten Format 843:250 (object-fit:
@@ -2766,7 +2766,7 @@ html.pb-i18n-laedt body{ opacity: 0; }
 }
 .local-deals .offers-bento--video .offers-bento__tile{ margin: 0; max-width: none; }
 .local-deals .offers-bento--video .offers-bento__tile--video{
-  grid-column: 1 / -1; grid-row: 1; aspect-ratio: 843 / 250; background: var(--pb-dark);
+  grid-column: 1 / -1; grid-row: 1; aspect-ratio: 1240 / 438; background: var(--pb-dark); /* 01.11.2026: +70 px hoeher (1240x438 statt 1240x368), Breite unveraendert */
 }
 .local-deals .offers-bento--video .offers-bento__tile:nth-child(2){ grid-column: 1; grid-row: 2; }
 .local-deals .offers-bento--video .offers-bento__tile:nth-child(3){ grid-column: 2; grid-row: 2; }
@@ -2779,7 +2779,7 @@ html.pb-i18n-laedt body{ opacity: 0; }
 }
 @media (max-width: 560px){
   .local-deals .offers-bento.offers-bento--video{ grid-template-columns: 1fr; }
-  .local-deals .offers-bento--video .offers-bento__tile--video{ aspect-ratio: 848 / 480; }
+  .local-deals .offers-bento--video .offers-bento__tile--video{ aspect-ratio: 1024 / 576; }
   .local-deals .offers-bento--video .offers-bento__tile:nth-child(2),
   .local-deals .offers-bento--video .offers-bento__tile:nth-child(3){ grid-column: 1; grid-row: auto; aspect-ratio: auto; }
   .local-deals .offers-bento--video .offers-bento__tile img{ height: auto; object-fit: contain; }
