@@ -2865,3 +2865,53 @@ body.fr-page::before{
   background: url("../assets/images/footer-pattern.png") center top / 600px 600px repeat; opacity: 0.3;
 }
 .fr-page .pbref > section.bg-\[\#779639\]{ background-color: transparent; }
+
+/* ==========================================================================
+   FRANCHISE-SEITEN: GROESSERE TEXTE (03.11.2026, Nutzervorgabe Lesbarkeit)
+   Nur innerhalb .fr-page .pbref (8 Franchise-Seiten). Kleine Fliesstexte,
+   Kartentexte, Karten-Ueberschriften, Vorzeilen/Etiketten und Formular-
+   beschriftungen groesser, Zeilenabstand leicht erhoeht. Grosse Ueberschriften
+   (h1/h2, text-lg und groesser), Buttons, Farben, Schriften, Layout unveraendert.
+   Texte, die ab 640 px schon >= 18 px haben (sm:text-lg/xl), sind ausgenommen.
+   ========================================================================== */
+/* Beschreibungstexte, Listen, Tabellen-/Kennwerte */
+.fr-page .pbref p.leading-relaxed:not([class*="text-lg"]):not([class*="text-xl"]):not([class*="text-2xl"]),
+.fr-page .pbref p.text-base:not([class*="sm:text-lg"]),
+.fr-page .pbref li:not([class*="text-xs"]):not([class*="text-lg"]):not([class*="text-xl"]),
+.fr-page .pbref dt:not([class*="text-lg"]):not([class*="text-xl"]):not([class*="text-2xl"]),
+.fr-page .pbref dd:not([class]),
+.fr-page .pbref label.text-sm{ font-size: 17px; line-height: 1.7; }
+.fr-page .pbref p.text-sm:not(.leading-relaxed):not([class*="sm:text-lg"]){ font-size: 16px; line-height: 1.6; }
+/* Karten-Ueberschriften */
+.fr-page .pbref h3.text-xs{ font-size: 15px; line-height: 1.35; }
+.fr-page .pbref h3.text-sm, .fr-page .pbref h4.text-sm{ font-size: 17px; line-height: 1.35; }
+.fr-page .pbref h3.text-base, .fr-page .pbref h4.text-base,
+.fr-page .pbref h3.text-sm.sm\:text-base{ font-size: 18px; line-height: 1.35; }
+/* kleine Vorzeilen, Etiketten, Formularbeschriftungen */
+.fr-page .pbref p.text-xs, .fr-page .pbref span.text-xs, .fr-page .pbref label.text-xs{ font-size: 14px; line-height: 1.45; }
+.fr-page .pbref p.text-xs.sm\:text-sm{ font-size: 16px; line-height: 1.5; } /* Unterzeilen (z. B. „In wenigen Monaten startklar“) */
+/* Absaetze/Werte ohne eigene Groessenklasse, die von einem text-sm-Elternelement 14 px erben */
+.fr-page .pbref .text-sm > p:not([class*="text-xs"]):not([class*="text-sm"]):not([class*="text-base"]):not([class*="text-lg"]):not([class*="text-xl"]):not([class*="text-2xl"]):not([class*="text-3xl"]),
+.fr-page .pbref .text-sm > dd:not([class*="text-xs"]):not([class*="text-sm"]):not([class*="text-base"]):not([class*="text-lg"]):not([class*="text-xl"]):not([class*="text-2xl"]):not([class*="text-3xl"]),
+.fr-page .pbref .text-sm > li:not([class*="text-xs"]):not([class*="text-sm"]):not([class*="text-base"]):not([class*="text-lg"]):not([class*="text-xl"]):not([class*="text-2xl"]):not([class*="text-3xl"]),
+.fr-page .pbref .text-sm > div > dd:not([class*="text-xs"]):not([class*="text-sm"]):not([class*="text-base"]):not([class*="text-lg"]):not([class*="text-xl"]):not([class*="text-2xl"]):not([class*="text-3xl"]){ font-size: 17px; line-height: 1.7; }
+@media (max-width: 639px){
+  .fr-page .pbref .text-sm > p:not([class*="text-xs"]):not([class*="text-sm"]):not([class*="text-base"]):not([class*="text-lg"]):not([class*="text-xl"]):not([class*="text-2xl"]):not([class*="text-3xl"]),
+  .fr-page .pbref .text-sm > dd:not([class*="text-xs"]):not([class*="text-sm"]):not([class*="text-base"]):not([class*="text-lg"]):not([class*="text-xl"]):not([class*="text-2xl"]):not([class*="text-3xl"]),
+  .fr-page .pbref .text-sm > li:not([class*="text-xs"]):not([class*="text-sm"]):not([class*="text-base"]):not([class*="text-lg"]):not([class*="text-xl"]):not([class*="text-2xl"]):not([class*="text-3xl"]),
+  .fr-page .pbref .text-sm > div > dd:not([class*="text-xs"]):not([class*="text-sm"]):not([class*="text-base"]):not([class*="text-lg"]):not([class*="text-xl"]):not([class*="text-2xl"]):not([class*="text-3xl"]){ font-size: 16px; line-height: 1.65; }
+  .fr-page .pbref p.text-sm[class*="sm:text-lg"]{ font-size: 16px; } /* Bildunterschrift „Wir stehen an deiner Seite“ */
+  .fr-page .pbref p.text-xs.sm\:text-sm{ font-size: 16px; }
+  .fr-page .pbref h3.text-xl{ font-size: 18px; } /* Kartenueberschrift „Investitionsübersicht“ passt sonst nicht in die Karte */
+}
+@media (max-width: 639px){
+  .fr-page .pbref p.leading-relaxed:not([class*="text-lg"]):not([class*="text-xl"]):not([class*="text-2xl"]),
+  .fr-page .pbref p.text-base:not([class*="sm:text-lg"]),
+  .fr-page .pbref li:not([class*="text-xs"]):not([class*="text-lg"]):not([class*="text-xl"]),
+  .fr-page .pbref dt:not([class*="text-lg"]):not([class*="text-xl"]):not([class*="text-2xl"]),
+  .fr-page .pbref dd:not([class]),
+  .fr-page .pbref label.text-sm{ font-size: 16px; line-height: 1.65; }
+  .fr-page .pbref h3.text-sm, .fr-page .pbref h4.text-sm, .fr-page .pbref h3.text-xs{ font-size: 16px; }
+  .fr-page .pbref h3.text-base, .fr-page .pbref h4.text-base, .fr-page .pbref h3.text-sm.sm\:text-base{ font-size: 17px; }
+  .fr-page .pbref p.text-xs, .fr-page .pbref span.text-xs{ font-size: 13px; }
+}
