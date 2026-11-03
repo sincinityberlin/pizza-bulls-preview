@@ -2,6 +2,7 @@
    Schluessel = deutscher Text bzw. HTML OHNE Attribute (siehe js/pb-sprache.js). */
 window.PB_I18N = {
 "en": {
+"Video: Verschiedene Pizzen werden frisch belegt": "Video: various pizzas being freshly topped",
 "Video: Pizzen, Burger und Snacks werden frisch zubereitet": "Video: pizzas, burgers and snacks being freshly prepared",
 "Schnell und heiß geliefert": "Delivered fast and hot",
 "Pizza Bulls Filiale von außen mit grüner Beschilderung pizza bulls und der Werbefläche Nimm mehr, zahl weniger": "Pizza Bulls store from outside with green pizza bulls signage and the advertising panel Take more, pay less",
@@ -980,6 +981,7 @@ window.PB_I18N = {
 "Als VIP-Mitglied bist du Teil unserer VIP-E-Mail-Liste: Punkte sammeln und als V.I.P. Mitglied belohnt werden. Die Anmeldung öffnest du über „Jetzt registrieren“ im Pizza-Bulls-Club-Bereich der Startseite, über „Neukunde? 10€ Rabatt“ oder direkt hier: <button>VIP Mitglieder Club</button>.": "As a VIP member you're part of our VIP email list: collect points and get rewarded as a V.I.P. member. You can open the sign-up via „Register now“ in the Pizza Bulls Club section of the home page, via „New customer? 10€ off“ or directly here: <button>VIP Members Club</button>."
 },
 "tr": {
+"Video: Verschiedene Pizzen werden frisch belegt": "Video: Çeşitli pizzalar taze malzemelerle hazırlanıyor",
 "Video: Pizzen, Burger und Snacks werden frisch zubereitet": "Video: Pizzalar, burgerler ve atıştırmalıklar taze hazırlanıyor",
 "Schnell und heiß geliefert": "Hızlı ve sıcak teslim",
 "Pizza Bulls Filiale von außen mit grüner Beschilderung pizza bulls und der Werbefläche Nimm mehr, zahl weniger": "Yeşil pizza bulls tabelası ve Daha fazla al, daha az öde reklam panosuyla Pizza Bulls şubesinin dış görünümü",
