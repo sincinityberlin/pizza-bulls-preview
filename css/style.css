@@ -2849,3 +2849,19 @@ h3.fr-subhead{ text-align: center; margin: 34px 0 16px; }
 .fr-split__media{ position: relative; }
 /* Hochformat-Bild im Split (Marketing) nicht hoeher als noetig */
 .fr-split__media img.fr-img--portrait{ display: block; max-width: 360px; margin: 0 auto; }
+
+/* ==========================================================================
+   FRANCHISE-SEITEN: SEITENHINTERGRUND WIE FOOTER (03.11.2026, Nutzervorgabe)
+   Nur body.fr-page (die 8 Franchise-Seiten). Weisser Grund mit demselben
+   hellgruenen Obst-/Gemuese-Muster wie .pb-footer::before (footer-pattern.png,
+   Kachel 600 px, 30 % Deckkraft) ueber die ganze Seitenlaenge. Die gruenen
+   Abschnittsflaechen der Referenz (bg-[#779639]) werden durchsichtig, damit das
+   Muster zwischen/hinter den roten Kaesten sichtbar ist - die roten Kaesten
+   selbst bleiben unveraendert. Header/Bestellleiste/Footer unberuehrt.
+   ========================================================================== */
+body.fr-page{ position: relative; isolation: isolate; background: var(--pb-white); }
+body.fr-page::before{
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: url("../assets/images/footer-pattern.png") center top / 600px 600px repeat; opacity: 0.3;
+}
+.fr-page .pbref > section.bg-\[\#779639\]{ background-color: transparent; }
