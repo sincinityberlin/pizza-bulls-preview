@@ -2899,3 +2899,29 @@ body.fr-page::before{
   .fr-page .pbref h3.text-base, .fr-page .pbref h4.text-base, .fr-page .pbref h3.text-sm.sm\:text-base{ font-size: 17px; }
   .fr-page .pbref p.text-xs, .fr-page .pbref span.text-xs{ font-size: 13px; }
 }
+
+/* ==========================================================================
+   FRANCHISE-SEITEN: KAESTEN WEISS MIT MUSTER + SCHWARZER RAHMEN (04.11.2026,
+   Nutzervorgabe). Nur .fr-page .pbref. Die grossen pinken Kaesten der Referenz
+   (rounded-3xl bg-[#cc0814]) werden durchsichtig -> der weisse Seitengrund mit
+   dem hellgruenen Obst-/Gemuese-Muster (wie Impressum/Footer) ist auch innen
+   sichtbar. Rahmen 2 px #000, Ecken unveraendert. Weisse/cremefarbene Texte
+   darin werden schwarz; gruene Akzente, Buttons, Bilder und die weissen
+   Informationskarten (bg-white) bleiben wie sie sind.
+   ========================================================================== */
+.fr-page .pbref .rounded-3xl.bg-\[\#cc0814\]{
+  background-color: transparent; color: #000;
+  border: 2px solid #000; --tw-ring-color: transparent;
+}
+.fr-page .pbref .rounded-3xl.bg-\[\#cc0814\] :is(.text-white, .text-white\/80, .text-white\/85, .text-white\/90, .text-\[\#f7f0c1\]):not([class*="bg-"]){ color: #000; }
+/* Halbtransparente Kacheln (bisher hellpink) -> gleicher Rahmen, Muster sichtbar */
+.fr-page .pbref .rounded-3xl.bg-\[\#cc0814\] .bg-white\/10,
+.fr-page .pbref .rounded-3xl.bg-\[\#cc0814\] .bg-white\/10:hover{ background-color: transparent; border: 2px solid #000; color: #000; }
+/* Kleine Etiketten (bisher weiss-transparent) */
+.fr-page .pbref .rounded-3xl.bg-\[\#cc0814\] :is(.bg-white\/15, .bg-white\/20){ background-color: transparent; border: 2px solid #000; color: #000; }
+.fr-page .pbref .rounded-3xl.bg-\[\#cc0814\] .bg-white\/30{ background-color: rgba(0, 0, 0, 0.22); }
+/* Feine Trennlinien weiss -> dezent schwarz */
+.fr-page .pbref .rounded-3xl.bg-\[\#cc0814\] .border-t.border-white\/20{ border-color: rgba(0, 0, 0, 0.18); }
+/* Umriss-Button (weisser Rand) */
+.fr-page .pbref .rounded-3xl.bg-\[\#cc0814\] a.border-white{ border-color: #000; color: #000; }
+.fr-page .pbref .rounded-3xl.bg-\[\#cc0814\] a.border-white:hover{ background-color: #000; color: #fff; }
